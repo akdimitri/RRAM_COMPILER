@@ -54,3 +54,16 @@ Cadence implementation with main compiler components
 >>loadRRAMCompiler()
 
 4. Download RRAM COMPILER Repository and place folder RRAM_COMPILER inside folder SKILL
+
+5. Run Compiler by invoking createRRAM function in CIW
+
+--------------------------------------------
+createRRAM(		; LIST OF ARGUMENTS
+						X 					; X SIZE OF ARRAY (COLS)
+						Y					; Y SIZE OF ARRAY (ROWS)
+						@optional 			; THE FOLLOWING ARGUMENTS ARE OPTIONAL, NEXT TO THEM IS THEIR DEFAULT VALUE
+						(LIBRARY "THESIS")	; LIBRARY TO PLACE THE NEW DESIGN
+						(DB_RRAM_CELL dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	; DB OF RRAM CELL
+					)		; END OF LIST OF ARGUMENTS
+                                                            
+                                                            --------------------------------------------
