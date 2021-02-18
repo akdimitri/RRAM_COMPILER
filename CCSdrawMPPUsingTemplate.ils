@@ -1,0 +1,167 @@
+/* CCSdrawMPPUsingTemplate.ils
+
+Language   SKILL
+Date       Mar 30, 2007 
+
+Draw a multipart path given a template. For example:
+
+CCSdrawMPPUsingTemplate("mytemplate" ?cvId cvId 
+   ?pts list(0:0 10:0 10:10)
+)
+
+***************************************************
+
+SCCS Info: @(#) CCSdrawMPPUsingTemplate.ils 03/30/07.13:40:48 1.1
+
+*/
+
+/*******************************************************************************
+*  DISCLAIMER: The following code is provided for Cadence customers to use at  *
+*   their own risk. The code may require modification to satisfy the           *
+*   requirements of any user. The code and any modifications to the code may   *
+*   not be compatible with current or future versions of Cadence products.     *
+*   THE CODE IS PROVIDED "AS IS" AND WITH NO WARRANTIES, INCLUDING WITHOUT     *
+*   LIMITATION ANY EXPRESS WARRANTIES OR IMPLIED WARRANTIES OF MERCHANTABILITY *
+*   OR FITNESS FOR A PARTICULAR USE.                                           *
+*******************************************************************************/
+
+(define CCSdrawMPPUsingTemplate nil)
+
+(let (templateMapping)
+  ;----------------------------------------------------------------------
+  ; Define the MPP position to keyword mapping data
+  ;----------------------------------------------------------------------
+  (setq templateMapping (makeTable 'templateMapping nil))
+  (setarray templateMapping
+	    'main
+	    '(?layer ?width ?choppable ?endType ?beginExt ?endExt 
+		     ?justification ?offset connectivity)
+	    )
+  (setarray templateMapping
+	    'offset
+	    '(?layer ?width ?choppable ?sep ?justification ?beginOffset 
+		     ?endOffset connectivity)
+	    )
+  (setarray templateMapping
+	    'connectivity
+	    '(?termIOType ?pin ?pinAccessDir ?pinLabel ?pinLabelHeight 
+			  ?pinLabelLayer ?pinLabelJust ?pinLabelFont 
+			  ?pinLabelDrafting ?pinLabelOrient
+			  ?pinLabelRefHandle ?pinLabelOffsetPoint)
+	    )
+  (setarray templateMapping
+	    'enclosure
+	    '(?layer ?enclosure ?choppable ?beginOffset ?endOffset 
+		     connectivity)
+	    )
+  (setarray templateMapping
+	    'subrect
+	    '(?layer ?width ?length ?choppable ?sep ?justification ?space 
+		     ?beginOffset ?endOffset ?gap connectivity 
+		     ?beginSegOffset ?endSegOffset ?diagonal)
+	    )
+
+  /***************************************************************
+  *                                                              *
+  *             (mapUsingTemplate lst templateList)              *
+  *                                                              *
+  *    PRIVATE function to map a positional list to a list of    *
+  *     keyword arguments - given the list of values and the     *
+  *     list of keywords. The keyword list can also contain      *
+  *    references to other template maps (e.g. connectivity)     *
+  *                                                              *
+  ***************************************************************/
+  (defun mapUsingTemplate (lst templateList)
+    (let (subTemplate)
+      (foreach mapcan (item keyArg) lst templateList
+	       (setq subTemplate (arrayref templateMapping keyArg))
+	       ;---------------------------------------------------------
+	       ; If there's a sub template (e.g. connectivity) map over
+	       ; that recursively, otherwise return the value with the
+	       ; keyword argument
+	       ;---------------------------------------------------------
+	       (if subTemplate
+		 (mapUsingTemplate item subTemplate)
+		 (list keyArg item)
+		 )
+	       )
+      )
+    )
+
+  /***************************************************************
+  *                                                              *
+  *                  (templateToArgs template)                   *
+  *                                                              *
+  *      PRIVATE function to map a complete MPP template to      *
+  *     the corresponding argument list for (rodCreatePath).     *
+  *                                                              *
+  ***************************************************************/
+  (defun templateToArgs (template)
+    (let (templateList)
+      (foreach mapcan (entry templateMap)
+	       template '(main (?offsetSubPath offset) 
+			       (?encSubPath enclosure)
+			       (?subRect subrect))
+	       (if (listp templateMap)
+		 ;-------------------------------------------------------
+		 ; lists indicate that there is a list of lists to be mapped
+		 ;-------------------------------------------------------
+		 (progn
+		   (setq templateList 
+			 (arrayref templateMapping (cadr templateMap)))
+		   (list 
+		     (car templateMap)
+		     (foreach mapcar subEntry entry
+			      (mapUsingTemplate subEntry templateList))
+		     )
+		   )
+		 ;-------------------------------------------------------
+		 ; other entries indicate that there is a single list
+		 ;-------------------------------------------------------
+		 (progn
+		   (setq templateList 
+			 (arrayref templateMapping templateMap))
+		   (mapUsingTemplate entry templateList)
+		   )
+		 )
+	       )
+      )
+    )
+
+  /*********************************************************************
+  *                                                                    *
+  * (drawMPPUsingTemplate templateName @key (cvId (geGetEditCellView)) *
+  *                          @rest args "tg")                          *
+  *                                                                    *
+  *     PUBLIC function (exported as CCSdrawMPPUsingTemplate) to       *
+  *       draw a multi-part path using a named template. Need to       *
+  *            provide ?cvId and ?pts arguments in general             *
+  *                                                                    *
+  *********************************************************************/
+  (defun drawMPPUsingTemplate (templateName @key (cvId (geGetEditCellView))
+					    @rest args "tg")
+    (let (tfId template mappedTemplate)
+      (setq tfId (techGetTechFile cvId))
+      (setq template (techGetMPPTemplateByName tfId templateName))
+      (if template
+	(progn
+	  (setq mappedTemplate (templateToArgs template))
+	  (apply rodCreatePath
+		 `(
+		   ?cvId ,cvId
+		   ,@args
+		   ,@mappedTemplate
+		   ))
+	  )
+	(error "MPP template %s cannot be found in technology library %s"
+	       templateName (getSGq tfId libName))
+	)
+      )
+    )
+
+  ;----------------------------------------------------------------------
+  ; Export the one public function
+  ;----------------------------------------------------------------------
+  (setq CCSdrawMPPUsingTemplate drawMPPUsingTemplate)
+  )
+
