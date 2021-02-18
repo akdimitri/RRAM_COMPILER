@@ -1,8 +1,10 @@
 # RRAM COMPILER
 
-Author: Antoniadis Dimitrios
+Author: 
+            Antoniadis Dimitrios
 
 Supervisors:
+
             T. Constandinou
             P. Feng
             A. Misfud
