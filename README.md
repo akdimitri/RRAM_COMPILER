@@ -67,6 +67,9 @@ For example:
 createRRAM( X, Y, LIBRARY, DB)
 
 X is the number of columns
+
 Y is the number of rows
+
 LIBRARY is the library where the result will be saved
+
 DB is the db id of the symbol of the memristor cell
