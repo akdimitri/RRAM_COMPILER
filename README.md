@@ -48,5 +48,7 @@ Under the working directory modify the .cdsinit file to load the corresponding s
 At the end of the file import the following lines of code.
 
 >>setSkillPath( append( '("./SKILL/RRAM_COMPILER") getSkillPath() ) )		; load path to personal skill scripts
+>>
 >>load("loadRRAM.il")
+>>
 >>loadRRAMCompiler()
