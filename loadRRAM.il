@@ -1,3 +1,9 @@
+;--------------------------------------------------------------------------------------------------------------------------------------------
+; Author:		Dimitrios Antoniadis
+; Date:			18/02/2021
+; Description:	This file contains the SKILL to load SKILL scripts for RRAM COMPILER
+;-------------------------------------------------------------------------------------------------------------------------------------------- 
+
 procedure(	loadRRAMCompiler(				; PROCEDURE ARGUMENTS
 							@key 
 							(PATH	"./SKILL/RRAM_COMPILER")	; PATH TO RRAM COMPILER							

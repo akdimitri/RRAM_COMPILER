@@ -1,3 +1,9 @@
+;--------------------------------------------------------------------------------------------------------------------------------------------
+; Author:		Dimitrios Antoniadis
+; Date:			18/02/2021
+; Description:	This file contains the SKILL code to create the Schematic of the RRAM 
+;-------------------------------------------------------------------------------------------------------------------------------------------- 
+
 procedure(	createRRAMsch(					; LIST OF ARGUMENTS
 							X 				; X SIZE OF ARRAY (COLS)
 							Y				; Y SIZE OF ARRAY (ROWS)

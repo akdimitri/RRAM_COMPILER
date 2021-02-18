@@ -1,3 +1,9 @@
+;--------------------------------------------------------------------------------------------------------------------------------------------
+; Author:		Dimitrios Antoniadis
+; Date:			28/1/2021
+; Description:	This file contains the main function SKILL code to create the RRAM 
+;-------------------------------------------------------------------------------------------------------------------------------------------- 
+
 procedure( createRRAM(		; LIST OF ARGUMENTS
 						X 					; X SIZE OF ARRAY (COLS)
 						Y					; Y SIZE OF ARRAY (ROWS)

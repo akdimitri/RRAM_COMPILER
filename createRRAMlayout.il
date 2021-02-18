@@ -1,3 +1,9 @@
+;--------------------------------------------------------------------------------------------------------------------------------------------
+; Author:		Dimitrios Antoniadis
+; Date:			18/02/2021
+; Description:	This file contains the SKILL to create the layout of the RRAM
+;-------------------------------------------------------------------------------------------------------------------------------------------- 
+
 procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
 								X 				; X SIZE OF ARRAY (COLS)
 								Y				; Y SIZE OF ARRAY (ROWS)
