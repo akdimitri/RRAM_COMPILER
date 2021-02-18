@@ -20,7 +20,7 @@ Research Project: Large-scale mixed-signal array compiler for automatic memory g
 * This project is still ongoing 
 
 
-**Research Project Description Description**: Commercial availability of memory complier is only used for industrial design of static random-access memory (SRAM) or
+**Research Project Description**: Commercial availability of memory complier is only used for industrial design of static random-access memory (SRAM) or
 dynamic random-access memory (DRAM). In academia, a new memory type has been proposed by using memristor based
 random-access memory (ReRAM). To design a large-scale ReRAM array is time consuming and tedious to custom design, and
 there are not many tools for automating this process. This project aims to develop a script-based compiler that provides a
