@@ -36,19 +36,21 @@ Cadence implementation with main compiler components
 
 **Instructions**
 
-The RRAM MEMORY COMPILER files are SKILL code scripts and they have to be placed under folder SKILL in working directory. More specifically, under the working directory, in which the virtuoso command is invoked create a folder named SKILL.
+1.The RRAM MEMORY COMPILER files are SKILL code scripts and they have to be placed under folder SKILL in working directory. More specifically, under the working directory, in which the virtuoso command is invoked create a folder named SKILL.
 
 >>mkdir SKILL
 
 
-Under the working directory modify the .cdsinit file to load the corresponding scripts.
+2.Under the working directory modify the .cdsinit file to load the corresponding scripts.
 
 >>gedit .cdsinit
 
-At the end of the file import the following lines of code.
+3.At the end of the file import the following lines of code.
 
 >>setSkillPath( append( '("./SKILL/RRAM_COMPILER") getSkillPath() ) )		; load path to personal skill scripts
 >>
 >>load("loadRRAM.il")
 >>
 >>loadRRAMCompiler()
+
+4.Download RRAM COMPILER Repository and place folder RRAM_COMPILER inside folder SKILL
