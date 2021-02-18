@@ -17,7 +17,7 @@ dynamic random-access memory (DRAM). In academia, a new memory type has been pro
 random-access memory (ReRAM). To design a large-scale ReRAM array is time consuming and tedious to custom design, and
 there are not many tools for automating this process. This project aims to develop a script-based compiler that provides a
 flexible and portable platform for generating and verifying ReRAM designs across different technologies.
-The student will investigate the current memory complier in terms of architecture and operation to understand the design
+The student will investigate the current memory compiler in terms of architecture and operation to understand the design
 process of common memory.
 
 The objectives are:
