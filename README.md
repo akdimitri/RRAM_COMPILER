@@ -9,7 +9,7 @@ University: Imperial College London
 Research Project: Large-scale mixed-signal array compiler for automatic memory generation
 
 ---
-* This project is still ongoing *
+* This project is still ongoing 
 
 
 **Research Project Description Description**: Commercial availability of memory complier is only used for industrial design of static random-access memory (SRAM) or
