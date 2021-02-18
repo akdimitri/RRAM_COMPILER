@@ -57,14 +57,13 @@ Cadence implementation with main compiler components
 
 5. Run Compiler by invoking createRRAM function in CIW
 
---------------------------------------------
+For example:
+>> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	
 
->>createRRAM(		; LIST OF ARGUMENTS
->>						X 					; X SIZE OF ARRAY (COLS)
->>						Y					; Y SIZE OF ARRAY (ROWS)
->>						@optional 			; THE FOLLOWING ARGUMENTS ARE OPTIONAL, NEXT TO THEM IS THEIR DEFAULT VALUE
->>						(LIBRARY "THESIS")	; LIBRARY TO PLACE THE NEW DESIGN
->>						(DB_RRAM_CELL dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	; DB OF RRAM CELL
->>					)		; END OF LIST OF ARGUMENTS
->>                                                            
-                                                          
+** Function Definition **
+createRRAM( X, Y, LIBRARY, DB)
+
+X is the number of columns
+Y is the number of rows
+LIBRARY is the library where the result will be saved
+DB is the db id of the symbol of the memristor cell
