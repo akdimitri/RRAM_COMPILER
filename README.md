@@ -63,7 +63,7 @@ Cadence implementation with main compiler components
 For example:
 >> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	
 
-** Function Definition **
+**Function Definition**
 createRRAM( X, Y, LIBRARY, DB)
 
 X is the number of columns
