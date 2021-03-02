@@ -1,7 +1,8 @@
 ;--------------------------------------------------------------------------------------------------------------------------------------------
 ; Author:		Dimitrios Antoniadis
-; Date:			18/02/2021
+; Date:			01/03/2021
 ; Description:	This file contains the SKILL to create the layout of the RRAM
+; Version:		2
 ;-------------------------------------------------------------------------------------------------------------------------------------------- 
 
 procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
@@ -13,9 +14,9 @@ procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
 							)
 	prog( 	(			; LIST OF LOCAL VARIABLES
 			CELLVIEW		; DB OF THE LAYOUT CELL
-			TF			; DB OF TECHNOLOGY FILE
+			;TF			; DB OF TECHNOLOGY FILE
 			INST_NAME	; TEMPORARY VARIABLE TO HOLD INSTANCE NAME
-			DB_INST		; TEMPORARY VARIABLE OF INSTANCE TO BE PLACED
+			;DB_INST		; TEMPORARY VARIABLE OF INSTANCE TO BE PLACED
 			DB_RRAM_CELL_LAYOUT	; TEMPORARY VARIABLE TO HOLD DB OF RRAM LAYOUT CELL
 			NET_ID_VSS	; VARIABLE TO HOLD VSS NET ID
 			NET_ID		; TEMPORARY VARIABLE TO HOLD NET ID
@@ -23,170 +24,146 @@ procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
 			RECT_ID		; TEMPORARY VARIABLE TO HOLD THE DB OF A RECT SHAPE
 			PIN_ID		; TEMPORARY VARIABLE TO HOLD THE DB OF A PIN
 			LABEL_ID		; TEMPORARY VARIABLE TO HOLD LABEL DB
-			GUARD_RING_DIST	; DISTANCE OF GUARNDING ON X/Y-AXIS
-			DX			;	DIFF to adjust guard ring on X
-			DY			;	DIFF to adjust guard ring on Y
-			PATH_ID		; PATH DB			
+			;GUARD_RING_DIST	; DISTANCE OF GUARNDING ON X/Y-AXIS
+			;DX			;	DIFF to adjust guard ring on X
+			;DY			;	DIFF to adjust guard ring on Y
+			;PATH_ID		; PATH DB	
+			k			; USED FOR WHILE LOOP		
 			)			; END OF LIST OF LOCAL VARIABLES
 	
 	printf("Creating Layout.\n")
 
 	CELLVIEW = dbOpenCellViewByType(LIBRARY NAME "layout" "maskLayout" "w")	; Create layout view
-	TF = techGetTechFile(CELLVIEW)	; read technology file
-	DB_RRAM_CELL_LAYOUT = dbOpenCellViewByType(DB_RRAM_CELL~>libName DB_RRAM_CELL~>cellName "layout" "maskLayout" "r")
-	
-	; Variables for guard rings and VSS
-	DX = 0.89
-	DY = 0.89
-	
-	for( i 1 Y			; ROWS
-		for( j 1 X			; COLS
-			
-			; PLACE (j,i)
-			printf("Placing CELL (%d,%d)\n" j i)
-			sprintf(INST_NAME "I_%d_%d" j i)
+	DB_RRAM_CELL_LAYOUT = dbOpenCellViewByType(DB_RRAM_CELL~>libName DB_RRAM_CELL~>cellName "layout" "maskLayout" "r")	
+	;dbCreateSimpleMosaic(CELLVIEW DB_RRAM_CELL_LAYOUT "RRAM_ROW" 0:0 "R0" Y 1 2.28 0)
 
-			if( (modulo(j 2)==1) 
-				then
-				DB_INST=dbCreateInst(CELLVIEW DB_RRAM_CELL_LAYOUT INST_NAME list(j*5 i*2.28) "R90" 1)
-				else
-				DB_INST=dbCreateInst(CELLVIEW DB_RRAM_CELL_LAYOUT INST_NAME list((j-1)*5 i*2.28) "MXR90" 1)		; j-1 be careful the mirroring
-			)	; then
-
-			; CREATE LABEL/PINS VSS/SEL
-			;if(	(i==1 && modulo(j 2)==1) 
-			if(	(i==1 && j==1)
-				then
-				;if( (j==1)	;VSS
-					;then
-					NET_ID_VSS=dbMakeNet(CELLVIEW "VSS")
-				;)	;then
-				RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list(((j-1)*5-0.115):4.445 ((j-1)*5+0.115):4.675))
-				dbAddFigToNet(RECT_ID NET_ID_VSS)
-				PIN_ID=dbCreatePin(NET_ID_VSS RECT_ID)
-				LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") ((j-1)*5):4.56 "VSS" "upperCenter" "R0" "roman" 0.5)		
-				PIN_ID~>term~>direction = "inputOutput"
-				leAttachFig(LABEL_ID PIN_ID~>fig)		
-
-				; Connect to guard ring
-				PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:2.78 0.26:(2.78-DY)) 0.94)
-				dbAddFigToNet(PATH_ID NET_ID_VSS)
-				PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:(4.56 +(Y-1)*2.28+1.78) 0.26:(4.56 +(Y-1)*2.28+1.78 + DY)) 0.94)
-				dbAddFigToNet(PATH_ID NET_ID_VSS)
-
-				PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list((5*X+0.21-0.94/2):2.78 (5*X+0.21-0.94/2):(2.78-DY))  0.94)
-				dbAddFigToNet(PATH_ID NET_ID_VSS)
-				PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list((5*X+0.21-0.94/2):(4.56 +(Y-1)*2.28+1.78) (5*X+0.21-0.94/2):(4.56 +(Y-1)*2.28+1.78 + DY))  0.94)
-				dbAddFigToNet(PATH_ID NET_ID_VSS)
+	for( i 1 Y
+		printf("Placing ROW %d\n" i)
+		sprintf(INST_NAME "RRAM_ROW<%d>" i)
+		dbCreateInst(CELLVIEW DB_RRAM_CELL_LAYOUT INST_NAME list(0 (i-1)*2.28) "R0")
 		
-			)	;then
+		; PIN SEL<i>
+		sprintf(NET_NAME "SEL<%d>" i)
+		NET_ID=dbMakeNet(CELLVIEW NET_NAME)
+		RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list(4.885:i*2.165 5.115:i*2.395))
+		dbAddFigToNet(RECT_ID NET_ID)
+		PIN_ID=dbCreatePin(NET_ID RECT_ID)
+		LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") 5:i*2.28 NET_NAME "upperCenter" "R0" "roman" 1)	
+		PIN_ID~>term~>direction = "input"
+		leAttachFig(LABEL_ID PIN_ID~>fig)		
+		
+	)	;for
 
-			if(	(i==1 && j!=1 && j!=X && modulo(j 2)==1)
-				then
-				PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(((j-1)*5):2.78 ((j-1)*5):(2.78-DY))  1.46)
-				dbAddFigToNet(PATH_ID NET_ID_VSS)
-				PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(((j-1)*5):(4.56 +(Y-1)*2.28+1.78) ((j-1)*5):(4.56 +(Y-1)*2.28+1.78 + DY))  1.46)
-				dbAddFigToNet(PATH_ID NET_ID_VSS)
-			)
+	; PIN VSS
+	NET_ID_VSS=dbMakeNet(CELLVIEW "VSS")
+	RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list(-0.115:2.165 0.115:2.395))
+	dbAddFigToNet(RECT_ID NET_ID_VSS)
+	PIN_ID=dbCreatePin(NET_ID_VSS RECT_ID)
+	LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") 0:2.28 "VSS" "upperCenter" "R0" "roman" 1)		
+	PIN_ID~>term~>direction = "inputOutput"
+	leAttachFig(LABEL_ID PIN_ID~>fig)		
 
-			if( (j==1)
-				then
-				sprintf(NET_NAME "SEL<%d>" i)	; 	Rows share SEL
-				NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-				RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((5-0.115):(4.56/2 + i*4.56/2-0.115) (5+0.115):(4.56/2 + i*4.56/2+0.115)))
-				dbAddFigToNet(RECT_ID NET_ID)
-				PIN_ID=dbCreatePin(NET_ID RECT_ID)
-				LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") 5:(4.56/2 + i*4.56/2) NET_NAME "upperCenter" "R0" "roman" 0.5)		
-				PIN_ID~>term~>direction = "input"
-				leAttachFig(LABEL_ID PIN_ID~>fig)	
-			)
+	for(j 1 X
+		if( modulo(j 2)==1
+				then		
+					sprintf(NET_NAME "N<%d>" j)	; 	Rows share N		
+					NET_ID=dbMakeNet(CELLVIEW NET_NAME)			
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.77-0.115+(j-1)*5):(1.14-0.115) (2.77+0.115+(j-1)*5):(1.14+0.115)))
+					dbAddFigToNet(RECT_ID NET_ID)
+					PIN_ID=dbCreatePin(NET_ID RECT_ID)
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.77+(j-1)*5):1.14 NET_NAME "upperCenter" "R0" "roman" 1)		
+					PIN_ID~>term~>direction = "inputOutput"
+					leAttachFig(LABEL_ID PIN_ID~>fig)		
 			
-			if(	(i==1 && modulo(j 2)==0 && j==X)		; Final VSS column
-				then
-				RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((j*5-0.115):4.445 (j*5+0.115):4.675))
-				dbAddFigToNet(RECT_ID NET_ID_VSS)
-				PIN_ID=dbCreatePin(NET_ID_VSS RECT_ID)
-				LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (j*5):4.56 "VSS" "upperCenter" "R0" "roman" 0.5)		
-				PIN_ID~>term~>direction = "inputOutput"
-				leAttachFig(LABEL_ID PIN_ID~>fig)
-			)	;if
-
-			if( i==1
-				then
-				sprintf(NET_NAME "N<%d>" j)	; 	Rows share N
-				NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-				if( modulo(j 2)==1
-					then							
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.77-0.115+(j-1)*5):(3.42-0.115) (2.77+0.115+(j-1)*5):(3.42+0.115)))
+					sprintf(NET_NAME "P<%d>" j)	; 	Rows share P			
+					NET_ID=dbMakeNet(CELLVIEW NET_NAME)			
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((0.39-0.14+(j-1)*5):(2.3-0.14) (0.39+0.14+(j-1)*5):(2.3+0.14)))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.77+(j-1)*5):3.42 NET_NAME "upperCenter" "R0" "roman" 0.5)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (0.39+(j-1)*5):2.3 NET_NAME "upperCenter" "R0" "roman" 1)		
 					PIN_ID~>term~>direction = "inputOutput"
-					leAttachFig(LABEL_ID PIN_ID~>fig)	
-
-					else
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.23-0.115+(j-1)*5):(3.42-0.115) (2.23+0.115+(j-1)*5):(3.42+0.115)))
-					dbAddFigToNet(RECT_ID NET_ID)
-					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.23+(j-1)*5):3.42 NET_NAME "upperCenter" "R0" "roman" 0.5)		
-					PIN_ID~>term~>direction = "inputOutput"
-					leAttachFig(LABEL_ID PIN_ID~>fig)	
-				)	;if
-			)	;if
-			
-			if( i==1
-				then
-				sprintf(NET_NAME "P<%d>" j)	; 	Rows share N
-				NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-				if( modulo(j 2)==1
-					then							
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((0.39-0.14+(j-1)*5):(4.58-0.14) (0.39+0.14+(j-1)*5):(4.58+0.14)))
-					dbAddFigToNet(RECT_ID NET_ID)
-					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (0.39+(j-1)*5):4.58 NET_NAME "upperCenter" "R0" "roman" 0.5)		
-					PIN_ID~>term~>direction = "inputOutput"
-					leAttachFig(LABEL_ID PIN_ID~>fig)	
-
-					else
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((4.61-0.14+(j-1)*5):(4.58-0.14) (4.61+0.14+(j-1)*5):(4.58+0.14)))
-					dbAddFigToNet(RECT_ID NET_ID)
-					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (4.61+(j-1)*5):4.58 NET_NAME "upperCenter" "R0" "roman" 0.5)		
-					PIN_ID~>term~>direction = "inputOutput"
-					leAttachFig(LABEL_ID PIN_ID~>fig)	
-				)	;if
-			)	;if
-
-			sprintf(NET_NAME "MR<%d>" ((i-1)*X+j))
-			NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-			if( modulo(j 2)==1
-				then							
-				RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((3.31-0.115+(j-1)*5):(4.56+(i-1)*4.56/2-0.115) (3.31+0.115+(j-1)*5):(4.56+(i-1)*4.56/2+0.115)))
-				dbAddFigToNet(RECT_ID NET_ID)
-				PIN_ID=dbCreatePin(NET_ID RECT_ID)
-				LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (3.31+(j-1)*5):(4.56+(i-1)*4.56/2) NET_NAME "upperCenter" "R0" "roman" 0.5)		
-				PIN_ID~>term~>direction = "inputOutput"
-				leAttachFig(LABEL_ID PIN_ID~>fig)	
+					leAttachFig(LABEL_ID PIN_ID~>fig)				
 
 				else
-				RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((1.69-0.115+(j-1)*5):(4.56+(i-1)*4.56/2-0.115) (1.69+0.115+(j-1)*5):(4.56+(i-1)*4.56/2+0.115)))
-				dbAddFigToNet(RECT_ID NET_ID)
-				PIN_ID=dbCreatePin(NET_ID RECT_ID)
-				LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (1.69+(j-1)*5):(4.56+(i-1)*4.56/2) NET_NAME "upperCenter" "R0" "roman" 0.5)		
-				PIN_ID~>term~>direction = "inputOutput"
-				leAttachFig(LABEL_ID PIN_ID~>fig)	
+					sprintf(NET_NAME "N<%d>" j)	; 	Rows share N
+					NET_ID=dbMakeNet(CELLVIEW NET_NAME)
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.23-0.115+(j-1)*5):(1.14-0.115) (2.23+0.115+(j-1)*5):(1.14+0.115)))
+					dbAddFigToNet(RECT_ID NET_ID)
+					PIN_ID=dbCreatePin(NET_ID RECT_ID)
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.23+(j-1)*5):1.14 NET_NAME "upperCenter" "R0" "roman" 1)		
+					PIN_ID~>term~>direction = "inputOutput"
+					leAttachFig(LABEL_ID PIN_ID~>fig)	
+					
+					sprintf(NET_NAME "P<%d>" j)
+					NET_ID=dbMakeNet(CELLVIEW NET_NAME)
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((4.61-0.14+(j-1)*5):(2.3-0.14) (4.61+0.14+(j-1)*5):(2.3+0.14)))
+					dbAddFigToNet(RECT_ID NET_ID)
+					PIN_ID=dbCreatePin(NET_ID RECT_ID)
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (4.61+(j-1)*5):2.3 NET_NAME "upperCenter" "R0" "roman" 1)		
+					PIN_ID~>term~>direction = "inputOutput"
+					leAttachFig(LABEL_ID PIN_ID~>fig)						
+					
+		);if			
+	)	; for j
 
-			)	;if
 
-			
-		)	; for j
-	)	; for i
+	
+	
+	
+	k=1
+	while(k<=X
+		for(	 i 1 Y						
+			sprintf(NET_NAME "MR<%d>" (i-1)*X+k)
+			NET_ID=dbMakeNet(CELLVIEW NET_NAME)
+			RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((3.31-0.115+(k-1)*5):(2.28*i-0.115) (3.31+0.115+(k-1)*5):(2.28*i+0.115)))
+			dbAddFigToNet(RECT_ID NET_ID)
+			PIN_ID=dbCreatePin(NET_ID RECT_ID)
+			LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (3.31+(k-1)*5):2.28*i NET_NAME "upperCenter" "R0" "roman" 0.5)		
+			PIN_ID~>term~>direction = "inputOutput"
+			leAttachFig(LABEL_ID PIN_ID~>fig)						
+		)	; for  	
+		k = k+2
+	)	; while
 
-	; Create Guard Ring
-	;---- TO DO: Create only straight lines and then create corners
-	CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(0:(2.78-DY) (5*X+0.455+DX):(2.78-DY) (5*X+0.455+DX):(4.56 +(Y-1)*2.28+1.78 + DY) 0:(4.56 +(Y-1)*2.28+1.78 + DY)) ?netName "VSS")
-	CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(0.42:(4.56 +(Y-1)*2.28+1.78 + DY) (-0.455-DX):(4.56 +(Y-1)*2.28+1.78 + DY) (-0.455-DX):(2.78-DY) 0.42:(2.78-DY)) ?netName "VSS")
+	k=2
+	while(k<=X
+		for(	 i 1 Y						
+			sprintf(NET_NAME "MR<%d>" (i-1)*X+k)
+			NET_ID=dbMakeNet(CELLVIEW NET_NAME)
+			RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((1.69-0.115+(k-1)*5):(2.28-0.115)*i (1.69+0.115+(k-1)*5):(2.28+0.115)*i))
+			dbAddFigToNet(RECT_ID NET_ID)
+			PIN_ID=dbCreatePin(NET_ID RECT_ID)
+			LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (1.69+(k-1)*5):2.28*i NET_NAME "upperCenter" "R0" "roman" 0.5)		
+			PIN_ID~>term~>direction = "inputOutput"
+			leAttachFig(LABEL_ID PIN_ID~>fig)						
+		)	; for  	
+		k = k+2
+	)	; while
+	
+	; Guard Ring and Guard Ring Connections
+	CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(0:-0.25 X*5+1.205:-0.25 X*5+1.205:Y*2.28+1.78+0.75 -1.205:Y*2.28+1.78+0.75 -1.205:0.5 ) ?netName "VSS")
+	CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(-1.205:0.92 -1.205:-0.25 0.42:-0.25)  ?netName "VSS")
 
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:2.28 0.26:-0.25) 0.94)
+	dbAddFigToNet(PATH_ID NET_ID_VSS)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:Y*2.28+1.78 0.26:Y*2.28+1.78+0.75) 0.94)
+	dbAddFigToNet(PATH_ID NET_ID_VSS)
+
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(-0.26+X*5:2.28 -0.26+X*5:-0.25) 0.94)
+	dbAddFigToNet(PATH_ID NET_ID_VSS)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(-0.26+X*5:Y*2.28+1.78 -0.26+X*5:Y*2.28+1.78+0.75) 0.94)
+	dbAddFigToNet(PATH_ID NET_ID_VSS)
+
+	k=2
+	while(k<X
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(k*5:2.28 k*5:-0.25)  1.46)
+		dbAddFigToNet(PATH_ID NET_ID_VSS)
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(k*5:Y*2.28+1.78 k*5:Y*2.28+1.78+0.75)  1.46)
+		dbAddFigToNet(PATH_ID NET_ID_VSS)
+		k=k+2
+	)	;while
+
+	
 	dbSave(CELLVIEW)		; Save
 	)	; prog	
 ) 	; procedure

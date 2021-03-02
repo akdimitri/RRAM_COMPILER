@@ -6,7 +6,7 @@
 
 procedure(	loadRRAMCompiler(				; PROCEDURE ARGUMENTS
 							@key 
-							(PATH	"./SKILL/RRAM_COMPILER")	; PATH TO RRAM COMPILER							
+							(PATH	"./SKILL/RRAM_COMPILER/RRAM_v_2")	; PATH TO RRAM COMPILER							
 							)				; END  OF PRCEDURE ARGUMENTS
 
 prog(	(		; LOCAL VARIABLE DECLARATION
@@ -15,43 +15,55 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 
 	sprintf(FILE "%s/%s" PATH "createRRAM.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING createRRAM.il")
+		printf("ERROR: FAILED LOADING createRRAM.il\n")
 		return(-1)
 	)
 
 	sprintf(FILE "%s/%s" PATH "createRRAMsch.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING createRRAMsch.il")
+		printf("ERROR: FAILED LOADING createRRAMsch.il\n")
 		return(-1)
 	)
 
 	sprintf(FILE "%s/%s" PATH "createRRAMlayout.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING createRRAMlayout.il")
+		printf("ERROR: FAILED LOADING createRRAMlayout.il\n")
 		return(-1)
 	)
 
 	sprintf(FILE "%s/%s" PATH "CCSdrawMPPUsingTemplate.ils")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING CCSdrawMPPUsingTemplate.ils ")
+		printf("ERROR: FAILED LOADING CCSdrawMPPUsingTemplate.ils\n")
 		return(-1)
 	)
 
 	sprintf(FILE "%s/%s" PATH "runDRC_Calibre.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING runDRC_Calibre.il ")
+		printf("ERROR: FAILED LOADING runDRC_Calibre.il\n")
 		return(-1)
 	)
 
 	sprintf(FILE "%s/%s" PATH "runLVS_Calibre.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING runLVS_Calibre.il ")
+		printf("ERROR: FAILED LOADING runLVS_Calibre.il\n")
 		return(-1)
 	)
 
 	sprintf(FILE "%s/%s" PATH "runPEX_Calibre.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING runPEX_Calibre.il ")
+		printf("ERROR: FAILED LOADING runPEX_Calibre.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/%s" PATH "createRRAMrowsch.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createRRAMrowsch.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/%s" PATH "createRRAMrowlayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createRRAMrowlayout.il\n")
 		return(-1)
 	)
 

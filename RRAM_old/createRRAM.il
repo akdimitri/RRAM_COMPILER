@@ -17,19 +17,24 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 				;PIN_P	; PIN P
 				;PIN_N	; PIN N
 				;PIN_SEL	; PIN SEL
-				;PIN_LIST
+				PIN_LIST
+				time		; time to measure				
 			)			; END OF LIST OF LOCAL VARIABLES
 
 	printf("\n+++++++++++++++++++++++++++++++\n")
 	printf("\n Running: createRRAM procedure \n")
 	printf("\n+++++++++++++++++++++++++++++++\n")
 	
+	
+	
 	; Set the NAME of the CELLVIEW
 	sprintf(NAME "RRAM_%d_%d" X Y)
 
+	time = measureTime(
+
 	; Create Design and its schematic
 	createRRAMsch(X Y LIBRARY NAME DB_RRAM_CELL)
-
+	
 	; Create Symbol
 	PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
 	;----- TO DO -----
@@ -40,14 +45,18 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 	; Create Layout
 	createRRAMlayout(X Y LIBRARY NAME DB_RRAM_CELL)
 
+
+	); time
+	
+	printf("Execution t2: %f\n" nthelem(3 time))
 	; Run DRC Calibre
-	runDRC_Calibre(LIBRARY NAME)
+	;runDRC_Calibre(LIBRARY NAME)
 
 	; Run LVS Calibre
-	runLVS_Calibre(LIBRARY NAME)
+	;runLVS_Calibre(LIBRARY NAME)
 
 	; Run PEX Calibre
-	runPEX_Calibre(LIBRARY NAME)
+	;runPEX_Calibre(LIBRARY NAME)
 	
 	)	; prog
 )	; procedure

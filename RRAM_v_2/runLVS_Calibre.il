@@ -81,11 +81,14 @@ procedure( runLVS_Calibre(		; ARGUMENT DECLARATION
 	printf("Creating SPICE netlist\n")
 	sprintf(SI_FILE "%s/si.env" RUN_DIRECTORY)
 	myPort = outfile( SI_FILE "w")
-	
+	if(myPort == nil
+		then
+		printf("FAIL TO OPEN PORT: %s\n" SI_FILE)
+	)
 	fprintf(myPort "simLibName = \"%s\"\n" library)
 	fprintf(myPort "simCellName = \"%s\"\n" cellname)
 
-	inPort = infile("./SKILL/RRAM_COMPILER/si.env.template")
+	inPort = infile("./SKILL/RRAM_COMPILER/RRAM_v_2/si.env.template")
 
 	while( (gets( line inPort)!=nil)
 		fprintf(myPort "%s" line)		

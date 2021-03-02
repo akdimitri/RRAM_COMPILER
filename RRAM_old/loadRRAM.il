@@ -6,7 +6,7 @@
 
 procedure(	loadRRAMCompiler(				; PROCEDURE ARGUMENTS
 							@key 
-							(PATH	"./SKILL/RRAM_COMPILER")	; PATH TO RRAM COMPILER							
+							(PATH	"./SKILL/RRAM_COMPILER/RRAM_old")	; PATH TO RRAM COMPILER							
 							)				; END  OF PRCEDURE ARGUMENTS
 
 prog(	(		; LOCAL VARIABLE DECLARATION

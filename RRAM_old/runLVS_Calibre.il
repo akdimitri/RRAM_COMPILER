@@ -85,7 +85,7 @@ procedure( runLVS_Calibre(		; ARGUMENT DECLARATION
 	fprintf(myPort "simLibName = \"%s\"\n" library)
 	fprintf(myPort "simCellName = \"%s\"\n" cellname)
 
-	inPort = infile("./SKILL/RRAM_COMPILER/si.env.template")
+	inPort = infile("./SKILL/RRAM_COMPILER/RRAM_old/si.env.template")
 
 	while( (gets( line inPort)!=nil)
 		fprintf(myPort "%s" line)		
