@@ -75,7 +75,8 @@ LIBRARY is the library where the result will be saved
 DB is the db id of the symbol of the memristor cell
 
 **Comparison of Versions**
+
 The difference between version 1 and version 2 are in Schematic and Layout Implementation. The following two figures do not include the execution time of DRC, LVS, PEX where the same functions are used.
 
-![Execution time in seconds. The x-axis refers to a RRAM array SIZExSIZE.](https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/Execution_withouth_verification.png)
-![Speed up on the left axis. The x-axis refers to a RRAM array SIZExSIZE.](https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/speed_up_Execution_withouth_verification.png)
+![Execution time in seconds. The x-axis refers to a RRAM array SIZExSIZE.](https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/Execution_withouth_verification.png | width=100)
+![Speed up on the left axis. The x-axis refers to a RRAM array SIZExSIZE.](https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/speed_up_Execution_withouth_verification.png | width=100)
