@@ -45,7 +45,7 @@ procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
 		; PIN SEL<i>
 		sprintf(NET_NAME "SEL<%d>" i)
 		NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-		RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list(4.885:i*2.165 5.115:i*2.395))
+		RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list(4.885:i*2.28-0.115 5.115:i*2.28+0.115))
 		dbAddFigToNet(RECT_ID NET_ID)
 		PIN_ID=dbCreatePin(NET_ID RECT_ID)
 		LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") 5:i*2.28 NET_NAME "upperCenter" "R0" "roman" 1)	
@@ -130,7 +130,7 @@ procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
 		for(	 i 1 Y						
 			sprintf(NET_NAME "MR<%d>" (i-1)*X+k)
 			NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-			RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((1.69-0.115+(k-1)*5):(2.28-0.115)*i (1.69+0.115+(k-1)*5):(2.28+0.115)*i))
+			RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((1.69-0.115+(k-1)*5):(2.28*i-0.115) (1.69+0.115+(k-1)*5):(2.28*i+0.115)))
 			dbAddFigToNet(RECT_ID NET_ID)
 			PIN_ID=dbCreatePin(NET_ID RECT_ID)
 			LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (1.69+(k-1)*5):2.28*i NET_NAME "upperCenter" "R0" "roman" 0.5)		

@@ -11,6 +11,7 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 						@optional 			; THE FOLLOWING ARGUMENTS ARE OPTIONAL, NEXT TO THEM IS THEIR DEFAULT VALUE
 						(LIBRARY "THESIS")	; LIBRARY TO PLACE THE NEW DESIGN
 						(DB_RRAM_CELL dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	; DB OF RRAM CELL
+						(CELLMAP "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/Calibre/rcx/calview.cellmap")		; CELLMAP FOR CALIBRE VIEW
 					)		; END OF LIST OF ARGUMENTS
 
 	prog(	(			; LIST OF LOCAL VARIABLES
@@ -53,16 +54,18 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 	; Create Layout
 	createRRAMlayout(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r"))
 	
-	); measureTime
-	printf("Elapsed Time %f seconds" nthelem(3 time))
+	
 	; Run DRC Calibre
-	;runDRC_Calibre(LIBRARY NAME)
+	runDRC_Calibre(LIBRARY NAME)
 
 	; Run LVS Calibre
-	;runLVS_Calibre(LIBRARY NAME)
+	runLVS_Calibre(LIBRARY NAME)
 
 	; Run PEX Calibre
-	;runPEX_Calibre(LIBRARY NAME)
+	runPEX_Calibre(LIBRARY NAME CELLMAP)
+
+	); measureTime
+	printf("Elapsed Time %f seconds" nthelem(3 time))
 	
 	)	; prog
 )	; procedure

@@ -6,6 +6,7 @@
 procedure( runPEX_Calibre(		; ARGUMENT DECLARATION
 				library			; Library Name
 				cellname			; Cell Name
+				cellmap			; for Calibre view
 			)					; END OF ARGUMENT DELARATION
 	
 	prog( 	(					; LOCAL VARIABLE DECLARATION
@@ -204,7 +205,39 @@ procedure( runPEX_Calibre(		; ARGUMENT DECLARATION
 
 	; Calibre Setup View Interface
 	sprintf(NETLIST "%s/%s.pex.netlist" RUN_DIRECTORY cellname)
-	mgc_rve_create_cellview(NETLIST)
+	;mgc_rve_create_cellview(NETLIST)
+	
+
+
+	; Create Calibre View
+	myPort = outfile( "calibreview.setup" "w")
+
+	fprintf(myPort "calibre_view_netlist_file : %s\n" NETLIST)
+	fprintf(myPort "output_library : %s\n" library)
+	fprintf(myPort "schematic_library : %s\n" library)
+	fprintf(myPort "cell_name : %s\n" cellname)
+	fprintf(myPort "cellmap_file : %s\n" cellmap)
+	fprintf(myPort "calibreview_log_file : ./calview.log\n")
+	fprintf(myPort "calibreview_name : calibre\n")
+	fprintf(myPort "calibreview_type : schematic\n")
+	fprintf(myPort "create_terminals : if_matching\n")
+	fprintf(myPort "preserve_device_case : off\n")
+	fprintf(myPort "execute_callbacks : off\n")
+	fprintf(myPort "suppress_notes : off\n")
+	fprintf(myPort "reset_properties : (m=1)\n")
+	fprintf(myPort "magnify_devices_by : 1.000000\n")
+	fprintf(myPort "magnify_parasitics_by : 1.000000\n")
+	fprintf(myPort "device_placement : layout_location\n")
+	fprintf(myPort "parasitic_placement : arrayed\n")
+	fprintf(myPort "show_parasitic_polygons : off\n")
+	fprintf(myPort "open_calibreview : don't_open\n")
+	fprintf(myPort "generate_spectre_netlist : off\n")
+	close(myPort)
+	
+	printf("Running Calibre View Setup\n")
+	mgc_rve_load_setup_file("calibreview.setup")
+
+
 	printf("Running CALIBRE PEX: DONE\n\n")
 	return("SUCCESS")
 	
