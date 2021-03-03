@@ -28,6 +28,8 @@ flexible and portable platform for generating and verifying ReRAM designs across
 The student will investigate the current memory compiler in terms of architecture and operation to understand the design
 process of common memory.
 
+------------------------------------------
+
 The objectives are:
 1. to develop an open source array compiler.
 2. to design a large-scale ReRAM memory with essential peripheral circuits, such as sense amplifier, address decoder, write
@@ -64,6 +66,7 @@ For example:
 >> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	
 
 **Function Definition**
+
 createRRAM( X, Y, LIBRARY, DB, CELLMAP)
 
 X is the number of columns
@@ -75,6 +78,8 @@ LIBRARY is the library where the result will be saved
 DB is the db id of the symbol of the memristor cell
 
 CELLMAP is the path to calibre.cellmap file
+
+----------------------------------------
 
 **Comparison of Versions**
 
