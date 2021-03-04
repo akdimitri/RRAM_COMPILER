@@ -89,3 +89,22 @@ The difference between version 1 and version 2 are in Schematic and Layout Imple
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/speed_up_Execution_withouth_verification.png" width="400">
 
 The algorithm complexity is the same for both versions equal to O(n^2) + c(n), where c(n) is the complexity of the Verification Algorithm of Calibre Tool. The second version is much faster on implementation because whole row blocks of RRAM are instantiated. Therefore the instantiaton of cells is of O(n) complexity. The first version instatiates the RRAM cell by cell and the complexity is O(n^2). However, both of them instatiate MR pins pin by pin in each row and line and this is why the second version has also O(n^2) complexity on implementation. Though, the speed up in second version is huge.
+
+The image below shows the execution time including Calibre Verification(DRC, LVS, PEX, Calibre View Setup). It can be shown that Verification occupies the largest portion of execution time.
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/execution_time_2.png" width="400">
+
+The table below compares the execution times without verification of both versions and the execution time including verification of the second version. The second version achieves better perfomance including verification compared to the first version without including verification. The verification time is the main reason of slowing down the algorithm, since the larger th e size, the longer time it takes for the system to complete the DRC,LVS,PEX and Calibre View Setup. Out of the four verification operations, PEX and Calibre View Setup are the most time consuming. All the measurements are in **seconds**.
+
+| SIZE | v1 without verification | v2 without verification | v2 with verification | v2 without verification/ v2 with verification |
+| --- | --- | --- | --- | --- |
+| 2 | 3.21 | 7.44 | 44.53 | 0.173 |
+| 4 | 3.7 | 7.93 | 44.28 | 0.179 |
+| 8 | 3.97 | 7.91 | 47.79 | 0.165 |
+| 16 | 4.78 | 8.06| 57.61 | 0.139 |
+| 32 | 11.66 | 8.4 | 108.61 | 0.077 |
+| 64 | 101.76 | 29.51 |302.28 | 0.097 |
+| 128 | 1815 | 68.55 | 1096.07 | 0.062 |
+
+The second version creates a fully verified 256x256 RRAM array in 3970.3 seconds, while it takes 22132.72 seconds for a 512x512 array.
+
