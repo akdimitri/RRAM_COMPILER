@@ -73,11 +73,11 @@ X is the number of columns
 
 Y is the number of rows
 
-LIBRARY is the library where the result will be saved
+LIBRARY is the library where the result will be saved (optional, it can be set directly on the skill code)
 
-DB is the db id of the symbol of the memristor cell
+DB is the db id of the symbol of the memristor cell (optional, it can be set directly on the skill code)
 
-CELLMAP is the path to calibre.cellmap file
+CELLMAP is the path to calibre.cellmap file (optional, it can be set directly on the skill code)
 
 ----------------------------------------
 
