@@ -148,6 +148,8 @@ procedure( runPEX_Calibre(		; ARGUMENT DECLARATION
 	fprintf(myPort "*pexPexNetlistFile: %s.pex.netlist\n" cellname)
 	fprintf(myPort "*pexPexNetlistFormat: CALIBREVIEW\n")
 	fprintf(myPort "*pexPexReportFile: %s.pex.report\n" cellname)
+	fprintf(myPort "*pexPexReportNetSummary: 1\n")
+	fprintf(myPort "*pexPexReportNetSummaryFile: %s/net.summary\n" RUN_DIRECTORY)
 	fprintf(myPort "*pexPexFormatCalibreViewWithNetGeometry: 1\n")
 	fprintf(myPort "*pexPexLocation: 1\n")
 	fprintf(myPort "*pexPexRlocation: 1\n")
