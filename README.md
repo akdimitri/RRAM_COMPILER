@@ -145,3 +145,7 @@ PEX creates an net.summary under .PEX_Calibre folder inside cellview folder. By 
 The following image shows that C+CC rises linearly as array rises exponentail. SEL lines seem to have the most aggresive rise in total C+CC as the array scales up. A potential reason is that SEL line on each memristor cell is 5um compared to P,N which are 2.5 and in the arrays by sharing a delta Y is used of 2.28.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/c_cc.png" width="400">
+
+**Settling Time**
+
+The worst case settling time occurs for VN=5, VP=0 and R=5MΩ. In general, settling time increases as R increses. The settling time simulations are time consuming. Therefore, the following graph presents results only for arrays with size less than 128x128. It is clear that as array increases exponential, settling time increases too.
