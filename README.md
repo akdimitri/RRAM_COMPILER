@@ -108,3 +108,17 @@ The table below compares the execution times without verification of both versio
 
 The second version creates a fully verified 256x256 RRAM array in 3970.3 seconds, while it takes 22132.72 seconds for a 512x512 array.
 
+The following table presents the timing for every function involved in the RRAM creation and verification. The most time is consumed by PEX.
+
+|SIZE | IMPLEMENTATION   | DRC       | LVS       | PEX         | SETUP       | TOTAL       |
+|---  | ---              | ---       | ---       | ---         | ---         | ---         |
+|2    | 7.50099          | 10.748419 | 8.942634  | 16.239728   | 5.383092    | 48.814863   |
+|4    | 7.753175         | 10.596107 | 8.954458  | 16.240825   | 5.384769    | 48.929334   |
+|8    | 7.675531         | 10.734499 | 8.663386  | 17.892335   | 6.716267    | 51.682018   |
+|16   | 7.774973         | 11.296378 | 9.237844  | 23.56026    | 10.979237   | 62.848692   |
+|32   | 8.042589         | 11.955142 | 9.28168   | 53.370914   | 29.845477   | 112.495802  |
+|64   | 11.596684        | 13.300558 | 10.088026 | 169.807008  | 102.532625  | 307.324901  |
+|128  | 44.291783        | 17.721942 | 11.997517 | 611.663116  | 409.871364  | 1095.545722 |
+|256  | 496.515316       | 32.068824 | 19.154827 | 2101.401427 | 1675.637499 | 4324.777893 |
+|512  | 7400.911615      | 80.894543 | 51.157234 | 7914.391475 | 7043.145462 | 22490.50033
+
