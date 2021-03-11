@@ -124,7 +124,7 @@ The following table presents the timing for every function involved in the RRAM 
 
 The following image presents the above table. It shows that PEX, Calibre Setup View and Implementation share almost equal time for large arrays. However, the speed up of the second version remains huge. On the contrary, DRC and LVS time is almost negligble for large arrays.
 
-<img src=https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/profiling_v2.png" width="400">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/profiling_v2.png" width="400">
 
 **Parasitics Extraction**
 
