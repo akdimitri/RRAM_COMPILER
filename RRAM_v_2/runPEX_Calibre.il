@@ -27,6 +27,7 @@ procedure( runPEX_Calibre(		; ARGUMENT DECLARATION
 				line 			; used to read a line from a file
 				RUNSET_FILE		; Name of runset file used for DRC
 				NETLIST			; PEX NETLIST
+				time				; execution time of Calibre View setup
 			)					; END OF LOCAL VARIABLE DECLARATION
 			
 
@@ -210,7 +211,7 @@ procedure( runPEX_Calibre(		; ARGUMENT DECLARATION
 	;mgc_rve_create_cellview(NETLIST)
 	
 
-
+	time = measureTime(
 	; Create Calibre View
 	myPort = outfile( "calibreview.setup" "w")
 
@@ -238,7 +239,8 @@ procedure( runPEX_Calibre(		; ARGUMENT DECLARATION
 	
 	printf("Running Calibre View Setup\n")
 	mgc_rve_load_setup_file("calibreview.setup")
-
+	)	; measureTime
+	printf("Calibre Setup View Execution Time: %f\n" nthelem(3 time))
 
 	printf("Running CALIBRE PEX: DONE\n\n")
 	return("SUCCESS")
