@@ -120,7 +120,7 @@ The following table presents the timing for every function involved in the RRAM 
 |64   | 11.596684        | 13.300558 | 10.088026 | 169.807008  | 102.532625  | 307.324901  |
 |128  | 44.291783        | 17.721942 | 11.997517 | 611.663116  | 409.871364  | 1095.545722 |
 |256  | 496.515316       | 32.068824 | 19.154827 | 2101.401427 | 1675.637499 | 4324.777893 |
-|512  | 7400.911615      | 80.894543 | 51.157234 | 7914.391475 | 7043.145462 | 22490.50033
+|512  | 7400.911615      | 80.894543 | 51.157234 | 7914.391475 | 7043.145462 | 22490.50033 |
 
 PEX creates an net.summary under .PEX_Calibre folder inside cellview folder. By using a matlab script the following worst case C+CC (F) were calculated for arrays of SIZExSIZE. As the SIZE gets larger, the worst case C+CC gets larger.
 
@@ -134,4 +134,7 @@ PEX creates an net.summary under .PEX_Calibre folder inside cellview folder. By 
 |64   | 3.34E-13 | 1.43E-13 | 1.91E-13 | 3.20E-15 | 2.28E-12 |
 |128  | 6.68E-13 | 2.86E-13 | 3.80E-13 | 3.20E-15 | 8.99E-12 |
 |256  | 1.34E-12 | 5.70E-13 | 7.59E-13 | 3.20E-15 | 3.56E-11 |
-|512  | 2.68E-12 | 1.14E-12 | 1.52E-12 | 3.20E-15 | 1.42E-10
+|512  | 2.68E-12 | 1.14E-12 | 1.52E-12 | 3.20E-15 | 1.42E-10 |
+
+The following image shows that C+CC rises linearly as array rises exponentail. SEL lines seem to have the most aggresive rise in total C+CC as the array scales up. A potential reason is that SEL line on each memristor cell is 5um compared to P,N which are 2.5 and in the arrays by sharing a delta Y is used of 2.28.
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/c_cc.png" width="400">
