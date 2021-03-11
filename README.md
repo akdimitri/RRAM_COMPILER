@@ -122,6 +122,8 @@ The following table presents the timing for every function involved in the RRAM 
 |256  | 496.515316       | 32.068824 | 19.154827 | 2101.401427 | 1675.637499 | 4324.777893 |
 |512  | 7400.911615      | 80.894543 | 51.157234 | 7914.391475 | 7043.145462 | 22490.50033 |
 
+**Parasitics Extraction**
+
 PEX creates an net.summary under .PEX_Calibre folder inside cellview folder. By using a matlab script the following worst case C+CC (F) were calculated for arrays of SIZExSIZE. As the SIZE gets larger, the worst case C+CC gets larger.
 
 |SIZE | SEL      | P        | N        | MR       | VSS      |
