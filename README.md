@@ -137,4 +137,5 @@ PEX creates an net.summary under .PEX_Calibre folder inside cellview folder. By 
 |512  | 2.68E-12 | 1.14E-12 | 1.52E-12 | 3.20E-15 | 1.42E-10 |
 
 The following image shows that C+CC rises linearly as array rises exponentail. SEL lines seem to have the most aggresive rise in total C+CC as the array scales up. A potential reason is that SEL line on each memristor cell is 5um compared to P,N which are 2.5 and in the arrays by sharing a delta Y is used of 2.28.
+
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/c_cc.png" width="400">
