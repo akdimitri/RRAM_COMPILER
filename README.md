@@ -122,3 +122,16 @@ The following table presents the timing for every function involved in the RRAM 
 |256  | 496.515316       | 32.068824 | 19.154827 | 2101.401427 | 1675.637499 | 4324.777893 |
 |512  | 7400.911615      | 80.894543 | 51.157234 | 7914.391475 | 7043.145462 | 22490.50033
 
+PEX creates an net.summary under .PEX_Calibre folder inside cellview folder. By using a matlab script the following worst case C+CC were calculated for arrays of SIZExSIZE. As the SIZE gets larger, the worst case C+CC gets larger.
+
+|SIZE | SEL      | P        | N        | MR       | VSS      |
+|---  | ---      | ---      | ---      | ---      | ---      |
+|2    | 9.80E-15 | 4.74E-15 | 7.03E-15 | 3.18E-15 | 4.62E-15 |
+|4    | 2.17E-14 | 9.81E-15 | 1.35E-14 | 3.20E-15 | 1.34E-14 |
+|8    | 4.25E-14 | 1.87E-14 | 2.53E-14 | 3.20E-15 | 4.38E-14 |
+|16   | 8.42E-14 | 3.65E-14 | 4.90E-14 | 3.20E-15 | 1.56E-13 |
+|32   | 1.68E-13 | 7.21E-14 | 9.63E-14 | 3.20E-15 | 5.90E-13 |
+|64   | 3.34E-13 | 1.43E-13 | 1.91E-13 | 3.20E-15 | 2.28E-12 |
+|128  | 6.68E-13 | 2.86E-13 | 3.80E-13 | 3.20E-15 | 8.99E-12 |
+|256  | 1.34E-12 | 5.70E-13 | 7.59E-13 | 3.20E-15 | 3.56E-11 |
+|512  | 2.68E-12 | 1.14E-12 | 1.52E-12 | 3.20E-15 | 1.42E-10
