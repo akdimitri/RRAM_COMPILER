@@ -148,7 +148,7 @@ The following image shows that C+CC rises linearly as size array rises exponenta
 
 The following image shows that C+CC rises logarithmically as total number of RRAM Cells of array rise exponentailly. 
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/capacitances.png" width="400">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/Capacitances.png" width="400">
 
 **Settling Time**
 
