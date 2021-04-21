@@ -21,7 +21,7 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 				time				; execution time
 				time2			; execution time
 				LOG				; LOG File
-				myPort			; port to write to file
+				my_log_port			; port to write to file
 			)			; END OF LIST OF LOCAL VARIABLES
 
 	printf("\n+++++++++++++++++++++++++++++++\n")
@@ -48,8 +48,14 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 	sprintf(NAME "RRAM_%d_%d" X Y)
 	
 	; Create file to hold important information
-	sprintf(LOG "%s/SKILL/RRAM_COMPILER/LOG/%s.log" pwd() NAME)
-	myPort = outfile( LOG "w")
+	sprintf(LOG "%s/RRAM_COMPILER_LOG/%s.log" pwd() NAME)
+	my_log_port = outfile( LOG "w")
+	if( my_log_port==nil
+		then
+		ERROR_CODE = -12
+		printf("ERROR: %d --- %s opening log file" ERROR_CODE library)
+		return(ERROR_CODE)
+	)
 
 	; Create Design and its schematic
 	createRRAMsch(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r"))
@@ -65,22 +71,22 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 	; Run DRC Calibre
 	time2 = measureTime(runDRC_Calibre(LIBRARY NAME))
 	printf("DRC Execution Time: %f\n" nthelem(3 time2))
-	fprintf(myPort "DRC Execution Time: %f\n" nthelem(3 time2))
+	fprintf(my_log_port "DRC Execution Time: %f\n" nthelem(3 time2))
 
 	; Run LVS Calibre
 	time2 = measureTime(runLVS_Calibre(LIBRARY NAME))
 	printf("LVS Execution Time: %f\n" nthelem(3 time2))
-	fprintf(myPort "LVS Execution Time: %f\n" nthelem(3 time2))
+	fprintf(my_log_port "LVS Execution Time: %f\n" nthelem(3 time2))
 
 	; Run PEX Calibre
 	time2 = measureTime(runPEX_Calibre(LIBRARY NAME CELLMAP))
 	printf("PEX+Calibre View Setup Execution Time: %f\n" nthelem(3 time2))
-	fprintf(myPort "PEX+Calibre View Setup Execution Time: %f\n" nthelem(3 time2))
+	fprintf(my_log_port "PEX+Calibre View Setup Execution Time: %f\n" nthelem(3 time2))
 
 	); measureTime
 	printf("Elapsed Time %f seconds" nthelem(3 time))
-	fprintf(myPort "Elapsed Time %f seconds" nthelem(3 time))
-	close(myPort)
+	fprintf(my_log_port "Elapsed Time %f seconds" nthelem(3 time))
+	close(my_log_port)
 	
 	)	; prog
 )	; procedure
