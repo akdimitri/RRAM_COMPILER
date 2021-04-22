@@ -154,7 +154,7 @@ The following image shows that C+CC rises logarithmically as total number of RRA
 
 **Settling Time**
 
-The worst case settling time occurs for VN=5, VP=0 and R=5MΩ. In general, settling time increases as R increses. The settling time simulations are time consuming. Therefore, the following graph presents results only for arrays with size less than 128x128. It is clear that as array increases exponential, settling time increases too. For the worst case the top right Memristor was chosen. The input pins are placed on the lower left, so the top right Memeristor is expected to have the longest path and as such the worst settling time.
+The worst case settling time for TT model libray occurs for VN=5, VP=0 and R=5MΩ. In general, settling time increases as R increses. The settling time simulations are time consuming. Therefore, the following graph presents results only for arrays with size less than 128x128. It is clear that as array increases exponential, settling time increases too. For the worst case the top right Memristor was chosen. The input pins are placed on the lower left, so the top right Memeristor is expected to have the longest path and as such the worst settling time.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/worst_settling.png" width="400">
 
