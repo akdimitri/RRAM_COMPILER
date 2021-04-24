@@ -65,11 +65,11 @@ Cadence implementation with main compiler components
 5. Run Compiler by invoking createRRAM function in CIW
 
 For example:
->> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	
+>> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"), 5, 2.28)	
 
 **Function Definition**
 
-createRRAM( X, Y, LIBRARY, DB, CELLMAP)
+createRRAM( X, Y, LIBRARY, DB, CELLMAP, DX, DY)
 
 X is the number of columns
 
@@ -80,6 +80,10 @@ LIBRARY is the library where the result will be saved (optional, it can be set d
 DB is the db id of the symbol of the memristor cell (optional, it can be set directly on the skill code)
 
 CELLMAP is the path to calibre.cellmap file (optional, it can be set directly on the skill code)
+
+DX is the horizontal pitch of the cells (optional, it can be set directly on the skill code, applies on 2nd version)
+
+DY is the vertical pitch of the cells (optional, it can be set directly on the skill code, applies on 2nd version)
 
 ----------------------------------------
 
