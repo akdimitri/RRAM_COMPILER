@@ -87,6 +87,16 @@ DY is the vertical pitch of the cells (optional, it can be set directly on the s
 
 ----------------------------------------
 
+**RRAM Memory Cell**
+
+The memory cell of the proposed RRAM consists of 1 memristor 1 transitor. The cellview in the EDA tool does not include the memristor, as it will be placed later on top of the memory cell. The schematic of a memory cell is shown on the next figure.
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/RRAM_cell.png" width="400">
+
+The RRAM Array is presented on the following image. The SEL lines are shared horizontally and P,N lines are shared vertically.
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/RRAM_3_3.png" width="400">
+
 **Comparison of Versions**
 
 The difference between version 1 and version 2 are in Schematic and Layout Implementation. The following two figures do not include the execution time of DRC, LVS, PEX where the same functions are used. They show the execution time in seconds and the speed up for a RRAM array of SIZExSIZE.
