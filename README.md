@@ -158,13 +158,14 @@ PEX creates an net.summary under .PEX_Calibre folder inside cellview folder. By 
 |256  | 1.34E-12 | 5.70E-13 | 7.59E-13 | 3.20E-15 | 3.56E-11 |
 |512  | 2.68E-12 | 1.14E-12 | 1.52E-12 | 3.20E-15 | 1.42E-10 |
 
-The following image shows that C+CC rises linearly as size array rises exponentailly. 
+The following image shows that C+CC rises linearly with regard to the number of cells of a line. 
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/c_cc.png" width="400">
 
-The following image shows that C+CC rises logarithmically as total number of RRAM Cells of array rise exponentailly. 
+The following image shows that R rises linearly with regard to the number of cells of a line. 
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/Capacitances.png" width="400">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/resistance.png" width="400">
+
 
 **Settling Time**
 
