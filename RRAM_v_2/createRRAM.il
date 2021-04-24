@@ -10,6 +10,8 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 						Y					; Y SIZE OF ARRAY (ROWS)
 						@optional 			; THE FOLLOWING ARGUMENTS ARE OPTIONAL, NEXT TO THEM IS THEIR DEFAULT VALUE
 						(LIBRARY "THESIS")	; LIBRARY TO PLACE THE NEW DESIGN
+						(DX 5)				; HORIZONTAL PITCH
+						(DY 2.28)			; VERTICAL PITCH
 						(DB_RRAM_CELL dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"))	; DB OF RRAM CELL
 						(CELLMAP "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/Calibre/rcx/calview.cellmap")		; CELLMAP FOR CALIBRE VIEW
 					)		; END OF LIST OF ARGUMENTS
@@ -42,7 +44,7 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 
 	; STEP 3
 	; Create Layout for RRAM ROW
-	createRRAMrowlayout(X LIBRARY NAME DB_RRAM_CELL)
+	createRRAMrowlayout(X LIBRARY NAME DB_RRAM_CELL DX)
 	
 	; Set the NAME of the CELLVIEW
 	sprintf(NAME "RRAM_%d_%d" X Y)
@@ -65,7 +67,7 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
 	
 	; Create Layout
-	createRRAMlayout(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r"))
+	createRRAMlayout(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r") DX DY)
 	
 	
 	; Run DRC Calibre

@@ -10,6 +10,7 @@ procedure(	createRRAMrowlayout(					; LIST OF ARGUMENTS
 								LIBRARY			; LIBRARY TO PLACE THE NEW DESIGN
 								NAME				; NAME OF THE CELLVIEW
 								DB_RRAM_CELL		; DB OF RRAM CELL
+								DX				; HORIZONTAL PITCH
 							)
 	prog( 	(			; LIST OF LOCAL VARIABLES
 			CELLVIEW		; DB OF THE LAYOUT CELL
@@ -43,9 +44,9 @@ procedure(	createRRAMrowlayout(					; LIST OF ARGUMENTS
 
 			if( (modulo(j 2)==1) 
 				then
-				dbCreateInst(CELLVIEW DB_RRAM_CELL_LAYOUT INST_NAME list(j*5 0) "R90" 1)
+				dbCreateInst(CELLVIEW DB_RRAM_CELL_LAYOUT INST_NAME list(j*DX 0) "R90" 1)
 				else
-				dbCreateInst(CELLVIEW DB_RRAM_CELL_LAYOUT INST_NAME list((j-1)*5 0) "MXR90" 1)		; j-1 be careful the mirroring
+				dbCreateInst(CELLVIEW DB_RRAM_CELL_LAYOUT INST_NAME list((j-1)*DX 0) "MXR90" 1)		; j-1 be careful the mirroring
 			)	; then
 			
 			
@@ -64,7 +65,7 @@ procedure(	createRRAMrowlayout(					; LIST OF ARGUMENTS
 				RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list(4.885:2.165 5.115:2.395))
 				dbAddFigToNet(RECT_ID NET_ID)
 				PIN_ID=dbCreatePin(NET_ID RECT_ID)
-				LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") 5:2.28 "SEL" "upperCenter" "R0" "roman" 0.5)	
+				LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") DX:2.28 "SEL" "upperCenter" "R0" "roman" 0.5)	
 				PIN_ID~>term~>direction = "input"
 				leAttachFig(LABEL_ID PIN_ID~>fig)				
 			)	;then
@@ -75,56 +76,56 @@ procedure(	createRRAMrowlayout(					; LIST OF ARGUMENTS
 				then		
 					sprintf(NET_NAME "N<%d>" j)	; 	Rows share N		
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)			
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.77-0.115+(j-1)*5):(1.14-0.115) (2.77+0.115+(j-1)*5):(1.14+0.115)))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.77-0.115+(j-1)*DX):(1.14-0.115) (2.77+0.115+(j-1)*DX):(1.14+0.115)))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.77+(j-1)*5):1.14 NET_NAME "upperCenter" "R0" "roman" 0.5)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.77+(j-1)*DX):1.14 NET_NAME "upperCenter" "R0" "roman" 0.5)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)		
 			
 					sprintf(NET_NAME "P<%d>" j)	; 	Rows share P			
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)			
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((0.39-0.14+(j-1)*5):(2.3-0.14) (0.39+0.14+(j-1)*5):(2.3+0.14)))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((0.39-0.14+(j-1)*DX):(2.3-0.14) (0.39+0.14+(j-1)*DX):(2.3+0.14)))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (0.39+(j-1)*5):2.3 NET_NAME "upperCenter" "R0" "roman" 0.5)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (0.39+(j-1)*DX):2.3 NET_NAME "upperCenter" "R0" "roman" 0.5)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)	
 					
 					sprintf(NET_NAME "MR<%d>" j)
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((3.31-0.115+(j-1)*5):(2.28-0.115) (3.31+0.115+(j-1)*5):(2.28+0.115)))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((3.31-0.115+(j-1)*DX):(2.28-0.115) (3.31+0.115+(j-1)*DX):(2.28+0.115)))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (3.31+(j-1)*5):2.28 NET_NAME "upperCenter" "R0" "roman" 0.5)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (3.31+(j-1)*DX):2.28 NET_NAME "upperCenter" "R0" "roman" 0.5)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)	
 
 				else
 					sprintf(NET_NAME "N<%d>" j)	; 	Rows share N
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.23-0.115+(j-1)*5):(1.14-0.115) (2.23+0.115+(j-1)*5):(1.14+0.115)))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((2.23-0.115+(j-1)*DX):(1.14-0.115) (2.23+0.115+(j-1)*DX):(1.14+0.115)))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.23+(j-1)*5):1.14 NET_NAME "upperCenter" "R0" "roman" 0.5)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (2.23+(j-1)*DX):1.14 NET_NAME "upperCenter" "R0" "roman" 0.5)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)	
 					
 					sprintf(NET_NAME "P<%d>" j)
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((4.61-0.14+(j-1)*5):(2.3-0.14) (4.61+0.14+(j-1)*5):(2.3+0.14)))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL4" "drawing") list((4.61-0.14+(j-1)*DX):(2.3-0.14) (4.61+0.14+(j-1)*DX):(2.3+0.14)))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (4.61+(j-1)*5):2.3 NET_NAME "upperCenter" "R0" "roman" 0.5)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL4" "pin") (4.61+(j-1)*DX):2.3 NET_NAME "upperCenter" "R0" "roman" 0.5)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)	
 					
 					sprintf(NET_NAME "MR<%d>" j)
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((1.69-0.115+(j-1)*5):(2.28-0.115) (1.69+0.115+(j-1)*5):(2.28+0.115)))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((1.69-0.115+(j-1)*DX):(2.28-0.115) (1.69+0.115+(j-1)*DX):(2.28+0.115)))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (1.69+(j-1)*5):2.28 NET_NAME "upperCenter" "R0" "roman" 0.5)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (1.69+(j-1)*DX):2.28 NET_NAME "upperCenter" "R0" "roman" 0.5)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)	
 			);if			
