@@ -1,4 +1,4 @@
-# RRAM COMPILER
+# Open-Source RRAM COMPILER
 
 Author: 
             
