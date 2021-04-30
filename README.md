@@ -8,7 +8,7 @@ Supervisors:
 
             T. Constandinou
             P. Feng
-            A. Misfud
+            A. Mifsud
 
 e-mail: dimitris.antoniadis20@imperial.ac.uk
 
