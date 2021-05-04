@@ -28,6 +28,10 @@ flexible and portable platform for generating and verifying ReRAM designs across
 The student will investigate the current memory compiler in terms of architecture and operation to understand the design
 process of common memory.
 
+**Publications**
+
+[Open-Source Memory Compiler for Automatic RRAM Generation and Verification](https://arxiv.org/abs/2104.14885)  (Preprint)
+
 ------------------------------------------
 
 The objectives are:
