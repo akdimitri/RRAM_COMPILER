@@ -37,7 +37,7 @@ process of common memory.
 
 ------------------------------------------
 
-** Research Project Objectives**
+**Research Project Objectives**
 
 1. to develop an open source array compiler.
 2. to design a large-scale ReRAM memory with essential peripheral circuits, such as sense amplifier, address decoder, write
