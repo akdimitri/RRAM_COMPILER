@@ -28,6 +28,8 @@ flexible and portable platform for generating and verifying ReRAM designs across
 The student will investigate the current memory compiler in terms of architecture and operation to understand the design
 process of common memory.
 
+--------------------------------
+
 **Publications**
 [Open-Source Memory Compiler for Automatic RRAM Generation and Verification](https://arxiv.org/abs/2104.14885)  (Preprint)
 
@@ -43,6 +45,8 @@ driver, column multiplexer.
 The expected outcome of this project is to realize the automatic ReRAM generation from schematic to layout togethering with
 physical verification and timing/power characteristics. The deliverable outcome from the student will be a final report showing
 Cadence implementation with main compiler components
+
+------------------------------
 
 **Instructions**
 
@@ -70,7 +74,9 @@ Cadence implementation with main compiler components
 5. Run Compiler by invoking createRRAM function in CIW
 
 For example:
->> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"), 5, 2.28)	
+>> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"), 5, 2.28)
+
+-----------------------------------	
 
 **Function Definition**
 
@@ -101,6 +107,8 @@ The memory cell of the proposed RRAM consists of 1 memristor 1 transitor. The ce
 The RRAM Array is presented on the following image. The SEL lines are shared horizontally and P,N lines are shared vertically.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/RRAM_3_3.png" width="400">
+
+--------------------------------
 
 **Comparison of Versions**
 
@@ -146,6 +154,8 @@ The following table presents the timing for every function involved in the RRAM 
 The following image presents the above table. It shows that PEX, Calibre Setup View and Implementation share almost equal time for large arrays. However, the speed up of the second version remains huge. On the contrary, DRC and LVS time is almost negligble for large arrays.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/profiling_v2.png" width="400">
+
+------------------------------------
 
 **Parasitics Extraction**
 
