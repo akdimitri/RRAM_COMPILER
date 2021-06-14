@@ -18,6 +18,10 @@ Research Project: Large-scale mixed-signal array compiler for automatic memory g
 
 ---
 * This project is still ongoing 
+* 
+* Version 2: RRAM ARRAY GENERATOR (COMPLETED)
+* 
+* Version 3: RRAM GENERATOR WITH PERIPHERAL CIRCUITS (IN PROGRESS)
 
 
 **Research Project Description**: Commercial availability of memory complier is only used for industrial design of static random-access memory (SRAM) or
