@@ -18,9 +18,7 @@ Research Project: Large-scale mixed-signal array compiler for automatic memory g
 
 ---
 * This project is still ongoing 
-* 
 * Version 2: RRAM ARRAY GENERATOR (COMPLETED)
-* 
 * Version 3: RRAM GENERATOR WITH PERIPHERAL CIRCUITS (IN PROGRESS)
 
 
