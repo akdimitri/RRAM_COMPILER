@@ -95,11 +95,6 @@ procedure(	createPMUXsch(						; LIST OF ARGUMENTS
 	sprintf(PIN_NAME "SA<1:%d>" B)
 	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "inputOutput" nil 0.9375:1.4 "R0" )		
 	
-	; RW
-	;PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
-	;sprintf(PIN_NAME "RW<1:%d>" X/B)
-	;schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "input" nil 0.375:1.2 "R0" )		
-	
 	; P
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
 	sprintf(PIN_NAME "P<1:%d>" X)

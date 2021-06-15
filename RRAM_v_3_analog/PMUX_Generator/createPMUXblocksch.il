@@ -29,7 +29,7 @@ procedure(	createPMUXblocksch(	LIBRARY			; LIBRARY TO PLACE THE NEW DESIGN
 	if(	CELLVIEW == nil
 		then		
 		;ERROR_CODE = -21
-		printf("ERROR: %d --- PMUX CELLVIEW CREATION FAILED" ERROR_CODE)
+		printf("ERROR: --- PMUX CELLVIEW CREATION FAILED")
 		return(nil) 
 
 	)

@@ -1,10 +1,10 @@
 ;--------------------------------------------------------------------------------------------------------------------------------------------
 ; Author:		Dimitrios Antoniadis
 ; Date:			15/06/2021
-; Description:	This file contains the SKILL code to create the Schematic of a PMUX 
+; Description:	This file contains the SKILL code to create the Schematic of a NMUX 
 ;-------------------------------------------------------------------------------------------------------------------------------------------- 
 
-procedure( createPMUX(						; LIST OF ARGUMENTS
+procedure( createNMUX(						; LIST OF ARGUMENTS
 						X					; X SIZE OF ARRAY (COLS), NUMBER OF MEMORY CELLS PER HORIZONTAL LINE
 						B					; NUMBER OF BITS OF A WORD
 						@optional 			; THE FOLLOWING ARGUMENTS ARE OPTIONAL, NEXT TO THEM IS THEIR DEFAULT VALUE
@@ -27,23 +27,23 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 	if( modulo( X B) != 0
 		then
 		printf("The division of %d with %d is NOT 0\n" X B)
-		ERROR_CODE = -20
-		printf("ERROR: %d --- PMUX ARGUMENTS SIZE WRONG\n" ERROR_CODE)
+		ERROR_CODE = -30
+		printf("ERROR: %d --- NMUX ARGUMENTS SIZE WRONG\n" ERROR_CODE)
 		return(ERROR_CODE) 
 	)
 	
 	; STEP 1
 	; CREATE PMUX BLOCK SCHEMATIC
-	sprintf(NAME "PMUX_BLOCK_%d" B) 
-	CELLVIEW_BLOCK = createPMUXblocksch(LIBRARY NAME B)
+	sprintf(NAME "NMUX_BLOCK_%d" B) 
+	CELLVIEW_BLOCK = createNMUXblocksch(LIBRARY NAME B)
 	if( CELLVIEW_BLOCK == nil
 		then		
-		ERROR_CODE = -21
-		printf("ERROR: %d --- createPMUX -> createPMUXblocksch\n" ERROR_CODE)
+		ERROR_CODE = -31
+		printf("ERROR: %d --- createNMUX -> createNMUXblocksch\n" ERROR_CODE)
 		return(ERROR_CODE) 
 	)
 
-	; STEP 2
+		; STEP 2
 	; Create Symbol for P BLOCK of B P SWITCHES
 	PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
 	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
@@ -53,10 +53,10 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 	; TODO
 
 	; STEP 4
-	; Create PMUX SCHEMATIC
+	; Create NMUX SCHEMATIC
 	; Set the NAME of the CELLVIEW
-	sprintf(NAME "PMUX_%d_%d" B X/B)
-	createPMUXsch( X B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "symbol" "" "r"))
+	sprintf(NAME "NMUX_%d_%d" B X/B)
+	createNMUXsch( X B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "symbol" "" "r"))
 	
 	; STEP 5
 	; Create Symbol for PMUX
@@ -64,7 +64,8 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
 
 
-	return("SUCCESS")			
+	return("SUCCESS")	
 
-	)	; prog
-)	; procedure
+
+	)	;prog
+)	;	procedure
