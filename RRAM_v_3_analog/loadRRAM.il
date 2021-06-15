@@ -74,6 +74,18 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		printf("ERROR: FAILED LOADING createPMUXblocksch.il\n")
 		return(-1)
 	)
+
+	sprintf(FILE "%s/PMUX_Generator/%s" PATH "createPMUX.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createPMUX.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/PMUX_Generator/%s" PATH "createPMUXsch.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createPMUXsch.il\n")
+		return(-1)
+	)
 	
 	printf("RRAM COMPILER LOADED SUCCESSFULLY\n")
 	return(t)

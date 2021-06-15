@@ -19,13 +19,20 @@ procedure(	createPMUXblocksch(	LIBRARY			; LIBRARY TO PLACE THE NEW DESIGN
 				PIN_CV_ID	; TEMPORARY VARIABLE TO HOLD THE DB OF THE PIN
 				;PIN_ID		; TEMPORARY VARIABLE TO HOLD THE DB OF NEW PIN
 				PIN_NAME		; TEMPORARY VARIABLE TO HOLD THE NAME OF A PIN
+				ERROR_CODE		; ERROR CODE TO BE RETURNED
 			)			; END OF LIST OF LOCAL VARIABLES
 	
 	printf("+++ Creating Schematic for 1 block of P SWITCHES +++\n")
 
 	; Create Schematic View
 	CELLVIEW = dbOpenCellViewByType( LIBRARY NAME "schematic" "schematic" "w")	
-	
+	if(	CELLVIEW == nil
+		then		
+		;ERROR_CODE = -21
+		printf("ERROR: %d --- PMUX CELLVIEW CREATION FAILED" ERROR_CODE)
+		return(nil) 
+
+	)
 	; Create Instance
 	sprintf(INST_NAME "M<1:%d>" B) 		
 	dbCreateInst(CELLVIEW P_SWITCH_CELL INST_NAME list(0 0) "R0")
@@ -37,6 +44,10 @@ procedure(	createPMUXblocksch(	LIBRARY			; LIBRARY TO PLACE THE NEW DESIGN
 	; Create VDD net common for all
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(0.8125:0.5625 0.8125:0.8125) 0.0625 0.0625 0.0 )
 	schCreateWireLabel( CELLVIEW car(NET_ID) 0.8125:0.8125 "VDD" "upperCenter" "R0" "fixed" 0.05 nil )
+	
+	; Create EN net common for all
+	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(-0.375:0.0625 0:0.0625) 0.0625 0.0625 0.0 )
+	schCreateWireLabel( CELLVIEW car(NET_ID) -0.375:0.0625 "EN" "upperCenter" "R0" "fixed" 0.05 nil )
 	
 	; Create NOT_EN net common for all
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(-0.375:0.1875 0:0.1875) 0.0625 0.0625 0.0 )
@@ -76,15 +87,20 @@ procedure(	createPMUXblocksch(	LIBRARY			; LIBRARY TO PLACE THE NEW DESIGN
 
 	; NOT_EN
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
-	schCreatePin( CELLVIEW PIN_CV_ID "NOT_EN" "inputOutput" nil -0.375:0.1875 "R0" nil nil "ground")		; VSS
+	schCreatePin( CELLVIEW PIN_CV_ID "NOT_EN" "input" nil -0.375:0.1875 "R0" nil nil "ground")		; VSS
 	
+	; EN
+	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
+	schCreatePin( CELLVIEW PIN_CV_ID "EN" "input" nil -0.375:0.0625 "R0" nil nil "ground")		; VSS
+	
+
 	; RW
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
-	schCreatePin( CELLVIEW PIN_CV_ID "RW" "inputOutput" nil -0.375:-0.125 "R0" nil nil "ground")		; VSS
+	schCreatePin( CELLVIEW PIN_CV_ID "RW" "input" nil -0.375:-0.125 "R0" nil nil "ground")		; VSS
 	
 	; NOT_RW
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
-	schCreatePin( CELLVIEW PIN_CV_ID "NOT_RW" "inputOutput" nil 2.1875:-0.125 "R180" nil nil "ground")		; VSS
+	schCreatePin( CELLVIEW PIN_CV_ID "NOT_RW" "input" nil 2.1875:-0.125 "R180" nil nil "ground")		; VSS
 	
 	; P
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
