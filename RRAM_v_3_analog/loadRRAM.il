@@ -105,6 +105,25 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
+	sprintf(FILE "%s/MUX_Generator/%s" PATH "createMUXblocksch.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createMUXblocksch.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/MUX_Generator/%s" PATH "createMUX.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createMUX.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/MUX_Generator/%s" PATH "createMUXsch.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createMUXsch.il\n")
+		return(-1)
+	)
+
+
 	
 	printf("RRAM COMPILER LOADED SUCCESSFULLY\n")
 	return(t)
