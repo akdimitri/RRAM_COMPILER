@@ -54,6 +54,9 @@ Cadence implementation with main compiler components
 
 **Instructions**
 
+0. Depndencies: This RRAM Compiler is currently using TSMC 180nm technology. The source code is based on the SKILL programming language. Therefore, this compiler needs TSMC PDK 180nm, Cadence Tools and Mentor Calibre tools for verification.  
+
+
 1. The RRAM MEMORY COMPILER files are SKILL code scripts and they have to be placed under folder SKILL in working directory. More specifically, under the working directory, in which the virtuoso command is invoked create a folder named SKILL.
 
 >>mkdir SKILL
