@@ -43,7 +43,7 @@ procedure(	createMUXsch(						; LIST OF ARGUMENTS
 
 	; Create OUT net common for every block
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(0.875:0.6875 0.875:1.6) 0.0625 0.0625 0.0 )
-	sprintf(NET_NAME "OUT<1:%d>" B)
+	sprintf(NET_NAME "OUT<(1:%d)*%d>" B X/B)
 	schCreateWireLabel( CELLVIEW car(NET_ID) 0.875:1.6 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	
 	; Create BL unique for every cell
