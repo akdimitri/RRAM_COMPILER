@@ -5,7 +5,7 @@
 ; Version:		2
 ;-------------------------------------------------------------------------------------------------------------------------------------------- 
 
-procedure(	createRRAMrowSch(				; LIST OF ARGUMENTS
+procedure(	createRRAMrowsch(				; LIST OF ARGUMENTS
 							X 				; X SIZE OF ARRAY (COLS)
 							LIBRARY			; LIBRARY TO PLACE THE NEW DESIGN
 							NAME				; NAME OF THE CELLVIEW

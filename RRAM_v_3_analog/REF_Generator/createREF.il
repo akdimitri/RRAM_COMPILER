@@ -16,7 +16,8 @@ procedure( createREF(						; LIST OF ARGUMENTS
 	prog(	(			; LIST OF LOCAL VARIABLES
 		NAME				; CELLVIEW NAME	
 		CELLVIEW_ROW 	; DB OF ROW SCHEMATIC	
-		PIN_LIST			; VARIABLE TO HOLD PIN LIST		
+		PIN_LIST			; VARIABLE TO HOLD PIN LIST	
+		CELLVIEW			; DB OF CELLVIEW	
 	)					; END OF LIST OF LOCAL VARIABLES
 
 
@@ -51,7 +52,7 @@ procedure( createREF(						; LIST OF ARGUMENTS
 		; STEP 4
 		; Create Schematic for REF Array
 		; Create Design and its schematic
-		createREFsch(Y B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r"))
+		CELLVIEW = createREFsch(Y B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r"))
 		
 		; STEP 5
 		; Create Symbol
@@ -63,9 +64,11 @@ procedure( createREF(						; LIST OF ARGUMENTS
 		; TO DO Layout
 	else
 		printf("%s already exists. Creation was skipped.\n" NAME)		
+		CELLVIEW = dbOpenCellViewByType( LIBRARY NAME "schematic" "schematic" "r")	
 	);if
 
 	printf("CreateREF(...) Function: DONE\n\n")
+	return(CELLVIEW)
 
 	)	; prog
 )	; procedure

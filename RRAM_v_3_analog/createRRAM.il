@@ -24,6 +24,7 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 				time2			; execution time
 				LOG				; LOG File
 				my_log_port			; port to write to file
+				CELLVIEW			; DB OF CELLVIEW TO BE RETURNED
 			)			; END OF LIST OF LOCAL VARIABLES
 
 	printf("\n+++++++++++++++++++++++++++++++\n")
@@ -32,19 +33,27 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 	
 	time = measureTime(
 
+	CELLVIEW = nil
+
 	; STEP 1
 	; Create A Row of RRAM
 	sprintf(NAME "_RRAM_%d" X)
-	CELLVIEW_ROW = createRRAMrowsch( X,	LIBRARY,	NAME	, DB_RRAM_CELL)
+	if( ddGetObj( LIBRARY NAME) == nil
+		then
+		CELLVIEW_ROW = createRRAMrowsch( X,	LIBRARY,	NAME	, DB_RRAM_CELL)
 
-	; STEP 2
-	; Create Symbol for RRAM ROW
-	PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
-	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
-
-	; STEP 3
-	; Create Layout for RRAM ROW
-	createRRAMrowlayout(X LIBRARY NAME DB_RRAM_CELL DX)
+		; STEP 2
+		; Create Symbol for RRAM ROW
+		PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
+		schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
+	
+		; STEP 3
+		; Create Layout for RRAM ROW
+		createRRAMrowlayout(X LIBRARY NAME DB_RRAM_CELL DX)
+	else
+		printf("%s already exists. Creation was skipped.\n" NAME)		
+		CELLVIEW_ROW = dbOpenCellViewByType( LIBRARY NAME "schematic" "schematic" "r")	
+	);if
 	
 	; Set the NAME of the CELLVIEW
 	sprintf(NAME "RRAM_%d_%d" X Y)
@@ -58,17 +67,22 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 		printf("ERROR: %d --- %s opening log file" ERROR_CODE library)
 		return(ERROR_CODE)
 	)
-
-	; Create Design and its schematic
-	createRRAMsch(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r"))
-
-	; Create Symbol
-	PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
-	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
 	
-	; Create Layout
-	createRRAMlayout(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r") DX DY)
+	if( ddGetObj( LIBRARY NAME) == nil
+		then
+		; Create Design and its schematic
+		CELLVIEW = createRRAMsch(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r"))
 	
+		; Create Symbol
+		PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
+		schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
+		
+		; Create Layout
+		;createRRAMlayout(X Y LIBRARY NAME dbOpenCellViewByType(CELLVIEW_ROW~>libName CELLVIEW_ROW~>cellName "symbol" "" "r") DX DY)
+	else
+		printf("%s already exists. Creation was skipped.\n" NAME)		
+		CELLVIEW = dbOpenCellViewByType( LIBRARY NAME "schematic" "schematic" "r")	
+	);if
 	
 	; Run DRC Calibre
 	;time2 = measureTime(runDRC_Calibre(LIBRARY NAME))
@@ -91,6 +105,6 @@ procedure( createRRAM(		; LIST OF ARGUMENTS
 	close(my_log_port)
 
 	printf("CreateRRAM(...) Function: DONE\n")
-	
+	return(CELLVIEW)
 	)	; prog
 )	; procedure

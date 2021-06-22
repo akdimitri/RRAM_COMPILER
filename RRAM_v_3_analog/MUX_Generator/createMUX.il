@@ -14,13 +14,14 @@ procedure( createMUX(						; LIST OF ARGUMENTS
 
 	prog(	(					; LIST OF LOCAL VARIABLES
 				NAME				; CELLVIEW NAME
-				CELLVIEW_BLOCK		; DB OF CELLVIEW
+				CELLVIEW_BLOCK	; DB OF CELLVIEW
 				PIN_LIST			; VARIABLE TO HOLD PIN LIST
 				ERROR_CODE		; ERROR CODE TO BE RETURNED
+				CELLVIEW			; DB OF CELLVIEW
 			)
 
 	printf("\n+++++++++++++++++++++++++++++++\n")
-	printf("\n Running: createPMUX procedure \n")
+	printf("\n Running: createMUX procedure \n")
 	printf("\n+++++++++++++++++++++++++++++++\n")
 
 	; STEP 0
@@ -72,19 +73,27 @@ procedure( createMUX(						; LIST OF ARGUMENTS
 		sprintf(NAME "PMUX_%d_%d" B X/B)
 	) ;if
 	
-	createMUXsch( X B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "symbol" "" "r"))
+	if( ddGetObj( LIBRARY NAME) == nil
+		then
+		CELLVIEW = createMUXsch( X B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "symbol" "" "r"))
+
+		; STEP 5
+		; Create Symbol for PMUX
+		PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
+		schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
 	
 	
-	; STEP 5
-	; Create Symbol for PMUX
-	PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
-	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
+		; STEP 6
+		; TO DO LAYOUT
+	else
+		printf("%s already exists. Creation was skipped.\n" NAME)		
+		CELLVIEW = dbOpenCellViewByType( LIBRARY NAME "schematic" "schematic" "r")	
+	);if
+	
+	
+	
 
-
-	; STEP 6
-	; TO DO LAYOUT
-
-	return("SUCCESS")			
+	return(CELLVIEW)			
 
 	)	; prog
 )	; procedure

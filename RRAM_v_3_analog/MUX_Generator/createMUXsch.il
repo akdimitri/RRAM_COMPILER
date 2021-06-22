@@ -72,7 +72,8 @@ procedure(	createMUXsch(						; LIST OF ARGUMENTS
 
 	; OUT
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
-	sprintf(PIN_NAME "OUT<(1:%d)*%d>" B X/B)
+	;sprintf(PIN_NAME "OUT<(1:%d)*%d>" B X/B)
+	sprintf(PIN_NAME "OUT<1:%d>" B)
 	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "inputOutput" nil 0.875:1.6 "R0" )		
 	
 	; BL

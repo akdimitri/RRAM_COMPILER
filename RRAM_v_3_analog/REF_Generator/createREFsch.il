@@ -53,14 +53,16 @@ procedure(	createREFsch(						; LIST OF ARGUMENTS
 	sprintf(PIN_NAME "SEL<1:%d>" Y)
 	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "input" nil -0.5:0 "R0" )	
 
-	; OUT
+	; P
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
-	sprintf(PIN_NAME "P<(1:%d)*%d>" B Y)
+	;sprintf(PIN_NAME "P<(1:%d)*%d>" B Y)
+	sprintf(PIN_NAME "P<1:%d>" B)
 	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "inputOutput" nil 0.6875:1 "R0" )	
 
-	; OUT
+	; N
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
-	sprintf(PIN_NAME "N<(1:%d)*%d>" B Y)
+	;sprintf(PIN_NAME "N<(1:%d)*%d>" B Y)
+	sprintf(PIN_NAME "N<1:%d>" B)
 	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "inputOutput" nil 0.8125:0.8 "R0" )	
 
 
