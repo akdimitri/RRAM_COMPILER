@@ -17,6 +17,7 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 						(DB_REF_CELL dbOpenCellViewByType("THESIS" "REF_NMOS" "symbol"))	; DB OF REFERENCE CELL
 						(CELLMAP "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/Calibre/rcx/calview.cellmap")		; CELLMAP FOR CALIBRE VIEW
 						(DB_SA dbOpenCellViewByType("THESIS" "SENSE_AMPLIFIER_LATCH_TYPE" "symbol"))
+						(DB_WR dbOpenCellViewByType("THESIS" "WRITE_AMPLIFIER" "symbol"))
 					)		; END OF LIST OF ARGUMENTS
 
 	prog(	(			; LIST OF LOCAL VARIABLES
@@ -43,7 +44,7 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 
 	; STEP 2
 	; Create PMUX
-	DB_PMUX_SCH = createMUX((X+B) B LIBRARY "P")
+	DB_PMUX_SCH = createPMUX(X B LIBRARY "P")
 
 	; STEP 3
 	; Create NMUX
@@ -57,13 +58,21 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 	; Create RRAM Analog Part
 	; Create Schematic View
 	sprintf(NAME "A_RRAM_%d_%d_%d" X Y B)	
-	createRRAManalogsch(X Y B LIBRARY NAME DB_RRAM_SCH DB_PMUX_SCH	 DB_NMUX_SCH	DB_REF_SCH DB_SA)
+	CELLVIEW = createRRAManalogsch(X Y B LIBRARY NAME DB_RRAM_SCH DB_PMUX_SCH	 DB_NMUX_SCH	DB_REF_SCH DB_SA DB_WR)
 
+	; STEP 6
+	; Create Symbol
+	PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
+	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
+	
+	; STEP 7
+	; Create Layout
+	; TODO
 	
 
 	printf("CreateRRAManalog(...) Function: DONE\n")
 
-	;return(CELLVIEW)
+	return(CELLVIEW)
 	
 	)	; prog
 )	; procedure

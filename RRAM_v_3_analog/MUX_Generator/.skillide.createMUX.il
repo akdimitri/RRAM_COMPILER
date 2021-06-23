@@ -4,12 +4,12 @@
 ; Description:	This file contains the SKILL code to create the Schematic of a MUX 
 ;-------------------------------------------------------------------------------------------------------------------------------------------- 
 
-procedure( createPMUX(						; LIST OF ARGUMENTS
+procedure( createMUX(						; LIST OF ARGUMENTS
 						X					; X SIZE OF ARRAY (COLS), NUMBER OF MEMORY CELLS PER HORIZONTAL LINE
 						B					; NUMBER OF BITS OF A WORD
 						@optional 			; THE FOLLOWING ARGUMENTS ARE OPTIONAL, NEXT TO THEM IS THEIR DEFAULT VALUE
 						(LIBRARY "THESIS")	; LIBRARY TO PLACE THE NEW DESIGN
-						(TYPE	"P")			; P OR N
+						(TYPE	"N")			; P OR N
 					)		; END OF LIST OF ARGUMENTS
 
 	prog(	(					; LIST OF LOCAL VARIABLES
@@ -70,12 +70,12 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 		sprintf(NAME "NMUX_%d_%d" B X/B)
 
 		else
-		sprintf(NAME "PMUX_%d_%d" B (X/B+1))
+		sprintf(NAME "PMUX_%d_%d" B X/B)
 	) ;if
 	
 	if( ddGetObj( LIBRARY NAME) == nil
 		then
-		CELLVIEW = createPMUXsch( X B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "symbol" "" "r"))
+		CELLVIEW = createMUXsch( X B LIBRARY NAME dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "symbol" "" "r"))
 
 		; STEP 5
 		; Create Symbol for PMUX

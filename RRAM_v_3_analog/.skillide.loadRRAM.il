@@ -155,7 +155,11 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
-
+	sprintf(FILE "%s/misc/%s" PATH "calculatePinPosition.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING calculatePinPosition.il\n")
+		return(-1)
+	)
 
 
 
