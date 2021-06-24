@@ -115,6 +115,11 @@ The RRAM Array is presented on the following image. The SEL lines are shared hor
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/RRAM_3_3.png" width="400">
 
+**RRAM Memory Architecture**
+
+The proposed simplified architecture is show on the image below. 
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/simplified_architecture.png" width="400">
 --------------------------------
 
 **Comparison of Versions**
