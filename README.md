@@ -16,7 +16,8 @@ University: Imperial College London
 
 Research Project: Large-scale mixed-signal array compiler for automatic memory generation
 
----
+-----------------------
+
 * This project is still ongoing 
 * Version 2: RRAM ARRAY GENERATOR (COMPLETED)
 * Version 3: RRAM GENERATOR WITH PERIPHERAL CIRCUITS (IN PROGRESS)
@@ -120,6 +121,7 @@ The RRAM Array is presented on the following image. The SEL lines are shared hor
 The proposed simplified architecture is show on the image below. 
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/simplified_architecture.png" width="400">
+
 --------------------------------
 
 **Comparison of Versions**
