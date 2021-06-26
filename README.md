@@ -125,7 +125,7 @@ The proposed simplified architecture is show on the image below.
 **Sense Amplifiers**
 
 All sense amplifiers were tested in an equaivalent testbech of 4Mb based on the results presented on 
-[Open-Source Memory Compiler for Automatic RRAM Generation and Verification](https://arxiv.org/abs/2104.14885). The outputs of Sense Amplifiers in the testbench had been driving 50.47fF Capacitors. A 100 Monte Carlo Analysis was run on every Sense Amplifier for every possible combination found in the tables below. For the simulation the state was initialised to LRS (HRS) and then altered to HRS (LRS).
+[Open-Source Memory Compiler for Automatic RRAM Generation and Verification](https://arxiv.org/abs/2104.14885). The outputs of Sense Amplifiers in the testbench had been driving 50.47fF Capacitors. An 100 Monte Carlo Analysis was run on every Sense Amplifier for every possible combination found in the tables below. For the simulation the state was initialised to LRS (HRS) and then altered to HRS (LRS).
 
 *Latch Type*
 
