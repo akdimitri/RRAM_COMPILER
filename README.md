@@ -197,6 +197,27 @@ This sense amplifier is quite similar to the previous one but it is a current mo
 | 122000  | 3.485714286 | 30% | 66%   | 80%  | 92%  | 100% | 100% |     
 | 1228000 | 35.08571429 | 40% | 74%   | 88%  | 97%  | 100% | 100% |  
   
+*Current Sampling Based Sense Amplifier*
+
+This amplifier is presented on [An Offset-Tolerant Fast-Random-Read Current-Sampling-Based Sense Amplifier for Small-Cell-Current Nonvolatile Memory](https://ieeexplore.ieee.org/document/6407149). It is a low power, high accuracy Sense Amplifier. Below, its schematic is shown and Monter Carlo Analysis for various VDD. Multiples VDDs were tested because this Sense Amplifier loads a high voltage compared to VDD on the bitlines that could alter the state of the transistor.
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/CSB_SA.png" width="400">
+
+| R | Ratio  | 10n | 20n | 30n | 40n  | 50 | 75n   | 100n| 125n| 150n|                      
+| 100 | 0.028571429 | 0 | 90 | 90 | 91 | 100 | - | - | - |                             
+| 3191| 0.091171429 | 0 | 90 | 90|   91 |  100 |- |-|-  |                             
+|10184 | 0.290971429 | 0 | 0  | 90 | 91| 100 | - |- | -|                               
+|20000   | 0.571428571 | 0 | 0 | 0 | 79 | 100 | 100 | 100 | 100 | 100 |
+|23513  | 0.6718085714 | -  | - | - | - | 100 | 100 | 100 | 100 | 100 |
+|27643  | 0.7898228571 | - | -|-| -| 100 | 100 | 100 | 100 | 100 |
+|32500  | 0.928571429 | 0 | 0    | 0   | 71        | 100 | 100 | 99     | 97  | 96 |                         
+|40000   | 1.142857143 | 0   | 100 | 100 | 100 | 100 | 100 | 99  | 96   | 90  |                        
+|45000   | 1.285714286 |-|   -  |   -      |  -   | 100 | 100 | 100 | 100 | 100 |
+|52000   | 1.485714286 |  - |  -  |  -   |  -    | 100 | 100 | 100 | 100 | 100| 
+|60000   | 1.714285714 | 0   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+|116000  | 3.314285714 | 0   | 100 | 100 | 100 | 100 |   -  |    -   | -  |                             
+|341000  | 9.742857143 | 0   | 100 | 100 | 100 | 100 |   -  | - |  -   |                             
+|1000000 | 28.57142857 | 0   | 100 | 100 | 100 | 100 |  -    |  -       |   -  |                             
 
 
 **Analog Part Simplified Schematic**
