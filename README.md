@@ -127,7 +127,7 @@ The proposed simplified architecture is show on the image below.
 All sense amplifiers were tested in an equaivalent testbech of 4Mb based on the results presented on 
 [Open-Source Memory Compiler for Automatic RRAM Generation and Verification](https://arxiv.org/abs/2104.14885). The outputs of Sense Amplifiers in the testbench had been driving 50.47fF Capacitors. A 100 Monte Carlo Analysis was run on every Sense Amplifier for every possible combination found in the tables below. For the simulation the state was initialised to LRS (HRS) and then altered to HRS (LRS).
 
-*Latch Type
+*Latch Type*
 
 Based on [Design of Sense Amplifiers for Non-Volatile Memory](https://ieeexplore.ieee.org/document/8757026) and [Analysis of sense amplifier circuits in nanometer technologies](https://ieeexplore.ieee.org/abstract/document/8085666). Its schematic is shown below
 
