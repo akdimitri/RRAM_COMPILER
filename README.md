@@ -170,7 +170,30 @@ Based on [Current-mode techniques for high-speed VLSI circuits with application 
 | 1000000 | 28.57142857 | 0% | 100% | 100% | 100% | 100% | 
 
 
-TODO - ADD TWO MORE SAs
+*Dimitris proposed 3 stages Sense Amplifier*
+
+This sense amplifier is quite similar to the previous one but it is a current mode only Sense Amplifier. The first stage is a modified version of the previous one and is based on the ideas presented on [Current-mode techniques for high-speed VLSI circuits with application to current sense amplifier for CMOS SRAM's](https://scholar.google.com/scholar?cluster=17946312173679186529&hl=en&as_sdt=0,5), [Precision differential voltage–current convertor](https://digital-library.theiet.org/content/journals/10.1049/el_19730109) and [A high-speed clamped bit-line current-mode sense amplifier](https://ieeexplore.ieee.org/document/75052). The idea is that due to the caprio's quad, the current drawn by lower transistors will be equal, therefore, the difference of bitlines can be extracted by copying the top branch currents. The currents are copied by a CCII- ([CMOS Current Amplifiers](https://www.springer.com/gp/book/9780792384694)) and then they are compared through a regenerative latch based on the idea of [1.5GHz fully differential latched current comparator with 20nA of sensitivity](https://ieeexplore.ieee.org/abstract/document/1689926).
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/dimitris_sa.png" width="400">
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/ccii.png" width="400">
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/regen_latch.png" width="400">
+
+
+
+| R | Ratio | 10n | 12.5n | 15n | 20n | 30n | 50n |                     
+| 1000 | 0.028571429 | 43.00 % | 95.00 % |  100.00 % |  100.00 % |  100.00 % |  100.00 % |    
+| 10000 | 0.285714286 | 16.00 % | 70.00 % | 96.00 % | 99.00 % | 100.00 % | 100.00 % |     
+| 20000  | 0.571428571 | 17.00 % | 55.00 % | 84.00 % | 94.00 %  | 100.00 % |  100.00 % |    
+| 30000  | 0.857142857 | 11.00 % | 56.00 % | 76.00 % | 80.00 % | 94.00 % | 94.00 % |                             
+| 32500  | 0.928571429 | 11.00 % | 59.00 % | 78.00 % | 77.00 % | 83.00 % | 79.00 % |
+| 37710  | 1.077428571 | 8.00 % | 18.00 % | 63.00 %  | 77.00 % | 89.00 % | 90.00 % |                              
+| 40840  | 1.166857143 | 14.00 % | 42.00 % | 71.00 % | 86.00 % | 93.00 %  | 99.00 % |                              
+| 61000  | 1.742857143 | 17.00 % | 65.00 % | 81.00 % | 87.00 % | 100.00 % | 100.00 % |    
+| 122000   | 3.485714286 | 30.00 % | 66.00 % | 80.00 % | 92.00 % | 100.00 % | 100.00 % |     
+| 1228000  | 35.08571429 | 40.00 % | 74.00 % | 88.00 % | 97.00 % | 100.00 % | 100.00 % |   
+
 
 **Analog Part Simplified Schematic**
 
