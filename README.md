@@ -125,7 +125,7 @@ The proposed simplified architecture is show on the image below.
 **Sense Amplifiers**
 
 All sense amplifiers were tested in an equaivalent testbech of 4Mb based on the results presented on 
-[Open-Source Memory Compiler for Automatic RRAM Generation and Verification](https://arxiv.org/abs/2104.14885). The outputs of Sense Amplifiers in the testbench had been driving 50.47fF Capacitors. An 100 Monte Carlo Analysis was run on every Sense Amplifier for every possible combination found in the tables below. For the simulation the state was initialised to LRS (HRS) and then altered to HRS (LRS).
+[Open-Source Memory Compiler for Automatic RRAM Generation and Verification](https://arxiv.org/abs/2104.14885). The outputs of Sense Amplifiers in the testbench had been driving 50.47fF Capacitors. An 100 Monte Carlo Analysis was run on every Sense Amplifier for every possible combination found in the tables below. Even though, 100 Point Monte Carlo Analysis is not enough to estimate the yield of each Sense Amplifier, it provides a clear view about the performance of each Sense Amplifier regarding speed and accuracy. For the simulation the state was initialised to LRS (HRS) and then altered to HRS (LRS). Both states had to be read correctly for test to be characterised as successful.
 
 *Latch Type*
 
@@ -148,7 +148,7 @@ Based on [Design of Sense Amplifiers for Non-Volatile Memory](https://ieeexplore
 | 447213   | 12.77751429 | 0%   | 100%   | 100%   |100%    | 100%   |
 | 1000000  | 28.57142857 | 0%   | 100%   | 100%   |100%    | 100%   |
 
-*Proposedt two stage Sense Amplifier*
+*Proposed two stage Sense Amplifier*
 
 Based on [Current-mode techniques for high-speed VLSI circuits with application to current sense amplifier for CMOS SRAM's](https://scholar.google.com/scholar?cluster=17946312173679186529&hl=en&as_sdt=0,5) and [The cross-coupled pair-part ii](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.718.2762&rep=rep1&type=pdf). First and second stages are shown below.
 
@@ -156,7 +156,19 @@ Based on [Current-mode techniques for high-speed VLSI circuits with application 
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/regen_latch_v.png" width="400">
 
-TODO - ADD MONTE CARLO
+| R | Ratio | 10n | 20n | 30n | 40n | 50n |  
+| --- | --- | --- | --- | --- | --- | --- |
+| 1000 (Ohm) | 0.028571429 | 0% | 97% | 100% | 100% | 100% |  
+| 3191  | 0.091171429 | 0% | 97% | 100% | 100% | 100% |
+| 10184 | 0.290971429 | 0% | 97% | 100% | 100% | 100% | 
+| 20000 | 0.571428571 | 0% | 97% | 100% | 100% | 100% |  
+|32500 | 0.928571429 | 0% | 97% | 100% | 93%  | 84% |                        
+|40000 | 1.142857143 | 0% | 88% | 100% | 100% | 99% |                           
+| 60000 | 1.714285714 | 0% | 100% | 100% | 100% | 100% | 
+| 116960 | 3.341714286 | 0% | 100% | 100% | 100% | 100% | 
+| 341000 | 9.742857143 | 0% | 100% | 100% | 100% | 100% | 
+| 1000000 | 28.57142857 | 0% | 100% | 100% | 100% | 100% | 
+
 
 TODO - ADD TWO MORE SAs
 
