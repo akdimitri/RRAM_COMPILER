@@ -203,6 +203,8 @@ This amplifier is presented on [An Offset-Tolerant Fast-Random-Read Current-Samp
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/CSB_SA.png" width="400">
 
+VDD = 1.8V
+
 |R(Ohm)  | Ratio        | 10n | 20n  | 30n  | 40n  | 50n  | 75n  | 100n | 125n | 150n | 
 | ---    |       ---    | --- | ---  | ---  | ---  | ---  | ---  | ---  | ---  | ---  |
 |100     | 0.028571429  | 0%  | 90%  | 90%  | 91%  | 100% | -    | -    | -    |  -   |                           
