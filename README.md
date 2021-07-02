@@ -71,7 +71,7 @@ Cadence implementation with main compiler components
 
 3. At the end of the file import the following lines of code.
 
->>setSkillPath( append( '("./SKILL/RRAM_COMPILER/RRAM_v_2") getSkillPath() ) )		; load path to personal skill scripts
+>>setSkillPath( append( '("./SKILL/RRAM_COMPILER/RRAM_v_3_analog") getSkillPath() ) )		; load path to personal skill scripts
 >>
 >>load("loadRRAM.il")
 >>
