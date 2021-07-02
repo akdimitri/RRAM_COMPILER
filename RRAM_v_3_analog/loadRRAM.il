@@ -27,9 +27,9 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
-	sprintf(FILE "%s/RRAM_Array_Generator/%s" PATH "createRRAMlayout.il")
+	sprintf(FILE "%s/RRAM_Array_Generator/%s" PATH "createRRAMArraylayout.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING createRRAMlayout.il\n")
+		printf("ERROR: FAILED LOADING createRRAMArraylayout.il\n")
 		return(-1)
 	)
 
@@ -136,6 +136,12 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
+	sprintf(FILE "%s/REF_Generator/%s" PATH "createREFrowlayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createREFrowlayout.il\n")
+		return(-1)
+	)
+
 
 	sprintf(FILE "%s/REF_Generator/%s" PATH "createREFsch.il")
 	if( !load(FILE) then
@@ -152,6 +158,12 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 	sprintf(FILE "%s/%s" PATH "createRRAManalogsch.il")
 	if( !load(FILE) then
 		printf("ERROR: FAILED LOADING createRRAManalogsch.il\n")
+		return(-1)
+	)
+	
+	sprintf(FILE "%s/%s" PATH "createRRAManaloglayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createRRAManaloglayout.il\n")
 		return(-1)
 	)
 

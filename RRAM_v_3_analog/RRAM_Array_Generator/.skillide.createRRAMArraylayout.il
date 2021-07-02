@@ -1,16 +1,16 @@
 ;--------------------------------------------------------------------------------------------------------------------------------------------
 ; Author:		Dimitrios Antoniadis
-; Date:			01/03/2021
+; Date:			02/07/2021
 ; Description:	This file contains the SKILL to create the layout of the RRAM
-; Version:		2
+; Version:		3
 ;-------------------------------------------------------------------------------------------------------------------------------------------- 
 
-procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
+procedure(	createRRAMArraylayout(					; LIST OF ARGUMENTS
 								X 				; X SIZE OF ARRAY (COLS)
 								Y				; Y SIZE OF ARRAY (ROWS)
 								LIBRARY			; LIBRARY TO PLACE THE NEW DESIGN
 								NAME				; NAME OF THE CELLVIEW
-								DB_RRAM_CELL		; DB OF RRAM CELL
+								DB_RRAM_CELL		; DB OF RRAM CELL ROW
 								DX				; HORIZONTAL PITCH
 								DY				; VERTICAL PITCH
 							)
@@ -143,24 +143,24 @@ procedure(	createRRAMlayout(					; LIST OF ARGUMENTS
 	)	; while
 	
 	; Guard Ring and Guard Ring Connections
-	CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(0:-0.25 X*DX+1.205:-0.25 X*DX+1.205:Y*DY+1.78+0.75 -1.205:Y*DY+1.78+0.75 -1.205:0.5 ) ?netName "VSS")
-	CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(-1.205:0.92 -1.205:-0.25 0.42:-0.25)  ?netName "VSS")
+	;CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(0:-0.25 X*DX+1.205:-0.25 X*DX+1.205:Y*DY+1.78+0.75 -1.205:Y*DY+1.78+0.75 -1.205:0.5 ) ?netName "VSS")
+	;CCSdrawMPPUsingTemplate("PSubGuardring" ?cvId CELLVIEW ?pts list(-1.205:0.92 -1.205:-0.25 0.42:-0.25)  ?netName "VSS")
 
-	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:DY 0.26:-0.25) 0.94)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:DY 0.26:-0.25-0.5) 0.94)
 	dbAddFigToNet(PATH_ID NET_ID_VSS)
-	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:Y*DY+1.78 0.26:Y*DY+1.78+0.75) 0.94)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(0.26:Y*DY+1.78 0.26:Y*DY+1.78+0.75+0.5) 0.94)
 	dbAddFigToNet(PATH_ID NET_ID_VSS)
 
-	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(-0.26+X*DX:DY -0.26+X*DX:-0.25) 0.94)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(-0.26+X*DX:DY -0.26+X*DX:-0.25-0.5) 0.94)
 	dbAddFigToNet(PATH_ID NET_ID_VSS)
-	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(-0.26+X*DX:Y*DY+1.78 -0.26+X*DX:Y*DY+1.78+0.75) 0.94)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(-0.26+X*DX:Y*DY+1.78 -0.26+X*DX:Y*DY+1.78+0.75+0.5) 0.94)
 	dbAddFigToNet(PATH_ID NET_ID_VSS)
 
 	k=2
 	while(k<X
-		PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(k*DX:DY k*DX:-0.25)  1.46)
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(k*DX:DY k*DX:-0.25-0.5)  1.46)
 		dbAddFigToNet(PATH_ID NET_ID_VSS)
-		PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(k*DX:Y*DY+1.78 k*DX:Y*DY+1.78+0.75)  1.46)
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list(k*DX:Y*DY+1.78 k*DX:Y*DY+1.78+0.75+0.5)  1.46)
 		dbAddFigToNet(PATH_ID NET_ID_VSS)
 		k=k+2
 	)	;while
