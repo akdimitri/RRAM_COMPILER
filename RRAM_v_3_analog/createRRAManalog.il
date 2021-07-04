@@ -43,16 +43,18 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 	DB_RRAM_SCH = createRRAM(X Y LIBRARY DX DY DB_RRAM_CELL CELLMAP)
 
 	; STEP 2
-	; Create PMUX
-	DB_PMUX_SCH = createPMUX(X B LIBRARY "P")
+	; Create REF
+	DB_REF_SCH = createREF(Y	B LIBRARY DB_REF_CELL)
 
 	; STEP 3
 	; Create NMUX
-	DB_NMUX_SCH = createMUX(X B LIBRARY "N")
+	DB_NMUX_SCH = createMUX(X B LIBRARY "N")	
 
 	; STEP 4
-	; Create REF
-	DB_REF_SCH = createREF(Y	B LIBRARY DB_REF_CELL)
+	; Create PMUX
+	DB_PMUX_SCH = createPMUX(X B LIBRARY "P")
+
+	
 	
 	; STEP 5
 	; Create RRAM Analog Part
@@ -67,7 +69,7 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 	
 	; STEP 7
 	; Create Layout
-	createRRAManaloglayout( X Y B	 LIBRARY	 NAME DB_RRAM_SCH DB_REF_SCH DX	 DY)
+	createRRAManaloglayout( X Y B	 LIBRARY	 NAME DB_RRAM_SCH DB_REF_SCH DB_PMUX_SCH DB_NMUX_SCH DX	 DY)
 	
 
 	printf("CreateRRAManalog(...) Function: DONE\n")

@@ -47,10 +47,10 @@ procedure(	createREFlayout(					; LIST OF ARGUMENTS
 				then		
 					sprintf(NET_NAME "N<%d>" j)	; 	Rows share N		
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)			
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((-0.115+(j-1)*DX):-0.115 (0.115+(j-1)*DX):0.115))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((-0.115+(j-1)*DX+0.73):-0.115 (0.115+(j-1)*DX+0.73):0.115))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") ((j-1)*DX):0 NET_NAME "upperCenter" "R0" "roman" 1)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") ((j-1)*DX+0.73):0 NET_NAME "upperCenter" "R0" "roman" 1)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)		
 					if( j==1 
@@ -78,10 +78,10 @@ procedure(	createREFlayout(					; LIST OF ARGUMENTS
 				else
 					sprintf(NET_NAME "N<%d>" j)	; 	Rows share N
 					NET_ID=dbMakeNet(CELLVIEW NET_NAME)
-					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((-0.115+j*DX):-0.115 (0.115+j*DX):0.115))
+					RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "drawing") list((-0.115+j*DX-0.73):-0.115 (0.115+j*DX-0.73):0.115))
 					dbAddFigToNet(RECT_ID NET_ID)
 					PIN_ID=dbCreatePin(NET_ID RECT_ID)
-					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (j*DX):0 NET_NAME "upperCenter" "R0" "roman" 1)		
+					LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") (j*DX-0.73):0 NET_NAME "upperCenter" "R0" "roman" 1)		
 					PIN_ID~>term~>direction = "inputOutput"
 					leAttachFig(LABEL_ID PIN_ID~>fig)	
 					if( j==B 

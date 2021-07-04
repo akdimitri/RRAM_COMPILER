@@ -30,7 +30,7 @@ procedure(	createRRAMArraylayout(					; LIST OF ARGUMENTS
 			;DX			;	DIFF to adjust guard ring on X
 			;DY			;	DIFF to adjust guard ring on Y
 			;PATH_ID		; PATH DB	
-			k			; USED FOR WHILE LOOP		
+			;k			; USED FOR WHILE LOOP		
 			)			; END OF LIST OF LOCAL VARIABLES
 	
 	printf("Creating Layout.\n")

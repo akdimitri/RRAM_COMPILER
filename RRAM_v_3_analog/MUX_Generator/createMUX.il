@@ -55,7 +55,7 @@ procedure( createMUX(						; LIST OF ARGUMENTS
 
 		; STEP 3
 		; Create Layout
-		; TODO
+		createMUXblocklayout( B LIBRARY NAME 5)
 
 		else
 			printf("%s already exists. Creation was skipped.\n" NAME)
@@ -84,7 +84,8 @@ procedure( createMUX(						; LIST OF ARGUMENTS
 	
 	
 		; STEP 6
-		; TO DO LAYOUT
+		createMUXlayout( B X LIBRARY NAME DX dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "layout" "" "r"))
+		
 	else
 		printf("%s already exists. Creation was skipped.\n" NAME)		
 		CELLVIEW = dbOpenCellViewByType( LIBRARY NAME "schematic" "schematic" "r")	

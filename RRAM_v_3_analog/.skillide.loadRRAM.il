@@ -81,6 +81,12 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
+	sprintf(FILE "%s/PMUX_Generator/%s" PATH "createPMUXlayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createPMUXlayout.il\n")
+		return(-1)
+	)
+
 	sprintf(FILE "%s/PMUX_Generator/%s" PATH "createPMUXsch.il")
 	if( !load(FILE) then
 		printf("ERROR: FAILED LOADING createPMUXsch.il\n")
@@ -112,9 +118,21 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
+	sprintf(FILE "%s/MUX_Generator/%s" PATH "createMUXblocklayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createMUXblocklayout.il\n")
+		return(-1)
+	)
+
 	sprintf(FILE "%s/MUX_Generator/%s" PATH "createMUX.il")
 	if( !load(FILE) then
 		printf("ERROR: FAILED LOADING createMUX.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/MUX_Generator/%s" PATH "createMUXlayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createMUXlayout.il\n")
 		return(-1)
 	)
 
@@ -141,11 +159,17 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		printf("ERROR: FAILED LOADING createREFrowlayout.il\n")
 		return(-1)
 	)
-
+	
 
 	sprintf(FILE "%s/REF_Generator/%s" PATH "createREFsch.il")
 	if( !load(FILE) then
 		printf("ERROR: FAILED LOADING createREFsch.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/REF_Generator/%s" PATH "createREFlayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createREFlayout.il\n")
 		return(-1)
 	)
 

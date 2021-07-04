@@ -21,7 +21,7 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 			)
 
 	printf("\n+++++++++++++++++++++++++++++++\n")
-	printf("\n Running: createMUX procedure \n")
+	printf("\n Running: createPMUX procedure \n")
 	printf("\n+++++++++++++++++++++++++++++++\n")
 
 	; STEP 0
@@ -35,6 +35,7 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 	)
 
 	; STEP 1
+	; THIS STEP WILL BE POTENTIALLY SKIPPED BY THE COMPILER
 	; CREATE MUX BLOCK SCHEMATIC
 	sprintf(NAME "MUX_BLOCK_%d" B) 
 
@@ -55,7 +56,7 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 
 		; STEP 3
 		; Create Layout
-		; TODO
+		createMUXblocklayout( B LIBRARY NAME 5)
 
 		else
 			printf("%s already exists. Creation was skipped.\n" NAME)
@@ -64,6 +65,7 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 
 	; STEP 4
 	; Create MUX SCHEMATIC
+	; NMUX IS NOT USED IN THE COMPILER BY THIS FUNCTION
 	; Set the NAME of the CELLVIEW
 	if( TYPE == "N"
 		then
@@ -84,7 +86,7 @@ procedure( createPMUX(						; LIST OF ARGUMENTS
 	
 	
 		; STEP 6
-		; TO DO LAYOUT
+		createPMUXlayout( B X LIBRARY NAME DX dbOpenCellViewByType(CELLVIEW_BLOCK~>libName CELLVIEW_BLOCK~>cellName "layout" "" "r"))
 	else
 		printf("%s already exists. Creation was skipped.\n" NAME)		
 		CELLVIEW = dbOpenCellViewByType( LIBRARY NAME "schematic" "schematic" "r")	
