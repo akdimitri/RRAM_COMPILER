@@ -124,7 +124,7 @@ The proposed simplified architecture is show on the image below.
 
 **Version 2 RRAM Compiler Generated 128 x 128 Array**
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/array_layout-1.png" width="400">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/array_layout-1.png" width="800">
 
 **Sense Amplifiers**
 
