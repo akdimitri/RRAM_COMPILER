@@ -122,6 +122,10 @@ The proposed simplified architecture is show on the image below.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/simplified_architecture.png" width="400">
 
+**Version 2 RRAM Compiler Generated 128 x 128 Array**
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/array_layout-1.png" width="800">
+
 **Sense Amplifiers**
 
 All sense amplifiers were tested in an equaivalent testbech of 4Mb based on the results presented on 
