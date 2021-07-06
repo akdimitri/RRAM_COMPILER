@@ -69,8 +69,10 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 	
 	; STEP 7
 	; Create Layout
-	createRRAManaloglayout( X Y B	 LIBRARY	 NAME DB_RRAM_SCH DB_REF_SCH DB_PMUX_SCH DB_NMUX_SCH DX	 DY)
-	
+	if( createRRAManaloglayout( X Y B	 LIBRARY	 NAME DB_RRAM_SCH DB_REF_SCH DB_PMUX_SCH DB_NMUX_SCH DX DY) == nil then
+		printf("createRRAManaloglayout was ABORTED...\nExiting\n")	
+		return("READ CIW FOR ERRORS")
+	)
 
 	printf("CreateRRAManalog(...) Function: DONE\n")
 

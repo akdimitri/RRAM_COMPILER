@@ -240,23 +240,23 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 	;PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
 	;sprintf(PIN_NAME "WR_IN<1:%d>" B)	
 	;schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "inputOutput" nil car(POINT)-2:car(cdr(POINT))-15 "R0" )
-	; Create VDDL
+	; Create VDDW
 	sprintf(NET_NAME "VDDL")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
 	sprintf(NET_NAME "VDDL")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT):car(cdr(POINT))-15 car(POINT):car(cdr(POINT))-15+1) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT):car(cdr(POINT))-15+1 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
-	; PIN VDDL
-	PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
-	schCreatePin( CELLVIEW PIN_CV_ID "VDDL" "inputOutput" nil car(POINT):car(cdr(POINT))-15+1 "R0" nil nil "power")
-	; Create VDD
+	; Create VDDW
 	sprintf(NET_NAME "VDDH")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "VDD")	
+	sprintf(NET_NAME "VDDW")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT):car(cdr(POINT))-15 car(POINT):car(cdr(POINT))-15+0.75) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT):car(cdr(POINT))-15+0.75 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
+	; PIN VDDW
+	PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
+	schCreatePin( CELLVIEW PIN_CV_ID "VDDW" "inputOutput" nil car(POINT):car(cdr(POINT))-15+0.75 "R0" nil nil "power")
 	; Create VSS
 	sprintf(NET_NAME "VSS")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
@@ -303,7 +303,7 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 	sprintf(NET_NAME "VDD")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "VDD" )	
+	sprintf(NET_NAME "VDDW" )	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+5:car(cdr(POINT))-12 car(POINT)+5:car(cdr(POINT))-12+1) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+5:car(cdr(POINT))-12+1 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	; Create VSS
@@ -317,23 +317,23 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 	sprintf(NET_NAME "S")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "WRITE")	
+	sprintf(NET_NAME "WRITE_H")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+5:car(cdr(POINT))-12 car(POINT)+5:car(cdr(POINT))-13) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+5:car(cdr(POINT))-13 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	; PIN WRITE
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
-	sprintf(PIN_NAME "WRITE")
+	sprintf(PIN_NAME "WRITE_H")
 	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "input" nil car(POINT)+5:car(cdr(POINT))-13 "R0" )	
 	; Create NOT_WRITE
 	sprintf(NET_NAME "NOT_S")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "NOT_WRITE")	
+	sprintf(NET_NAME "NOT_WRITE_H")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+5:car(cdr(POINT))-12 car(POINT)+5:car(cdr(POINT))-11) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+5:car(cdr(POINT))-11 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	; PIN WRITE
 	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
-	sprintf(PIN_NAME "NOT_WRITE")
+	sprintf(PIN_NAME "NOT_WRITE_H")
 	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "input" nil car(POINT)+5:car(cdr(POINT))-11 "R0" )	
 	;------------------------------------------------------------------------------------------------------------------------------
 	
@@ -360,7 +360,7 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 	sprintf(NET_NAME "VDD")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "VDD" )	
+	sprintf(NET_NAME "VDDW" )	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+10:car(cdr(POINT))-12 car(POINT)+10:car(cdr(POINT))-12+1) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+10:car(cdr(POINT))-12+1 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	; Create VSS
@@ -374,14 +374,14 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 	sprintf(NET_NAME "S")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "WRITE")	
+	sprintf(NET_NAME "WRITE_H")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+10:car(cdr(POINT))-12 car(POINT)+10:car(cdr(POINT))-13) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+10:car(cdr(POINT))-13 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	; Create NOT_WRITE
 	sprintf(NET_NAME "NOT_S")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "NOT_WRITE")	
+	sprintf(NET_NAME "NOT_WRITE_H")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+10:car(cdr(POINT))-12 car(POINT)+10:car(cdr(POINT))-11) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+10:car(cdr(POINT))-11 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	;--------------------------------------------------------------------------------------------------------------------------
@@ -400,6 +400,8 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 		sprintf(NET_NAME "VDDL" )	
 		NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT):car(cdr(POINT))-20 car(POINT):car(cdr(POINT))-20+1) 0.0625 0.0625 0.0 )	
 		schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT):car(cdr(POINT))-20+1 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
+		PIN_CV_ID = dbOpenCellViewByType( "basic" "iopin" "symbol" "" 'r )
+		schCreatePin( CELLVIEW PIN_CV_ID "VDDL" "inputOutput" nil car(POINT):car(cdr(POINT))-20+1 "R0" nil nil "power")	
 		; Create VSS
 		sprintf(NET_NAME "VSS")	
 		DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
@@ -506,7 +508,7 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 	sprintf(NET_NAME "VDD")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "VDD")	
+	sprintf(NET_NAME "VDDL")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+5:car(cdr(POINT))-20 car(POINT)+5:car(cdr(POINT))-18.25) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+5:car(cdr(POINT))-18.25 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 	; Create P_OUT<1:2B>
@@ -553,16 +555,24 @@ procedure(	createRRAManalogsch(					; LIST OF ARGUMENTS
 	sprintf(NET_NAME "S")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "WRITE")	
+	sprintf(NET_NAME "WRITE_L")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+5:car(cdr(POINT))-25 car(POINT)+5:car(cdr(POINT))-26) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+5:car(cdr(POINT))-26 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
+	; PIN WRITE_L
+	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
+	sprintf(PIN_NAME "WRITE_L")
+	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "input" nil car(POINT)+5:car(cdr(POINT))-26 "R0" )
 	; Create NOT_WRITE
 	sprintf(NET_NAME "NOT_S")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
 	POINT = calculatePinPosition(DB_PIN)	
-	sprintf(NET_NAME "NOT_WRITE")	
+	sprintf(NET_NAME "NOT_WRITE_L")	
 	NET_ID = schCreateWire( CELLVIEW "draw" "full" list(car(POINT)+5:car(cdr(POINT))-25 car(POINT)+5:car(cdr(POINT))-24) 0.0625 0.0625 0.0 )	
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)+5:car(cdr(POINT))-24 NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
+	; PIN NOT_WRITE_L
+	PIN_CV_ID = dbOpenCellViewByType( "basic" "ipin" "symbol" "" 'r )
+	sprintf(PIN_NAME "NOT_WRITE_L")
+	schCreatePin( CELLVIEW PIN_CV_ID PIN_NAME "input" nil car(POINT)+5:car(cdr(POINT))-24 "R0" )
 	; Create VDDL
 	sprintf(NET_NAME "VDD")	
 	DB_PIN = setof(TERM MASTER_CV~>terminals TERM~>name==NET_NAME)
