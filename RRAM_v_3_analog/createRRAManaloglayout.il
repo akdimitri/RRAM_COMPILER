@@ -18,6 +18,7 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 									DX				; HORIZONTAL PITCH
 									DY				; VERTICAL PITCH
 									@optional
+									(DB_SA_CELL dbOpenCellViewByType("THESIS" "SENSE_AMPLIFIER_LATCH_TYPE" "schematic" "" "r"))	; DB OF SA
 									(DB_WR_CELL dbOpenCellViewByType("THESIS" "WRITE_AMPLIFIER" "schematic" "" "r"))	; DB OF WR
 									(DB_TG dbOpenCellViewByType("THESIS" "TG" "schematic" "" "r"))		; DB OF TG
 									(DB_TG5 dbOpenCellViewByType("THESIS" "TG5" "schematic" "" "r"))	; DB OF TG5
@@ -35,6 +36,8 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 			DB_WR_CELL_LAYOUT	; TEMPORARY VARIABLE TO HOLD DB OF WR LAYOUT CELL
 			DB_TG_CELL_LAYOUT	; TEMPORARY VARIABLE TO HOLD DB OF 1.8V TG
 			DB_TG5_CELL_LAYOUT	; TEMPORARY VARIABLE TO HOLD DB OF 5V TG
+			DB_MUX_BLOCK			; TEMPORARY VARIABLE TO HOLD DB OF MUX BLOCK
+			DB_SA_CELL_LAYOUT	; TEMPORARY VARIABLE TO HOLD DB OF MUX BLOCK
 			NET_ID_VSS	; VARIABLE TO HOLD VSS NET ID
 			NET_ID		; TEMPORARY VARIABLE TO HOLD NET ID
 			NET_NAME		; TEMPORARY VARIABLE TO HOLD NET NAME
@@ -46,8 +49,8 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 	
 	printf("Creating Layout.\n")
 
-	if(	X*DX<26.54*B then
-		printf("CHOOSE A LARGER ARRAY OR DELETE CELLS AND COMMENT EXIT LINE IN function createRRAManaloglayout to Continue\n")
+	if(	X*DX<35*B then
+		printf("CHOOSE A LARGER ARRAY IN ORDER TO USE THIS BIT WORD\n")
 		return(nil)
 	)
 	
@@ -62,7 +65,7 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 	
 	; STEP 3
 	; PLACE REF ARRAY
-	sprintf(NAME "REF_%d_%d" B Y)
+	sprintf(NAME "REF")
 	DB_REF_CELL_LAYOUT = dbOpenCellViewByType(DB_REF_CELL~>libName DB_REF_CELL~>cellName "layout" "maskLayout" "r")
 	dbCreateInst(CELLVIEW DB_REF_CELL_LAYOUT  NAME list(X*DX 0) "R0")
 
@@ -140,7 +143,7 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 	; STEP 7 
 	; CONNECT P TO PMUX
 	for( j 1 X+B
-		sprintf(NET_NAME "P_<%d>" j)
+		sprintf(NET_NAME "P<%d>" j)
 		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
 		PATH_ID= dbCreatePath(CELLVIEW list("METAL4" "drawing") list(3.375+(j-1)*DX:-1.330 3.375+(j-1)*DX:-5) 0.38)
 		dbAddFigToNet(PATH_ID NET_ID)
@@ -318,7 +321,7 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 	; STEP 12 
 	; CONNECT N TO NMUX
 	for( j 1 X
-		sprintf(NET_NAME "N_<%d>" j)
+		sprintf(NET_NAME "N<%d>" j)
 		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
 		PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") list(3.375+(j-1)*DX-1:-1.330 3.375+(j-1)*DX-1:-5) 0.38)
 		dbAddFigToNet(PATH_ID NET_ID)
@@ -676,6 +679,312 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 	LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") 0:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62 "VDD" "upperCenter" "R0" "roman" 1.25)		
 	PIN_ID~>term~>direction = "inputOutput"
 	leAttachFig(LABEL_ID PIN_ID~>fig)	
+
+	; STEP 16 
+	; GENERATE PIN VDDW 1.8-5 V
+	; PIN VDDW
+	NET_ID=dbMakeNet(CELLVIEW "VDDW")
+	RECT_ID = dbCreateRect(CELLVIEW list("METAL1" "pin") list(-0.115:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-0.115 
+															0.115:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62+0.115))
+	dbAddFigToNet(RECT_ID NET_ID)
+	PIN_ID=dbCreatePin(NET_ID RECT_ID)
+	LABEL_ID = dbCreateLabel(CELLVIEW list("METAL1" "pin") 0:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62 "VDDW" "upperCenter" "R0" "roman" 1.25)		
+	PIN_ID~>term~>direction = "inputOutput"
+	leAttachFig(LABEL_ID PIN_ID~>fig)	
+
+	; STEP 17
+	; FILL THE GAPS MPP
+	for( j 1 B
+	CCSdrawMPPUsingTemplate("NWellGuardring" ?cvId CELLVIEW ?pts list(
+						(j-1)*(26.54+4.23*2)+26.54:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16
+						(j-1)*(26.54+4.23*2)+26.54+7.75:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16)  
+						?netName "VDDL")
+	sprintf(NET_NAME "VDDL")	
+	PATH_ID= dbCreatePath(CELLVIEW list("DIFF" "drawing") list((j-1)*(26.54+4.23*2)+26.54+7.75:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16
+															(j-1)*(26.54+4.23*2)+26.54+8.25+0.7-0.28:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16) 0.42)
+	PATH_ID= dbCreatePath(CELLVIEW list("NIMP" "drawing") list((j-1)*(26.54+4.23*2)+26.54+7.75:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16
+															(j-1)*(26.54+4.23*2)+26.54+8.25+0.7-0.1:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16) 0.78)
+	
+	PATH_ID= dbCreatePath(CELLVIEW list("NWELL" "drawing") list((j-1)*(26.54+4.23*2)+26.54:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16
+															(j-1)*(26.54+4.23*2)+26.54+8.25+0.7:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16) 0.98)
+	NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL1" "drawing") list((j-1)*(26.54+4.23*2)+26.54+7.75:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16
+															(j-1)*(26.54+4.23*2)+26.54+8.29+0.7-0.36:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16) 0.34)
+		
+	dbAddFigToNet(PATH_ID NET_ID)
+	)
+
+	; STEP 18
+	; PLACE MUXES FOR SENSE ARRAY
+	; CREATE P BUSES FOR CELLS AND REFS
+	for(j 1 B
+		sprintf(NET_NAME "P_OUT<%d>" j)
+		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+		; Vertical
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL3" "drawing") 
+						list(
+						(j-1)*(26.54+4.23*2)+29.225:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-8+6.64
+						(j-1)*(26.54+4.23*2)+29.225:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62
+						)
+						 0.38)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		;Horizontal
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") 
+						list(	
+						0:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62		
+						(B-1)*(26.54+4.23*2)+29.225:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62
+						)
+						 0.3)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										(j-1)*(26.54+4.23*2)+29.225-0.45+0.19
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+		
+	)
+
+	for(j B+1 2*B
+		sprintf(NET_NAME "P_OUT<%d>" j)
+		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+		; Vertical
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL3" "drawing") 
+						list(
+						X*DX+(j-1-B)*DX-0.875+2.5:-7.43-2*(X/B+1)*0.62-0.62-16-2.745
+						X*DX+(j-1-B)*DX-0.875+2.5:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62
+						)
+						 0.3)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		;Horizontal
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") 
+						list(	
+						0:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62		
+						(X+B)*DX-3.375:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62
+						)
+						 0.3)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										X*DX+(j-1-B)*DX-0.875+2.5-0.45+0.15
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+		
+	)
+	
+	; PLACE MUX BLOCK FOR SENSE ARRAYS
+	sprintf(NAME "MUX_BLOCK_%d" B)
+	DB_MUX_BLOCK = dbOpenCellViewByType(LIBRARY NAME "layout" "maskLayout" "r")
+	dbCreateInst(CELLVIEW DB_MUX_BLOCK  "MUX_BLOCK<1>" list(2.5 -7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8) "R0")
+	; PLACE MUX BLOCK FOR SENSE ARRAYS
+	sprintf(NAME "MUX_BLOCK_%d" B)
+	DB_MUX_BLOCK = dbOpenCellViewByType(LIBRARY NAME "layout" "maskLayout" "r")
+	dbCreateInst(CELLVIEW DB_MUX_BLOCK "MUX_BLOCK<2>" list(2.5+B*DX -7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8) "R0")
+	
+	for(j 1 2*B
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										1.625+(j-1)*DX
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+3.5) "R0" 
+	                                         	list( 
+											list("cutRows" 2)             ;row
+	                                         	list("cutColumns" 1)               ;column                                             	
+											)
+		)
+		VIA_ID=techFindViaDefByName(TF_ID "M2_M1")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										1.625+(j-1)*DX
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+3.5) "R0" 
+	                                         	list( 
+											list("cutRows" 2)             ;row
+	                                         	list("cutColumns" 1)               ;column                                             	
+											)
+		)
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										1.625+(j-1)*DX-0.45
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+		sprintf(NET_NAME "P_OUT<%d>" j)
+		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+		; Vertical
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL3" "drawing") 
+						list(
+						1.625+(j-1)*DX:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62+0.19
+						1.625+(j-1)*DX:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+3.5
+						)
+						 0.38)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		
+	)
+
+	; NOT_READ 1.8 V	
+	sprintf(NET_NAME "NOT_READ")
+	NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") list(-1.705:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+4.725
+																2*B*DX+2.5-DX:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+4.725)	0.38)
+	dbAddFigToNet(PATH_ID NET_ID)	
+	;NOT_READ 1.8V
+	RECT_ID = dbCreateRect(CELLVIEW list("METAL2" "pin") list(-1.705:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+4.725-0.115
+														 -1.705+0.23:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+4.725+0.115))
+	dbAddFigToNet(RECT_ID NET_ID)
+	PIN_ID=dbCreatePin(NET_ID RECT_ID)
+	LABEL_ID = dbCreateLabel(CELLVIEW list("METAL2" "pin") -1.705+0.115:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+4.725 NET_NAME "upperCenter" "R0" "roman" 1)		
+	PIN_ID~>term~>direction = "input"
+	leAttachFig(LABEL_ID PIN_ID~>fig)	
+
+	; READ 1.8 V	
+	sprintf(NET_NAME "READ")
+	NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") list(-1.705:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+2.265
+																2*B*DX+2.5-DX:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+2.265)	0.38)
+	dbAddFigToNet(PATH_ID NET_ID)	
+	; READ 1.8V
+	RECT_ID = dbCreateRect(CELLVIEW list("METAL2" "pin") list(-1.705:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+2.265-0.115
+														 -1.705+0.23:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+2.265+0.115))
+	dbAddFigToNet(RECT_ID NET_ID)
+	PIN_ID=dbCreatePin(NET_ID RECT_ID)
+	LABEL_ID = dbCreateLabel(CELLVIEW list("METAL2" "pin") -1.705+0.115:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8+2.265 NET_NAME "upperCenter" "R0" "roman" 1)		
+	PIN_ID~>term~>direction = "input"
+	leAttachFig(LABEL_ID PIN_ID~>fig)	
+
+
+	for(j 1 2*B
+		sprintf(NET_NAME "SA_IN<%d>" j)
+		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+		; Vertical
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL3" "drawing") 
+						list(
+						3.375+(j-1)*DX:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-8-1.32
+						3.375+(j-1)*DX:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(j-1)*0.62
+						)
+						 0.38)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		
+		; Horizontal
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") 
+						list(
+						0:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(j-1)*0.62
+						B*15:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(j-1)*0.62
+						)
+						 0.3)
+		dbAddFigToNet(PATH_ID NET_ID)		
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										3.375+(j-1)*DX
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(j-1)*0.62) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)	
+	)
+	
+	;------------------------------------------------
+	; --- TODO - PARAMETERISATION FOR OTHER SAs
+	;------------------------------------------------
+	;STEP 19
+	; PLACE SENSE ARRAY
+	for(j 1 B
+		; PLACE MUX BLOCK FOR SENSE ARRAYS
+		sprintf(NAME "SA<%d>" j)
+		DB_SA_CELL_LAYOUT = dbOpenCellViewByType(DB_SA_CELL~>libName DB_SA_CELL~>cellName "layout" "maskLayout" "r")
+		dbCreateInst(CELLVIEW DB_SA_CELL_LAYOUT  NAME list((j-1)*15+5.405 -7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-2*B*0.62-0.62-1) "MX")
+	
+	)
+	; CONNECT SA_IN
+	for(j 1 B
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										1.595+(j-1)*15
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(j-1)*0.62) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+		sprintf(NET_NAME "SA_IN<%d>" j)
+		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+		; Vertical
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL3" "drawing") 
+						list(
+						1.595+(j-1)*15:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(j-1)*0.62
+						1.595+(j-1)*15:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-2*B*0.62-0.62-1-1.115
+						)
+						 0.38)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										1.595+(j-1)*15
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-2*B*0.62-0.62-1-1.115) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+		VIA_ID=techFindViaDefByName(TF_ID "M2_M1")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										1.595+(j-1)*15
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-2*B*0.62-0.62-1-1.115) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+	)
+
+	for(j 1 B
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										9.725+(j-1)*15
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(B+j-1)*0.62) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+		sprintf(NET_NAME "SA_IN<%d>" j+B)
+		NET_ID =dbMakeNet(CELLVIEW NET_NAME)
+		; Vertical
+		PATH_ID= dbCreatePath(CELLVIEW list("METAL3" "drawing") 
+						list(
+						9.985+(j-1)*15:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-(j-1)*0.62-B*0.62
+						9.985+(j-1)*15:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-2*B*0.62-0.62-1-1.115-0.19
+						)
+						 0.38)
+		dbAddFigToNet(PATH_ID NET_ID)	
+		VIA_ID=techFindViaDefByName(TF_ID "M3_M2")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										9.985+(j-1)*15-0.45+0.015
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-2*B*0.62-0.62-1-1.115) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+		VIA_ID=techFindViaDefByName(TF_ID "M2_M1")
+		dbCreateVia( CELLVIEW VIA_ID list(
+										9.985+(j-1)*15-0.45+0.015
+										-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-2*B*0.62+0.62-1-16-1-2*B*0.62-0.62-1-1.115) "R0" 
+	                                         	list( 
+											list("cutRows" 1)             ;row
+	                                         	list("cutColumns" 2)               ;column                                             	
+											)
+		)
+	)
+	
+	
 
 	dbSave(CELLVIEW)		; Save
 	return(CELLVIEW)	
