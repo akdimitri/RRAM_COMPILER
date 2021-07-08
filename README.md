@@ -120,11 +120,11 @@ DY is the vertical pitch of the cells (optional, it can be set directly on the s
 		
 		DB_RRAM_CELL	; DB OF RRAM
 		
-		DB_REF_CELL	; DB OF RRAM
+		DB_REF_CELL	; DB OF REF
 		
-		DB_PMUX_CELL	; DB OF RRAM
+		DB_PMUX_CELL	; DB OF PMUX
 		
-		DB_NMUX_CELL	; DB OF RRAM
+		DB_NMUX_CELL	; DB OF NMUX
 		
 		DX		; HORIZONTAL PITCH
 		
