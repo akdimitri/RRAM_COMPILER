@@ -104,6 +104,8 @@ DX is the horizontal pitch of the cells (optional, it can be set directly on the
 
 DY is the vertical pitch of the cells (optional, it can be set directly on the skill code, applies on 2nd version)
 
+*Version 3*
+
 createRRAManaloglayout(	
 
 		X 	; X SIZE OF ARRAY (COLS)
