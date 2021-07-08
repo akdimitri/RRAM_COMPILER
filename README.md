@@ -106,7 +106,7 @@ DY is the vertical pitch of the cells (optional, it can be set directly on the s
 
 *Version 3*
 
-createRRAManaloglayout(	
+		createRRAManaloglayout(	
 
 		X 	; X SIZE OF ARRAY (COLS)
 		
