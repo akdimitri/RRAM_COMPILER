@@ -104,22 +104,40 @@ DX is the horizontal pitch of the cells (optional, it can be set directly on the
 
 DY is the vertical pitch of the cells (optional, it can be set directly on the skill code, applies on 2nd version)
 
-createRRAManaloglayout(	X 	; X SIZE OF ARRAY (COLS)
+createRRAManaloglayout(	
+
+		X 	; X SIZE OF ARRAY (COLS)
+		
 		Y	; Y SIZE OF ARRAY (ROWS)
+	
 		B	; B SIZE OF WORD
+		
 		LIBRARY	; LIBRARY TO PLACE THE NEW DESIGN
+		
 		NAME	; NAME OF THE CELLVIEW
+		
 		DB_RRAM_CELL	; DB OF RRAM
-		DB_REF_CELL		; DB OF RRAM
+		
+		DB_REF_CELL	; DB OF RRAM
+		
 		DB_PMUX_CELL	; DB OF RRAM
+		
 		DB_NMUX_CELL	; DB OF RRAM
+		
 		DX		; HORIZONTAL PITCH
+		
 		DY		; VERTICAL PITCH
+		
 		@optional
+		
 		(DB_SA_CELL dbOpenCellViewByType("THESIS" "SENSE_AMPLIFIER_LATCH_TYPE" "schematic" "" "r"))	; DB OF SA
+		
 		(DB_WR_CELL dbOpenCellViewByType("THESIS" "WRITE_AMPLIFIER" "schematic" "" "r"))	; DB OF WR
+		
 		(DB_TG dbOpenCellViewByType("THESIS" "TG" "schematic" "" "r"))		; DB OF TG
+		
 		(DB_TG5 dbOpenCellViewByType("THESIS" "TG5" "schematic" "" "r"))	; DB OF TG5
+		
 		)
 
 ----------------------------------------
