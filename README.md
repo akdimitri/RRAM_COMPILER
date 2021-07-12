@@ -324,13 +324,19 @@ The image shown below, shows a simplified version of the Analog Part of the RRAM
 **Proposed Layout Version 3**
 
 The image below shows a simplified version of the layout of the proposed RRAM based on version 3.
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/ANALOG_LAYOUT.png" width="1000">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/ANALOG_LAYOUT.png" width="800">
 
 **Proposed Analog Layout Version 3**
 
 The image below shows a small array of 64 x 64, where the width of a word is 4 bits. This array was chosen so that the circuits location is clear in the image. As the size grows, the smaller relatively to the total area the layout of Write Drivers/Sense Amplifier/IO circuits become. The layout is surrounded on the right and top by power lines which will be later connected on the top level design.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/64_64_4.png" width="1000">
+
+**Automatically Synthesied Controller in Genus**
+
+The image below shows the schematic of the automatically synthesised based on desired sizes Controller using VDD.
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/genus_32_32_8_syn.gif" width="8000">
 
 
 --------------------------------
