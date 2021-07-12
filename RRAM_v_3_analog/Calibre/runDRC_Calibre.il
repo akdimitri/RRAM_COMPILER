@@ -40,7 +40,7 @@ procedure( 	runDRC_Calibre(		; ARGUMENT DECLARATION
 		;--------------------------------------------------------------------------
 
 		; Read the path of library from cds.lib
-		printf("Reading cds.lib\n")
+		;printf("Reading cds.lib\n")
 		;sprintf(CDS_LIB_FILE "%s/cds.lib" pwd())		; PATH to cds.lib
 		;myPort = infile(CDS_LIB_FILE)					; Open file
 		;if( myPort == nil 

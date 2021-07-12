@@ -197,6 +197,18 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
+	sprintf(FILE "%s/DIGITAL_SCRIPTS/%s" PATH "generateDigital.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING generateDigital.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/DIGITAL_SCRIPTS/%s" PATH "runGenus.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING runGenus.il\n")
+		return(-1)
+	)
+
 
 
 	
