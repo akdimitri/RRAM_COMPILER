@@ -334,7 +334,7 @@ The image below shows a small array of 64 x 64, where the width of a word is 4 b
 
 **Automatically Synthesied Controller in Genus**
 
-The image below shows the schematic of the automatically synthesised based on desired sizes Controller using VDD.
+The image below shows the schematic of the automatically synthesised based on desired sizes Controller using VDD. This controller is a for a 32 x 32 Array, with 8 bits word.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/genus_32_32_8_syn.gif" width="8000">
 
