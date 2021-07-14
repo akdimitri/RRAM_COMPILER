@@ -78,8 +78,6 @@ Cadence implementation with main compiler components
 
 >>setSkillPath( append( '("./SKILL/RRAM_COMPILER/RRAM_v_3_analog") getSkillPath() ) )		; load path to personal skill scripts
 >>
->>sprintf(RRAM_COMPILER_DIGIITAL_PATH "%s/DIGITAL" pwd())
->>
 >>load("loadRRAM.il")
 >>
 >>loadRRAMCompiler()
