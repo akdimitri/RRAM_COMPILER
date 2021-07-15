@@ -352,7 +352,7 @@ The Reference Resistance for Read Operation is 35k.
 Since the RRAM has 16 columns and uses 2 bits words, then multiplexeres needed will be 16 to 2 and they need 2^k=16/2 => k = 3 bits adress word to be controlled. So Column Word Adresses are from 0 to 7, plus 1 to enable reference circuits.
 Since the RRAM has 16 rows then  they need 2^k=16 => k = 4 bits word adress. So Ro addresses are from 0 to 15.
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/tb_RRAM_16_16_2.png" width="600">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/tb_RRAM_16_16_2.png" width="800">
 
 The image below shows the write operation at 
 	
