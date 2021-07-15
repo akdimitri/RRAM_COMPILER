@@ -336,8 +336,40 @@ The image below shows a small array of 64 x 64, where the width of a word is 4 b
 
 The image below shows the schematic of the automatically synthesised based on desired sizes Controller using VDD. This controller is a for a 32 x 32 Array, with 8 bits word.
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/genus_32_32_8_syn.gif" width="8000">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/genus_32_32_8_syn.gif" width="800">
 
+**Ideal Simulation of a 16 x 16 RRAM with 2 bits word length** 
+
+The image below shows the schematic of the testbench for a RRAM of 16x16 with 2 bits word and Latch Type Sense Amplifier. The circuits are based on the architecture presented above. VDDH was set to 5V, VDDW to 3.3V and VDDL to 1.8V. Assuming cordinates (X, Y) where X is a column and Y a row starting counting from 1. The following Resistances have been used:
+
+	- R(16,16) = 1M
+	- R(15,16) = 1k
+	- R(14,16) = 100k
+	- R(13,16) = 100k
+	
+The Reference Resistance for Read Operation is 35k.
+
+Since the RRAM has 16 columns and uses 2 bits words, then multiplexeres needed will be 16 to 2 and they need 2^k=16/2 => k = 3 bits adress word to be controlled. So Column Word Adresses are from 0 to 7, plus 1 to enable reference circuits.
+Since the RRAM has 16 rows then  they need 2^k=16 => k = 4 bits word adress. So Ro addresses are from 0 to 15.
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/tb_RRAM_16_16_2.png" width="600">
+
+The image below shows the write operation at 
+	
+	-SEL = 16 starting counting from 1 (SEL = 15 starting counting from 0).
+	-Columns = [13,14] starting counting from 1 controlled by P_EN[7] starting counting from 1 (Columns = [12,13] starting counting from 0 controlled by P_EN[6] starting counting from 1).
+	
+	Different counting convention has been used for analog and digital signals.
+	
+It is shown that after EN, addresses, and Z_WR (I/O port) signals are received, on the next cycle, P and N lines are set either to 3.3V or 0.
+Z_WR<1> accounts for the values written on (13,16) and Z_WR<2> for the values written on (14,16). Inittialy, 2'b10
+ is written and then 2'b10.
+ 
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/write_16_16_2.png" width="600">
+
+The image below shows the read operation of (15,16) and (16,16) inittially. So when Latch is Enabled the output is 1.8V for R(16,16)>RRef and 0V for (15,16)<RRef. Then the read opeartion is executed for R(13,16)>RRef and R(14,16)?RRef and 1.8V are outputted.
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/read_16_16_2.png" width="600">
 
 --------------------------------
 
