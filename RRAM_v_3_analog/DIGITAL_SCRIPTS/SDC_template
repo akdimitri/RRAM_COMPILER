@@ -1,11 +1,8 @@
 # CLOCK SETTINGS
 set myClk clk;
-#set EXT_PIN_CAP 7
-#set EXT_WIRE_CAP 0.5
 set SLEW_TRANSITION 100
-#set MY_PERIOD_PS 20000;
-set MY_IN_DELAY_PS [expr ${MY_PERIOD_PS}/10]
-set MY_OUT_DELAY_PS [expr ${MY_PERIOD_PS}/10]
+set MY_IN_DELAY_PS [expr ${MY_PERIOD_PS}/20]
+set MY_OUT_DELAY_PS [expr ${MY_PERIOD_PS}/20]
 set HALF_MY_PERIOD_PS [expr ${MY_PERIOD_PS}/2]
 
 # SETTINGS FOR SYNTHESIS
@@ -18,11 +15,12 @@ set WAVEFORM 0
 append WAVEFORM " "
 append WAVEFORM $HALF_MY_PERIOD_PS
 create_clock [get_ports {*clk*}] -name ${myClk} -period ${MY_PERIOD_PS} -waveform $WAVEFORM
+create_generated_clock -name gen_clk1 -source [get_ports clk] -multiply_by 1 [get_pins controller1/*reg*/ena]
 
 # SET DELAY ALL INPUTS/ALL OUTPUTS
 set allinP [get_ports -filter direction==in *]
 set all_input_no_clock [remove_from_collection $allinP [get_ports *clk*]]
- set_input_delay ${MY_IN_DELAY_PS} -clock ${myClk} [get_ports ${all_input_no_clock}]
+set_input_delay ${MY_IN_DELAY_PS} -clock ${myClk} [get_ports ${all_input_no_clock}]
 set_output_delay ${MY_OUT_DELAY_PS} -clock ${myClk} [all_outputs]
 
 # Set input constrains

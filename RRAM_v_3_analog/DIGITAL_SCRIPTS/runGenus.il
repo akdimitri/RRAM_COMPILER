@@ -57,17 +57,17 @@ procedure( runGenus(			; 	ARGUMENT DECLARATION
 	; SEL LINES
 	fprintf(OUT_PORT "set alloutP [get_ports -filter direction==out *]\n")
 	fprintf(OUT_PORT "# SEL LINES OUTPUT CAP\n")
-	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2]\n" Y)	; SEL LINE CAP is 5.83fF/cell, ensure correct by multiplying*2
+	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2]\n" X)	; SEL LINE CAP is 5.83fF/cell, ensure correct by multiplying*2
 	fprintf(OUT_PORT "set_load $EXT_PIN_CAP -pin_load [get_ports SEL*]\n")
 	fprintf(OUT_PORT "set rem_out [remove_from_collection $alloutP [get_ports SEL*]]\n")
 	; P_EN
 	fprintf(OUT_PORT "# P_EN P_NOT_EN LINES OUTPUT CAP SIMILAR SIZE OF SEL LINES EXPECT SIMILAR CAP\n")	
-	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2]\n" Y+B)	; SEL LINE CAP is 5.83fF/cell,
+	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2]\n" X+B)	; SEL LINE CAP is 5.83fF/cell,
 	fprintf(OUT_PORT "set_load $EXT_PIN_CAP -pin_load [get_ports P_*]\n")
 	fprintf(OUT_PORT "set rem_out [remove_from_collection $rem_out [get_ports P_*]]\n")
 	; N_EN
 	fprintf(OUT_PORT "# N_EN N_NOT_EN LINES OUTPUT CAP SIMILAR SIZE OF SEL LINES EXPECT SIMILAR CAP\n")	
-	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2]\n" Y+B)	; SEL LINE CAP is 5.83fF/cell,
+	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2]\n" X+B)	; SEL LINE CAP is 5.83fF/cell,
 	fprintf(OUT_PORT "set_load $EXT_PIN_CAP -pin_load [get_ports N_*]\n")
 	fprintf(OUT_PORT "set rem_out [remove_from_collection $rem_out [get_ports N_*]]\n")
 

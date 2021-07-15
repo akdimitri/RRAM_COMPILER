@@ -1,0 +1,23 @@
+# CLOCK SETTINGS
+set myClk clk;
+set SLEW_TRANSITION 100
+set MY_IN_DELAY_PS [expr ${MY_PERIOD_PS}/20]
+set MY_OUT_DELAY_PS [expr ${MY_PERIOD_PS}/20]
+set HALF_MY_PERIOD_PS [expr ${MY_PERIOD_PS}/2]
+
+# SETTINGS FOR SYNTHESIS
+set_time_unit -picoseconds 1
+set_load_unit -picofarads 1
+set_design_mode -process 180
+
+# CREATE CLOCK
+set WAVEFORM 0
+append WAVEFORM " "
+append WAVEFORM $HALF_MY_PERIOD_PS
+create_clock -name ${myClk} -period ${MY_PERIOD_PS} -waveform $WAVEFORM
+#create_clock -name gen_clk1 -period ${MY_PERIOD_PS} -waveform $WAVEFORM [get_pins */*reg*/ena]
+
+set_input_delay ${MY_IN_DELAY_PS} -clock ${myClk} [all_inputs]
+set_output_delay ${MY_OUT_DELAY_PS} -clock ${myClk} [all_outputs]
+
+set_input_transition $SLEW_TRANSITION [all_inputs]

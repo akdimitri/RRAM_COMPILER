@@ -63,8 +63,9 @@ check_timing_intent
 set_db syn_generic_effort high
 set_db syn_map_effort high
 set_db syn_opt_effort high
-syn_generic
-syn_map
+syn_generic 
+syn_map 
+write_sdf -design $DESIGN -nonegchecks -edges check_edge -setuphold merge_when_paired -recrem merge_when_paired  > ${LOCAL_DIR}/constraints/${DESIGN}/${DESIGN}_syn.sdf
 syn_opt
 
 # RESULTS
@@ -80,7 +81,8 @@ report power  > ${LOCAL_DIR}/reports/${DESIGN}/${DESIGN}_power.rep
 write_db -to_file ${LOCAL_DIR}/db/${DESIGN}/${DESIGN}_syn.db
 write_hdl > ${LOCAL_DIR}/rtl/${DESIGN}/${DESIGN}_syn.v
 write_sdc > ${LOCAL_DIR}/constraints/${DESIGN}/${DESIGN}_syn.sdc
-write_sdf > ${LOCAL_DIR}/constraints/${DESIGN}/${DESIGN}_syn.sdf
+#write_sdf -design $DESIGN  -edges check_edge -setuphold merge_when_paired -recrem merge_when_paired  > ${LOCAL_DIR}/constraints/${DESIGN}/${DESIGN}_syn.sdf
 write_design -innovus -base_name ${LOCAL_DIR}/innovus/${DESIGN}/${DESIGN}
 
-gui_show
+#gui_show
+exit
