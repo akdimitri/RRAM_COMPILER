@@ -357,7 +357,8 @@ Since the RRAM has 16 rows then  they need 2^k=16 => k = 4 bits word adress. So 
 The image below shows the write operation at 
 	
 	-SEL = 16 starting counting from 1 (SEL = 15 starting counting from 0).
-	-Columns = [13,14] starting counting from 1 controlled by P_EN[7] starting counting from 1 (Columns = [12,13] starting counting from 0 controlled by P_EN[6] starting counting from 1).
+	-Columns = [13,14] starting counting from 1 controlled by P_EN[7] starting counting from 1 (Columns = [12,13] 
+	starting counting from 0 controlled by P_EN[6] starting counting from 1).
 	
 	Different counting convention has been used for analog and digital signals.
 	
