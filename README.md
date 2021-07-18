@@ -459,4 +459,4 @@ The worst case settling time for SS model libray is shown on the next figure. It
 
 **Known Problems**
 
-Do not overwrite a RRAM Cellview. Delete and rerun the compiler. If a problem persists try removing potential .cdslck files and rerun virtuoso.
+Do *not overwrite* a RRAM Cellview. *Delete* and rerun the compiler. If a problem persists try removing potential .cdslck files and *rerun virtuoso*.
