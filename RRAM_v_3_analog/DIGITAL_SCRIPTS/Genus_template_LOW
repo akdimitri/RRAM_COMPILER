@@ -25,11 +25,10 @@ set SYNTH_DIR "${LOCAL_DIR}/synthesis/${DESIGN}"
 set TCL_PATH "${LOCAL_DIR}/tcl/${DESIGN} ${LOCAL_DIR}/constraints/${DESIGN}"
 set RTL_PATH "$LOCAL_DIR/rtl/${DESIGN}"
 set RTL_LIST "${DESIGN}.v"
-set LIB_PATH "/usr/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcb018bcdgp2a_110a /ibe/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Back_End/lef/tcb018bcdgp2a_110a/lef"
-set LIB_LIST "tcb018bcdgp2atc.lib"
-set LEF_LIST "tcb018bcdgp2a_5lm.lef"
-set CAP_TABLE_FILE {/ibe/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Back_End/lef/tcb018bcdgp2a_110a/techfiles/captable/t018lo_1p5m_typical.captable}
-#set QRC_TECHFILE {/ibe/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/Assura/lvs_rcx/qrcTechFile}
+set LIB_PATH "/usr/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcb018gbwp7t_270a/ /ibe/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Back_End/lef/tcb018gbwp7t_270a/lef"
+set LIB_LIST "tcb018gbwp7ttc.lib"
+set LEF_LIST "tcb018gbwp7t_5lm.lef"
+set CAP_TABLE_FILE {/ibe/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Back_End/lef/tcb018gbwp7t_270a/techfiles/captable/t018lo_1p5m_typical.captable}
 
 # PATH SETTINGS #
 set_db init_lib_search_path $LIB_PATH
@@ -40,7 +39,6 @@ set_db init_hdl_search_path $RTL_PATH
 read_libs $LIB_LIST
 read_physical -lef $LEF_LIST
 set_db cap_table_file $CAP_TABLE_FILE
-#read_qrc $QRC_TECHFILE
 
 # DESIGN PROCESS NODE #
 set_db design_process_node 180

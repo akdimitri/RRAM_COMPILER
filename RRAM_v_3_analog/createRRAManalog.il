@@ -74,6 +74,9 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 		return("READ CIW FOR ERRORS")
 	)
 
+	; STEP 8
+	runLVS_Calibre(LIBRARY NAME)
+
 	printf("CreateRRAManalog(...) Function: DONE\n")
 
 	return(CELLVIEW)

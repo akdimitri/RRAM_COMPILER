@@ -209,9 +209,15 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
-	sprintf(FILE "%s/DIGITAL_SCRIPTS/%s" PATH "runGenus_vddw.il")
+	sprintf(FILE "%s/DIGITAL_SCRIPTS/%s" PATH "runGenus_vddl.il")
 	if( !load(FILE) then
-		printf("ERROR: FAILED LOADING runGenus_vddw.il\n")
+		printf("ERROR: FAILED LOADING runGenus_vddl.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/DIGITAL_SCRIPTS/%s" PATH "runInnovus.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING runInnovus.il\n")
 		return(-1)
 	)
 

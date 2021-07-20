@@ -760,7 +760,7 @@ procedure(	createRRAManaloglayout(					; LIST OF ARGUMENTS
 		; Vertical
 		PATH_ID= dbCreatePath(CELLVIEW list("METAL3" "drawing") 
 						list(
-						X*DX+(j-1-B)*DX-0.875+2.5:-7.43-2*(X/B+1)*0.62-0.62-16-2.745
+						X*DX+(j-1-B)*DX-0.875+2.5:-7.43-2*(X/B+1)*0.62-0.62-16
 						X*DX+(j-1-B)*DX-0.875+2.5: -7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-1-(j-1-B)*0.62	
 						;X*DX+(j-1-B)*DX-0.875+2.5:-7.43-2*(X/B+1)*0.62-0.62-B*0.62-16-1-2*X/B*0.62-0.62-16-1-B*0.62-0.62-16-1-(j-1)*0.62
 						)

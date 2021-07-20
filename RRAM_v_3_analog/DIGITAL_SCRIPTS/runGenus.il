@@ -70,14 +70,20 @@ procedure( runGenus(			; 	ARGUMENT DECLARATION
 	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2]\n" X+B)	; SEL LINE CAP is 5.83fF/cell,
 	fprintf(OUT_PORT "set_load $EXT_PIN_CAP -pin_load [get_ports N_*]\n")
 	fprintf(OUT_PORT "set rem_out [remove_from_collection $rem_out [get_ports N_*]]\n")
+	; WRITE/NOT_WRITE
+	fprintf(OUT_PORT "# WRITE NOT_WRITE LINES OUTPUT CAP SIMILAR SIZE OF SEL LINES EXPECT SIMILAR CAP\n")	
+	fprintf(OUT_PORT "set EXT_PIN_CAP [expr %d*0.00583*2*3*2]\n" B)	; SEL LINE CAP is 5.83fF/cell,
+	fprintf(OUT_PORT "set_load $EXT_PIN_CAP -pin_load [get_ports *WRITE]\n")
+	fprintf(OUT_PORT "set rem_out [remove_from_collection $rem_out [get_ports *WRITE]]\n")
 
 	; REMAINING OUTPUTS WILL DRIVE LEVEL DOWN SHIFTERS
-	; SET OUTPUT DRIVE TO 100fF
-	fprintf(OUT_PORT "set EXT_PIN_CAP 0.1\n")	
+	; SET OUTPUT DRIVE TO 50fF
+	fprintf(OUT_PORT "set EXT_PIN_CAP 0.05\n")	
 	fprintf(OUT_PORT "set_load $EXT_PIN_CAP -pin_load [get_ports $rem_out]\n")
 	
 	; SET INPUT CAP
-	fprintf(OUT_PORT "set EXT_WIRE_CAP 0.5\n")	
+	; ASK ANDREA,PEILONG
+	fprintf(OUT_PORT "set EXT_WIRE_CAP 0.1\n")	
 	fprintf(OUT_PORT "set_load $EXT_WIRE_CAP  -wire_load [all_inputs]\n")
 
 
@@ -89,6 +95,36 @@ procedure( runGenus(			; 	ARGUMENT DECLARATION
 	sprintf(CMD "cd ./DIGITAL/work; genus -f ../tcl/%s/%s.tcl" NAME NAME)
 	printf("SYSTEM: %s\n" CMD)
 	CID = ipcBeginProcess(CMD)
+	ipcWait(CID)
+	
+	; FIX
+	; Add QRC tech file at rc corner in mmmc file
+	printf("Adding manually QRC tech file to innovus mmmc.tcl\n")
+	sprintf(FILE "./DIGITAL/innovus/%s/%s.mmmc.tcl" NAME NAME)	
+	IN_PORT = infile(FILE)
+	sprintf(FILE "./DIGITAL/innovus/%s/temp_%s.mmmc.tcl" NAME NAME)	
+	OUT_PORT = outfile( FILE "w")	
+	while( (gets( line IN_PORT)!=nil)		
+		if(rexMatchp("-post_route_clock_cap*" line) then
+			fprintf(OUT_PORT "\t%s\t" nthelem( 1 parseString(line)))
+			fprintf(OUT_PORT "%s " nthelem( 2 parseString(line)))
+			fprintf(OUT_PORT "%s " nthelem( 3 parseString(line)))
+			fprintf(OUT_PORT "%s" nthelem( 4 parseString(line)))
+			fprintf(OUT_PORT "\t\\\n")
+			fprintf(OUT_PORT "\t-qrc_tech {/ibe/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/Assura/lvs_rcx/qrcTechFile}\n")
+		else 
+			fprintf(OUT_PORT "%s" line)
+		)		
+	)
+	close(IN_PORT)
+	close(OUT_PORT)
+	sprintf(CMD "rm ./DIGITAL/innovus/%s/%s.mmmc.tcl" NAME NAME)	
+	printf("SYSTEM: %s\n" CMD)
+	CID = ipcBeginProcess(CMD)	
+	ipcWait(CID)
+	sprintf(CMD "mv ./DIGITAL/innovus/%s/temp_%s.mmmc.tcl ./DIGITAL/innovus/%s/%s.mmmc.tcl" NAME NAME NAME NAME)	
+	printf("SYSTEM: %s\n" CMD)
+	CID = ipcBeginProcess(CMD)	
 	ipcWait(CID)
 
 	return(t)
