@@ -1,7 +1,8 @@
 # CLOCK SETTINGS
 set myClk clk;
 set SLEW_TRANSITION 500
-set MY_IN_DELAY_PS [expr ${MY_PERIOD_PS}/20]
+# Take into account the level down shifters delay
+set MY_IN_DELAY_PS [expr 1000]
 set MY_OUT_DELAY_PS [expr ${MY_PERIOD_PS}/20]
 set HALF_MY_PERIOD_PS [expr ${MY_PERIOD_PS}/2]
 

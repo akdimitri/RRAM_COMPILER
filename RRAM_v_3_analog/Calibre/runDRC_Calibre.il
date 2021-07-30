@@ -139,6 +139,7 @@ procedure( 	runDRC_Calibre(		; ARGUMENT DECLARATION
 		fprintf(myPort "*drcLayoutView: layout\n")
 		fprintf(myPort "*drcResultsFile: %s.drc.results\n" cellname)
 		fprintf(myPort "*drcSummaryFile: %s.drc.summary\n" cellname)
+		fprintf(myPort "*drcActiveRecipe: All checks\n")
 		fprintf(myPort "*cmnFDILayoutLibrary: %s\n" library)
 		fprintf(myPort "*cmnFDILayoutView: layout\n")
 		fprintf(myPort "*cmnFDIDEFLayoutPath: %s.def\n" cellname)

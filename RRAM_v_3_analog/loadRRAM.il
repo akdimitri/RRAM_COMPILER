@@ -12,8 +12,13 @@ procedure(	loadRRAMCompiler(				; PROCEDURE ARGUMENTS
 prog(	(		; LOCAL VARIABLE DECLARATION
 		FILE		; TEMPORARY VARABLE TO HOLD THE NAME OF THE FILE TO BE CALLED
 		)		; END OF LOCAL VARIABLE DECLARATION	
-
-	printf("LOAD RRAM COMPILER\n")
+	
+	printf("\n\n\n*****************************************\n")
+	printf("*          LOAD RRAM COMPILER           *\n")
+	printf("*      AUTHOR: DIMITRIS ANTONIADIS      *\n")
+	printf("* ORGANIZATION: IMPERIAL COLLEGE LONDON *\n")
+	printf("*              2020-2021                *\n")
+	printf("*****************************************\n\n")
 
 	sprintf(FILE "%s/%s" PATH "createRRAM.il")
 	if( !load(FILE) then
@@ -221,7 +226,59 @@ prog(	(		; LOCAL VARIABLE DECLARATION
 		return(-1)
 	)
 
+	sprintf(FILE "%s/DIGITAL_SCRIPTS/%s" PATH "runInnovus_vddl.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING runInnovus_vddl.il\n")
+		return(-1)
+	)
 
+	sprintf(FILE "%s/%s" PATH "createRRAMmixed.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createRRAMmixed.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/misc/%s" PATH "my_verilogIn.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING my_verilogIn.il\n")
+		return(-1)
+	)
+	
+	sprintf(FILE "%s/misc/%s" PATH "my_streamIn.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING my_streamIn.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/%s" PATH "createRRAMmixedsch.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createRRAMmixedsch.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/misc/%s" PATH "createAMSconfig.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createAMSconfig.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/misc/%s" PATH "calculatePinPositionDigital.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING calculatePinPositionDigital.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/misc/%s" PATH "calculateBusPinPositionDigital.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING calculateBusPinPositionDigital.il\n")
+		return(-1)
+	)
+
+	sprintf(FILE "%s/%s" PATH "createRRAMmixedlayout.il")
+	if( !load(FILE) then
+		printf("ERROR: FAILED LOADING createRRAMmixedlayout.il\n")
+		return(-1)
+	)
 
 	
 	printf("RRAM COMPILER LOADED SUCCESSFULLY\n")

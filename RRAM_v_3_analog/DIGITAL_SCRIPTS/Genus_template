@@ -67,8 +67,9 @@ set_db syn_map_effort high
 set_db syn_opt_effort high
 syn_generic 
 syn_map 
-write_sdf -design $DESIGN -nonegchecks -edges check_edge -setuphold merge_when_paired -recrem merge_when_paired  > ${LOCAL_DIR}/constraints/${DESIGN}/${DESIGN}_syn.sdf
 syn_opt
+write_sdf -design $DESIGN -nonegchecks -edges check_edge -setuphold merge_when_paired -recrem merge_when_paired  > ${LOCAL_DIR}/constraints/${DESIGN}/${DESIGN}_syn.sdf
+
 
 # RESULTS
 report_qor
