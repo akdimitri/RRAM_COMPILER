@@ -23,9 +23,14 @@ Research Project: Large-scale mixed-signal array compiler for automatic memory g
 * Version 3: RRAM GENERATOR WITH PERIPHERAL CIRCUITS (IN PROGRESS)
 	- Analog Part Schematic - Layout and Verification DONE
 	- Digital Part
-		- Automatic Synthesis Using Genus for VDD Controller and Decoders: DONE
-		- TODO: Synthesis for Level Shifters
+		- Automatic Synthesis Using Genus for VDD Controller and Decoders
 		- Automatic Implementation Innovus
+	- Mixed Part
+		- Automatic Schematic Generation
+		- Automatic LVS clean DRC clean Layout Implementation
+		- TODO: Automatic Characterisation of Permomance
+
+* Version 4: TODO: Array of RRAMs
 
 
 **Research Project Description**: Commercial availability of memory complier is only used for industrial design of static random-access memory (SRAM) or
