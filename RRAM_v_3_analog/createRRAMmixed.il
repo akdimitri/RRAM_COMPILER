@@ -7,8 +7,11 @@ procedure( createRRAMmixed(		; LIST OF ARGUMENTS
 						M		; NUMBER OF COLUMNS X
 						N		; NUMBER OF ROWS Y						
 						B		; BITS OF A WORD B
+						;DB_TOP	; DB SYMBOL OF TOP LEVEL
 						@optional
+						(CLOCK_PS		10000)	; 10ns digital clock
 						(LIBRARY "THESIS")
+						(VDDW 3.3)
 						)		; END OF LIST OF ARGUMENTS
 
 	prog(	(			; LIST OF LOCAL VARIABLES
@@ -17,6 +20,8 @@ procedure( createRRAMmixed(		; LIST OF ARGUMENTS
 			DB_ANALOG			; DB OF ANALOG RRAM SCH
 			DB_CONTROLLER		; DB OF DIGITAL CONTROLLER
 			DB_SIGNALS_VDDL		; DB OF DIGITAL VDDL SIGNALS
+			CELLVIEW
+			PIN_LIST
 			)			; END OF LIST OF LOCAL VARIABLES
 
 	printf("\n\n\n")
@@ -25,12 +30,12 @@ procedure( createRRAMmixed(		; LIST OF ARGUMENTS
 	printf("###############################\n")
 	printf("# AUTHOR: DIMITRIS ANTONIADIS #\n")
 	printf("# IMPERIAL COLLEGE LONDON     #\n")
-	printf("# VERSION DATE: 26/07/2021    #\n")
+	printf("# VERSION DATE: 03/08/2021    #\n")
 	printf("###############################")
 	; STEP 1 CREATE ANALOG PART
 	DB_ANALOG = createRRAManalog( M N B)
 	; STEP 2 CREATE DIGITAL PART
-	generateDigital(	M N B)
+	generateDigital(	M N B CLOCK_PS)
 	;STEP 3 STREAM IN TO VIRTUOSO
 	sprintf(NAME "CONTROLLER_5V_%d_%d_%d" M N B)
 	sprintf(FILE "./DIGITAL/innovus/%s/outputs/%s_final.gds" NAME NAME)
@@ -63,18 +68,27 @@ procedure( createRRAMmixed(		; LIST OF ARGUMENTS
 	DB_SIGNALS_VDDL = dbOpenCellViewByType("DIGITAL_THESIS_1_8V" NAME "symbol" "" "r")
 	
 	sprintf(NAME "TOP_%d_%d_%d" M N B)
-	createRRAMmixedsch( M N B LIBRARY NAME DB_ANALOG DB_CONTROLLER DB_SIGNALS_VDDL)
+	CELLVIEW = createRRAMmixedsch( M N B LIBRARY NAME DB_ANALOG DB_CONTROLLER DB_SIGNALS_VDDL)
 
 	; STEP 6
 	;TOP LEVEL SYMBOL
 	; Create Symbol
 	PIN_LIST=schSchemToPinList(LIBRARY NAME "schematic")
 	schPinListToView(LIBRARY NAME "symbol" PIN_LIST "schPinListToSymbolGen")
-	createAMSconfig(LIBRARY NAME "DIGITAL_THESIS_5V THESIS DIGITAL_THESIS_1_8V basic analogLib tcb018bcdgp2a tcb018gbwp7t DIMITRIS_CELL tsmc18" )
+	createAMSconfig(LIBRARY NAME "DIGITAL_THESIS_5V THESIS DIGITAL_THESIS_1_8V basic analogLib tcb018bcdgp2a tcb018gbwp7t DIMITRIS_CELL tsmc18" "spectre spice pspice verilog verilogams behavioral functional systemVerilog schematic veriloga vhdl vhdlams wreal")
 
 	; STEP 7
 	; TOP LAYOUT
 	createRRAMmixedlayout(M N B LIBRARY NAME DB_ANALOG DB_CONTROLLER DB_SIGNALS_VDDL)
+
+	; STEP 8
+	; Verification
+	runDRC_Calibre(LIBRARY NAME)
+	runLVS_Calibre_Mixed(LIBRARY NAME M N B)
+
+	; STEP 9
+	; CHARACTERIZATION
+	characterizeRRAMmixed( M N B  CELLVIEW CLOCK_PS LIBRARY VDDW) 
 
 	return(t)	
 	)	; prog

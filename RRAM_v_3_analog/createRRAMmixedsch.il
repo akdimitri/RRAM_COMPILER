@@ -715,6 +715,8 @@ procedure(	createRRAMmixedsch(					; LIST OF ARGUMENTS
 	schCreateWireLabel( CELLVIEW car(NET_ID) car(POINT)-1:car(cdr(POINT)) NET_NAME "upperCenter" "R0" "fixed" 0.05 nil )
 
 
+	; PLACE RESISTANCES TO BE READ
+
 	
 
 	schCheck(CELLVIEW)		; Check 

@@ -18,7 +18,7 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 						(CELLMAP "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/Calibre/rcx/calview.cellmap")		; CELLMAP FOR CALIBRE VIEW
 						(DB_SA dbOpenCellViewByType("THESIS" "SENSE_AMPLIFIER_LATCH_TYPE" "symbol"))
 						(DB_WR dbOpenCellViewByType("THESIS" "WRITE_AMPLIFIER" "symbol"))
-						(CELLMAP "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/Calibre/rcx/calview.cellmap")		; CELLMAP FOR CALIBRE VIEW
+						;(CELLMAP "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/Calibre/rcx/calview.cellmap")		; CELLMAP FOR CALIBRE VIEW
 					)		; END OF LIST OF ARGUMENTS
 
 	prog(	(			; LIST OF LOCAL VARIABLES
@@ -28,7 +28,7 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 				DB_PMUX_SCH	
 				DB_NMUX_SCH		
 				DB_REF_SCH
-				;PIN_LIST			; VARIABLE TO HOLD PIN LIST
+				PIN_LIST			; VARIABLE TO HOLD PIN LIST
 				;;time				; execution time
 				;time2			; execution time
 				;LOG				; LOG File
@@ -72,7 +72,7 @@ procedure( createRRAManalog(		; LIST OF ARGUMENTS
 	; Create Layout
 	if( createRRAManaloglayout( X Y B	 LIBRARY	 NAME DB_RRAM_SCH DB_REF_SCH DB_PMUX_SCH DB_NMUX_SCH DX DY) == nil then
 		printf("createRRAManaloglayout was ABORTED...\nExiting\n")	
-		exit
+		exit()
 		;return("READ CIW FOR ERRORS")
 	)
 

@@ -2,13 +2,13 @@ procedure( createAMSconfig(		; LIST OF ARGUMENTS
 								LIBRARY			; LIBRARY
 								CELL				; CELL								
 								LIBRARY_LIST		; LIBRARY LIST TO BE USED FOR THE CONFIG FILES (ONE STRING SEPERATED BY SPACE)
+								viewList
 							)
 
 
 	prog( 	(	; LIST OF LOCAL VARIABLES
 				view
-				topview
-				viewList
+				topview				
 				stopList
 				config
 			)
@@ -17,7 +17,7 @@ procedure( createAMSconfig(		; LIST OF ARGUMENTS
 	view="config"
 	 
 	topview="schematic"
-	viewList="spectre spice pspice verilog verilogams behavioral functional systemVerilog schematic veriloga vhdl vhdlams wreal"
+	;viewList="spectre spice pspice verilog verilogams behavioral functional systemVerilog schematic veriloga vhdl vhdlams wreal"
 	stopList="spectre "
 	;libList="DIMITRIS_CELL THESIS analogLib basic tsmc18"
 	 

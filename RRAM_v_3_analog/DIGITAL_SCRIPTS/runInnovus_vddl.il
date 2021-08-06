@@ -316,6 +316,7 @@ procedure( runInnovus_vddl(			; 	ARGUMENT DECLARATION
 	fprintf(OUT_PORT "set_db extract_rc_coupled true\n")
 	fprintf(OUT_PORT "extract_rc\n")
 	fprintf(OUT_PORT "write_parasitics -spef_file ../innovus/%s/outputs/%s_final_low_effort.spef -rc_corner default_emulate_rc_corner\n" NAME NAME)
+	fprintf(OUT_PORT "report_power -out_file ../reports/%s/%s_innovus_power.rep \n" NAME NAME)
 	
 	fprintf(OUT_PORT "\n# COMMENTED OUT UNTIL VERIFIED\nif 0 {\n")
 	fprintf(OUT_PORT "# High Effort Requires qrcMap.layermap\n# I strongly believe this file is wrong\nThis extract_rc will execute with no errors but probably with wrong results\n")

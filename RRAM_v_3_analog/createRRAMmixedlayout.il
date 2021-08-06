@@ -1027,7 +1027,7 @@ procedure(	createRRAMmixedlayout(					; LIST OF ARGUMENTS
 	dbAddFigToNet(PATH_ID NET_ID)
 
 	; VDDL LVL DOWN
-	dbCreateVia( CELLVIEW VIA_ID list(LVL_DOWN_X+1.5 LVL_DOWN_Y+8) "R0" 
+	dbCreateVia( CELLVIEW VIA_ID list(LVL_DOWN_X+1.01 LVL_DOWN_Y+8) "R0" 
                                          	list( 
 										list("cutRows" 1)             ;row
                                          	list("cutColumns" 3))               ;column                                             	
@@ -1041,7 +1041,7 @@ procedure(	createRRAMmixedlayout(					; LIST OF ARGUMENTS
 	)
 	sprintf(NET_NAME "VDDL")	
 	NET_ID =dbMakeNet(CELLVIEW NET_NAME)
-	PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") list(LVL_DOWN_X+1.5:LVL_DOWN_Y+8 CONTROLLER_X-1.705-RING_WIDTH:LVL_DOWN_Y+8) 0.38)
+	PATH_ID= dbCreatePath(CELLVIEW list("METAL2" "drawing") list(LVL_DOWN_X+1.01:LVL_DOWN_Y+8 CONTROLLER_X-1.705-RING_WIDTH:LVL_DOWN_Y+8) 0.38)
 	dbAddFigToNet(PATH_ID NET_ID)
 
 	; CONNECT CONTROLLER TO POWER
