@@ -96,8 +96,8 @@ Cadence implementation with main compiler components
 **Function Definition**
 
 	createRRAMmixed(		; LIST OF ARGUMENTS
-			M		; NUMBER OF COLUMNS X
-			N		; NUMBER OF ROWS Y						
+			M		; NUMBER OF COLUMNS b2^X
+			N		; NUMBER OF ROWS 2^Y						
 			B		; BITS OF A WORD B			
 			@optional
 			(CLOCK_PS		10000)	; 10ns digital clock
