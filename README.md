@@ -20,8 +20,8 @@ Research Project: Large-scale mixed-signal array compiler for automatic memory g
 
 * This project is still ongoing 
 * Version 2: RRAM ARRAY GENERATOR (COMPLETED)
-* Version 3: RRAM GENERATOR WITH PERIPHERAL CIRCUITS (IN PROGRESS)
-	- Analog Part Schematic - Layout and Verification DONE
+* Version 3: RRAM GENERATOR WITH PERIPHERAL CIRCUITS (COMPLETED)
+	- Analog Part Schematic - Layout and Verification
 	- Digital Part
 		- Automatic Synthesis Using Genus for VDD Controller and Decoders
 		- Automatic Implementation Innovus
