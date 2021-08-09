@@ -282,7 +282,7 @@ The image shown below, shows a simplified version of the Analog Part of the RRAM
 **Proposed Layout Version 3**
 
 The image below shows a simplified version of the layout of the proposed RRAM based on version 3.
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/ANALOG_LAYOUT.png" width="800">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/ANALOG_LAYOUT_2.png" width="800">
 
 **Proposed Analog Layout Version 3**
 
