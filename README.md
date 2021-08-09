@@ -296,6 +296,10 @@ The image below shows a small array of 64 x 64, where the width of a word is 8 b
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/64_64_8.png" width="1000">
 
+**Timing Characterisation**
+
+TO BE UPDATED
+
 <!---
 
 **Automatically Synthesized Controller in Genus**
