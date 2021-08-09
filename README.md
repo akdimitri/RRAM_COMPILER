@@ -28,7 +28,7 @@ Research Project: Large-scale mixed-signal array compiler for automatic memory g
 	- Mixed Part
 		- Automatic Schematic Generation
 		- Automatic LVS clean DRC clean Layout Implementation
-		- TODO: Automatic Characterisation of Permomance
+		- Automatic Characterisation of Timing Permomance
 
 * Version 4: TODO: Array of RRAMs
 
@@ -89,68 +89,21 @@ Cadence implementation with main compiler components
 
 4. Download RRAM COMPILER Repository and place folder RRAM_COMPILER inside folder SKILL
 
-5. Run Compiler by invoking createRRAM function in CIW to create a RRAM Array
-
-For example:
->> createRRAM( 32, 32, "THESIS", dbOpenCellViewByType("DIMITRIS_cell" "LV1T1R_NMOS_Pixel_v2" "symbol"), 5, 2.28)
+5. Further TSMC technology Files are needed to run the compiler. After examing which files can be uploaded without violating agreement of use, the repository will be updated.
 
 -----------------------------------	
 
 **Function Definition**
 
-createRRAM( X, Y, LIBRARY, DB, CELLMAP, DX, DY)
-
-X is the number of columns
-
-Y is the number of rows
-
-LIBRARY is the library where the result will be saved (optional, it can be set directly on the skill code)
-
-DB is the db id of the symbol of the memristor cell (optional, it can be set directly on the skill code)
-
-CELLMAP is the path to calibre.cellmap file (optional, it can be set directly on the skill code)
-
-DX is the horizontal pitch of the cells (optional, it can be set directly on the skill code, applies on 2nd version)
-
-DY is the vertical pitch of the cells (optional, it can be set directly on the skill code, applies on 2nd version)
-
-*Version 3*
-
-		createRRAManaloglayout(	
-
-		X 	; X SIZE OF ARRAY (COLS)
-		
-		Y	; Y SIZE OF ARRAY (ROWS)
-	
-		B	; B SIZE OF WORD
-		
-		LIBRARY	; LIBRARY TO PLACE THE NEW DESIGN
-		
-		NAME	; NAME OF THE CELLVIEW
-		
-		DB_RRAM_CELL	; DB OF RRAM
-		
-		DB_REF_CELL	; DB OF REF
-		
-		DB_PMUX_CELL	; DB OF PMUX
-		
-		DB_NMUX_CELL	; DB OF NMUX
-		
-		DX		; HORIZONTAL PITCH
-		
-		DY		; VERTICAL PITCH
-		
-		@optional
-		
-		(DB_SA_CELL dbOpenCellViewByType("THESIS" "SENSE_AMPLIFIER_LATCH_TYPE" "schematic" "" "r"))	; DB OF SA
-		
-		(DB_WR_CELL dbOpenCellViewByType("THESIS" "WRITE_AMPLIFIER" "schematic" "" "r"))	; DB OF WR
-		
-		(DB_TG dbOpenCellViewByType("THESIS" "TG" "schematic" "" "r"))		; DB OF TG
-		
-		(DB_TG5 dbOpenCellViewByType("THESIS" "TG5" "schematic" "" "r"))	; DB OF TG5
-		
-		)
+	createRRAMmixed(		; LIST OF ARGUMENTS
+			M		; NUMBER OF COLUMNS X
+			N		; NUMBER OF ROWS Y						
+			B		; BITS OF A WORD B			
+			@optional
+			(CLOCK_PS		10000)	; 10ns digital clock
+			(LIBRARY "THESIS")
+			(VDDW 3.3)
+			)		; END OF LIST OF ARGUMENTS
 
 ----------------------------------------
 
