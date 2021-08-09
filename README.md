@@ -2,7 +2,7 @@
 
 Author: 
             
-            Antoniadis Dimitris
+            Dimitrios (Dimitris) Antoniadis
 
 Supervisors:
 
