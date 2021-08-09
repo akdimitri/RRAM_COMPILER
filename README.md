@@ -337,6 +337,8 @@ The image below shows a small array of 64 x 64, where the width of a word is 4 b
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/64_64_4.png" width="1000">
 
+<!---
+
 **Automatically Synthesized Controller in Genus**
 
 The image below shows the schematic of the automatically synthesised based on desired sizes Controller using VDD. This controller is a for a 32 x 32 Array, with 8 bits word.
@@ -376,6 +378,8 @@ Z_WR<1> accounts for the values written on (13,16) and Z_WR<2> for the values wr
 The image below shows the read operation of (15,16) and (16,16) inittially. So when Latch is Enabled the output is 1.8V for R(16,16)>RRef and 0V for (15,16)<RRef. Then the read opeartion is executed for R(13,16)>RRef and R(14,16)?RRef and 1.8V are outputted.
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/read_16_16_2.png" width="600">
+
+--->
 
 --------------------------------
 
