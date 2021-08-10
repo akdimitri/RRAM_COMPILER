@@ -298,7 +298,29 @@ The image below shows a small array of 64 x 64, where the width of a word is 8 b
 
 **Timing Characterisation**
 
-TO BE UPDATED
+Timing Characterisation performs 4 tests. Initially, reset signal is received, then a {10...10} is received on IO and write signals at controller. Write signals are for the second to last (horizontally) word on the top row. For this test 1MOhm has been used for resistors, since they cause worst case settling time. Then the complementary value is written. For the read test, initially the last word is set to {10...10} by using values 0.3 * RRef. After this read operation, the resistances are altered and their complementary values are used.
+
+40ns Clock
+
+https://rawcdn.githack.com/akdimitri/RRAM_COMPILER/d65a0a1e8cd08897fe44e501b39ce588698ae23b/raw/64_64_8_CHARACTERIZATION/40_TB_TOP_64_64_8.html
+
+60ns Clock
+
+https://rawcdn.githack.com/akdimitri/RRAM_COMPILER/d65a0a1e8cd08897fe44e501b39ce588698ae23b/raw/64_64_8_CHARACTERIZATION/60_TB_TOP_64_64_8.html
+
+80ns Clock
+
+https://rawcdn.githack.com/akdimitri/RRAM_COMPILER/d65a0a1e8cd08897fe44e501b39ce588698ae23b/raw/64_64_8_CHARACTERIZATION/80_TB_TOP_64_64_8.html
+
+Digital Implementation
+
+Controller
+
+https://rawcdn.githack.com/akdimitri/RRAM_COMPILER/d65a0a1e8cd08897fe44e501b39ce588698ae23b/raw/64_64_8_CHARACTERIZATION/CONTROLLER_5V_64_64_8_innovus_metrics.html#run=0
+
+Low Voltage Controll Signals
+
+https://rawcdn.githack.com/akdimitri/RRAM_COMPILER/d65a0a1e8cd08897fe44e501b39ce588698ae23b/raw/64_64_8_CHARACTERIZATION/SIGNALS_VDDL_64_64_8_innovus_metrics.html
 
 <!---
 
