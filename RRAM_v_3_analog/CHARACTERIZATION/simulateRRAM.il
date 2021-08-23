@@ -92,7 +92,7 @@ procedure( simulateRRAM(		; LIST OF ARGUMENTS
 	fprintf(OUT_PORT "\t'sdf_cmd_file  \"%s/%s_SDF_CMD\"\n" DIR NAME)
 	fprintf(OUT_PORT ")\n")
 
-	sprintf(STR "save( 'v \"/clk\" \"/EN\" \"/RW\" \"/X_ADDRESS_IN<%d:0>\" \"/Y_ADDRESS_IN<%d:0>\" \"/reset\" \"/Z_BUS<%d:0>\" " int(log(X/B)/log(2))-1 int(log(Y)/log(2))-1 B-1)
+	sprintf(STR "save( 'v \"/clk\" \"/EN\" \"/RW\" \"/X_ADDRESS_IN<%d:0>\" \"/Y_ADDRESS_IN<%d:0>\" \"/reset\" \"/Z_BUS<%d:0>\" \"/TOP/WRITE_L\" \"/TOP/READ_L_1\" \"/TOP/DVLP_L\" \"/TOP/PRE_L\" \"/TOP/SA_EN_L\" " int(log(X/B)/log(2))-1 int(log(Y)/log(2))-1 B-1)
 	for(j 0 B-1
 		sprintf(STR "%s \"/TOP/Z_SA<%d>\" " STR j)
 	)
@@ -118,6 +118,11 @@ procedure( simulateRRAM(		; LIST OF ARGUMENTS
 		fprintf(OUT_PORT "ocnxlOutputSignal( \"/TOP/RRAM_ANALOG/SA_VO<%d>\" ?plot t ?save t)\n" j)
 		fprintf(OUT_PORT "ocnxlOutputSignal( \"/TOP/RRAM_ANALOG/net1<%d>\" ?plot t ?save t)\n" j-1)
 	)
+	fprintf(OUT_PORT "ocnxlOutputSignal( \"/TOP/WRITE_L\" ?save t)\n")
+	fprintf(OUT_PORT "ocnxlOutputSignal( \"/TOP/READ_L_1\" ?save t)\n")
+	fprintf(OUT_PORT "ocnxlOutputSignal( \"/TOP/DVLP_L\" ?save t)\n")
+	fprintf(OUT_PORT "ocnxlOutputSignal( \"/TOP/PRE_L\" ?save t)\n")
+	fprintf(OUT_PORT "ocnxlOutputSignal( \"/TOP/SA_EN_L\" ?save t)\n")	
 	
 	;fprintf(OUT_PORT "ocnxlOutputTerminal( \"/TOP/VDDH\" ?save t)\n")
 	;fprintf(OUT_PORT "ocnxlOutputSignal( \"/VDDH\" ?save t)\n")
@@ -159,7 +164,11 @@ procedure( simulateRRAM(		; LIST OF ARGUMENTS
 	;fprintf(OUT_PORT "ocnxlOutputExpr( \"average(clip((POWER_H + POWER_L + POWER_W + POWER_LVL_D) (12 * %fn) (14 * %fn)))\" ?name \"AV_POWER_RE\" ?plot t)\n" float(CLOCK_PS/1000) float(CLOCK_PS/1000))
 	fprintf(OUT_PORT "ocnxlOutputExpr( \"value(VT(\\\"/Z_BUS<3:0>\\\") (41.4 * %fn))\" ?name \"READ_2\" ?plot t)\n" float(CLOCK_PS/1000))
 	fprintf(OUT_PORT "ocnxlOutputExpr( \"value(VT(\\\"/Z_BUS<3:0>\\\") (27.4 * %fn))\" ?name \"READ_1\" ?plot t)\n" float(CLOCK_PS/1000))
-	
+	fprintf(OUT_PORT "ocnxlOutputExpr( \"VT(\\\"/TOP/SA_EN_L\\\")\" ?plot t)\n")
+	fprintf(OUT_PORT "ocnxlOutputExpr( \"VT(\\\"/TOP/PRE_L\\\")\" ?plot t)\n")
+	fprintf(OUT_PORT "ocnxlOutputExpr( \"VT(\\\"/TOP/DVLP_L\\\")\" ?plot t)\n")
+	fprintf(OUT_PORT "ocnxlOutputExpr( \"VT(\\\"/TOP/READ_L_1\\\")\" ?plot t)\n")
+	fprintf(OUT_PORT "ocnxlOutputExpr( \"VT(\\\"/TOP/WRITE_L\\\")\" ?plot t)\n")
 	fprintf(OUT_PORT "ocnxlEndTest()\n")	
 
 	fprintf(OUT_PORT "\n;====================== Specs ==================================================\n\n")
