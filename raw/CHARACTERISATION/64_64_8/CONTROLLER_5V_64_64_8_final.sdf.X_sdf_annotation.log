@@ -1,0 +1,1269 @@
+======================================================================
+
+Annotating SDF timing data:
+  Compiled SDF file:     /ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_64_64_8/.CHARACTERIZATION/CONTROLLER_5V_64_64_8_final.sdf.X
+  Log file:              /ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_64_64_8/.CHARACTERIZATION/CONTROLLER_5V_64_64_8_final.sdf.X_sdf_annotation.log
+  Backannotation scope:  TB_TOP_64_64_8.TOP.CONTROLLER
+  Configuration file:    
+  MTM control:           MAXIMUM
+  Scale factors:         
+  Scale type:            
+
+Time units: 1ns
+
+
+Annotating to instance CTS_cdb_buf_00093 of module CKBD0
+	ABSOLUTE (IOPATH I Z) = (0.333, 0.31)
+
+Annotating to instance CTS_ccl_a_buf_00024 of module CKBD0
+	ABSOLUTE (IOPATH I Z) = (0.348, 0.331)
+
+Annotating to instance CTS_ccl_a_buf_00015 of module CKBD0
+	ABSOLUTE (IOPATH I Z) = (0.347, 0.324)
+
+Annotating to instance CTS_ccl_a_buf_00012 of module CKBD0
+	ABSOLUTE (IOPATH I Z) = (0.363, 0.353)
+
+Annotating to instance CTS_ccl_a_buf_00006 of module CKBD0
+	ABSOLUTE (IOPATH I Z) = (0.31, 0.318)
+
+Annotating to instance g1720 of module CKND2
+	ABSOLUTE (IOPATH I ZN) = (0.166, 0.195)
+
+Annotating to instance g1723 of module CKND0
+	ABSOLUTE (IOPATH I ZN) = (0.309, 0.336)
+
+Annotating to instance CTS_cse_buf_00003 of module BUFFD4
+	ABSOLUTE (IOPATH I Z) = (0.144, 0.148)
+
+Annotating to instance CTS_cse_buf_00002 of module BUFFD2
+	ABSOLUTE (IOPATH I Z) = (0.172, 0.219)
+
+Annotating to instance CTS_cse_buf_00001 of module BUFFD1
+	ABSOLUTE (IOPATH I Z) = (0.241, 0.29)
+
+Annotating to instance g1550__8780 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.365, 0.898)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.893)
+
+Annotating to instance g1549__4296 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.366, 0.898)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.9)
+
+Annotating to instance g1546__3772 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.366, 0.898)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.898)
+
+Annotating to instance g1551__1474 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.366, 0.899)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.899)
+
+Annotating to instance g1547__4547 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.34, 0.86)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.892)
+
+Annotating to instance g1553__9682 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.34, 0.86)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.898)
+
+Annotating to instance g1557__2683 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.341, 0.862)
+	ABSOLUTE (IOPATH A2 Z) = (1.282, 0.898)
+
+Annotating to instance g1554__1309 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.34, 0.861)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.897)
+
+Annotating to instance g1548__6877 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.342, 0.865)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.895)
+
+Annotating to instance g1552__2900 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.341, 0.863)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.894)
+
+Annotating to instance g1558__2391 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.334, 0.856)
+	ABSOLUTE (IOPATH A2 Z) = (1.274, 0.893)
+
+Annotating to instance g1560__7675 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.341, 0.862)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.9)
+
+Annotating to instance g1555__7118 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.342, 0.864)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.899)
+
+Annotating to instance g1561__8757 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.341, 0.862)
+	ABSOLUTE (IOPATH A2 Z) = (1.282, 0.898)
+
+Annotating to instance g1556__1786 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.342, 0.865)
+	ABSOLUTE (IOPATH A2 Z) = (1.28, 0.9)
+
+Annotating to instance g1559__5953 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.341, 0.862)
+	ABSOLUTE (IOPATH A2 Z) = (1.281, 0.897)
+
+Annotating to instance g1571__5703 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.904)
+	ABSOLUTE (IOPATH A2 Z) = (1.266, 0.944)
+
+Annotating to instance g1563__7114 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.906)
+	ABSOLUTE (IOPATH A2 Z) = (1.267, 0.944)
+
+Annotating to instance g1564__5266 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.902)
+	ABSOLUTE (IOPATH A2 Z) = (1.267, 0.944)
+
+Annotating to instance g1567__2250 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.904)
+	ABSOLUTE (IOPATH A2 Z) = (1.263, 0.955)
+
+Annotating to instance g1587__6083 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.908)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.95)
+
+Annotating to instance g1594__2703 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.904)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.939)
+
+Annotating to instance g1591__5795 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.347, 0.906)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.939)
+
+Annotating to instance g1596__7344 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.903)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.94)
+
+Annotating to instance g1565__1840 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.375, 0.922)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.95)
+
+Annotating to instance g1589__1857 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.904)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.935)
+
+Annotating to instance g1562__9906 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.902)
+	ABSOLUTE (IOPATH A2 Z) = (1.263, 0.955)
+
+Annotating to instance g1586__8780 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.32, 0.902)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.949)
+
+Annotating to instance g1574__4296 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.321, 0.905)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.95)
+
+Annotating to instance g1592__3772 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.904)
+	ABSOLUTE (IOPATH A2 Z) = (1.287, 0.932)
+
+Annotating to instance g1569__1474 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.347, 0.907)
+	ABSOLUTE (IOPATH A2 Z) = (1.263, 0.955)
+
+Annotating to instance g1593__4547 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.907)
+	ABSOLUTE (IOPATH A2 Z) = (1.287, 0.933)
+
+Annotating to instance g1581__9682 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.906)
+	ABSOLUTE (IOPATH A2 Z) = (1.287, 0.935)
+
+Annotating to instance g1597__2683 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.903)
+	ABSOLUTE (IOPATH A2 Z) = (1.287, 0.933)
+
+Annotating to instance g1582__1309 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.903)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.936)
+
+Annotating to instance g1573__6877 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.372, 0.913)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.95)
+
+Annotating to instance g1580__2900 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.905)
+	ABSOLUTE (IOPATH A2 Z) = (1.282, 0.894)
+
+Annotating to instance g1584__2391 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.347, 0.907)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.874)
+
+Annotating to instance g1590__7675 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.903)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.874)
+
+Annotating to instance g1585__7118 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.905)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.874)
+
+Annotating to instance g1583__8757 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.355, 0.868)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.95)
+
+Annotating to instance g1576__1786 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.653, 0.216)
+	ABSOLUTE (IOPATH A2 ZN) = (0.606, 0.264)
+
+Annotating to instance g1577__5953 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.654, 0.217)
+	ABSOLUTE (IOPATH A2 ZN) = (0.619, 0.27)
+
+Annotating to instance g1566__5703 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.904)
+	ABSOLUTE (IOPATH A2 Z) = (1.286, 0.891)
+
+Annotating to instance g1595__7114 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.902)
+	ABSOLUTE (IOPATH A2 Z) = (1.282, 0.893)
+
+Annotating to instance g1572__5266 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.906)
+	ABSOLUTE (IOPATH A2 Z) = (1.286, 0.892)
+
+Annotating to instance g1568__2250 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.346, 0.867)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.95)
+
+Annotating to instance g1588__6083 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.347, 0.906)
+	ABSOLUTE (IOPATH A2 Z) = (1.282, 0.893)
+
+Annotating to instance g1570__2703 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.345, 0.903)
+	ABSOLUTE (IOPATH A2 Z) = (1.286, 0.892)
+
+Annotating to instance g1575__5795 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.321, 0.85)
+	ABSOLUTE (IOPATH A2 Z) = (1.285, 0.949)
+
+Annotating to instance g1578__7344 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.641, 0.213)
+	ABSOLUTE (IOPATH A2 ZN) = (0.611, 0.266)
+
+Annotating to instance g1635 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.56, 1.117)
+
+Annotating to instance g1601__1840 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.85)
+	ABSOLUTE (IOPATH A2 Z) = (1.269, 0.982)
+
+Annotating to instance g1630 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.564, 1.119)
+
+Annotating to instance g1652 of module INVD16
+	ABSOLUTE (IOPATH I ZN) = (0.689, 0.335)
+
+Annotating to instance g1628 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.561, 1.115)
+
+Annotating to instance g1653 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.561, 1.115)
+
+Annotating to instance g1654 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.555, 1.107)
+
+Annotating to instance g1655 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.566, 1.128)
+
+Annotating to instance g1626 of module INVD16
+	ABSOLUTE (IOPATH I ZN) = (0.686, 0.335)
+
+Annotating to instance g1603__5019 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.321, 0.848)
+	ABSOLUTE (IOPATH A2 Z) = (1.27, 0.98)
+
+Annotating to instance g1627 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.568, 1.12)
+
+Annotating to instance g1612 of module CKND1
+	ABSOLUTE (IOPATH I ZN) = (0.45, 0.413)
+
+Annotating to instance g1613 of module CKND1
+	ABSOLUTE (IOPATH I ZN) = (0.422, 0.391)
+
+Annotating to instance g1621__8780 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.851)
+	ABSOLUTE (IOPATH A2 Z) = (1.269, 0.982)
+
+Annotating to instance g1632 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.56, 1.117)
+
+Annotating to instance g1600__4296 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.321, 0.849)
+	ABSOLUTE (IOPATH A2 Z) = (1.287, 0.932)
+
+Annotating to instance g1622__3772 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.848)
+	ABSOLUTE (IOPATH A2 Z) = (1.264, 1)
+
+Annotating to instance g1604__1474 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.323, 0.85)
+	ABSOLUTE (IOPATH A2 Z) = (1.287, 0.931)
+
+Annotating to instance g1602__4547 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.323, 0.85)
+	ABSOLUTE (IOPATH A2 Z) = (1.264, 1.001)
+
+Annotating to instance g1605__9682 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.849)
+	ABSOLUTE (IOPATH A2 Z) = (1.288, 0.932)
+
+Annotating to instance g1614__2683 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.323, 0.85)
+	ABSOLUTE (IOPATH A2 Z) = (1.27, 0.98)
+
+Annotating to instance g1606__1309 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.85)
+	ABSOLUTE (IOPATH A2 Z) = (1.287, 0.931)
+
+Annotating to instance g1620__6877 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.323, 0.849)
+	ABSOLUTE (IOPATH A2 Z) = (1.264, 0.999)
+
+Annotating to instance g1618__2900 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.321, 0.849)
+	ABSOLUTE (IOPATH A2 Z) = (1.269, 0.982)
+
+Annotating to instance g1616__2391 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.849)
+	ABSOLUTE (IOPATH A2 Z) = (1.27, 0.982)
+
+Annotating to instance g1619__7675 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.322, 0.85)
+	ABSOLUTE (IOPATH A2 Z) = (1.269, 0.982)
+
+Annotating to instance g1615__7118 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.323, 0.851)
+	ABSOLUTE (IOPATH A2 Z) = (1.269, 0.982)
+
+Annotating to instance g1617__8757 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.321, 0.848)
+	ABSOLUTE (IOPATH A2 Z) = (1.264, 1)
+
+Annotating to instance g1598 of module CKND1
+	ABSOLUTE (IOPATH I ZN) = (0.426, 0.398)
+
+Annotating to instance g1636 of module INVD16
+	ABSOLUTE (IOPATH I ZN) = (0.675, 0.328)
+
+Annotating to instance g1637 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.56, 1.117)
+
+Annotating to instance g1634 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.56, 1.118)
+
+Annotating to instance g1644__1786 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.447, 0.897)
+	ABSOLUTE (IOPATH A2 Z) = (1.441, 0.957)
+
+Annotating to instance g1662__5953 of module OR2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.467, 0.992)
+	ABSOLUTE (IOPATH A2 Z) = (1.499, 0.984)
+
+Annotating to instance g1659__5703 of module OR2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.543, 1.03)
+	ABSOLUTE (IOPATH A2 Z) = (1.57, 1.021)
+
+Annotating to instance g1660__7114 of module OR2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.485, 1.008)
+	ABSOLUTE (IOPATH A2 Z) = (1.515, 1.004)
+
+Annotating to instance g1624__5266 of module ND2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.302, 0.18)
+	ABSOLUTE (IOPATH A2 ZN) = (0.222, 0.125)
+
+Annotating to instance g1661__2250 of module OR2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.485, 1.008)
+	ABSOLUTE (IOPATH A2 Z) = (1.52, 1.005)
+
+Annotating to instance g1625__6083 of module ND2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.278, 0.169)
+	ABSOLUTE (IOPATH A2 ZN) = (0.215, 0.117)
+
+Annotating to instance g1623__2703 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.611, 0.502)
+	ABSOLUTE (IOPATH A2 Z) = (0.492, 0.404)
+
+Annotating to instance g1633 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.554, 1.105)
+
+Annotating to instance g1629 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.551, 1.099)
+
+Annotating to instance g1631 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.56, 1.113)
+
+Annotating to instance g1642__5795 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.428, 0.874)
+	ABSOLUTE (IOPATH A2 Z) = (1.421, 0.931)
+
+Annotating to instance g1639__7344 of module OR2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.467, 0.996)
+	ABSOLUTE (IOPATH A2 Z) = (1.515, 0.993)
+
+Annotating to instance g1638__1840 of module OR2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.54, 1.038)
+	ABSOLUTE (IOPATH A2 Z) = (1.583, 1.035)
+
+Annotating to instance g1640__5019 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.453, 0.903)
+	ABSOLUTE (IOPATH A2 Z) = (1.447, 0.958)
+
+Annotating to instance g1610__1857 of module ND2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.267, 0.153)
+	ABSOLUTE (IOPATH A2 ZN) = (0.207, 0.108)
+
+Annotating to instance g1647__9906 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.463, 0.91)
+	ABSOLUTE (IOPATH A2 Z) = (1.457, 0.97)
+
+Annotating to instance g1609__8780 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.699, 0.256)
+	ABSOLUTE (IOPATH A2 ZN) = (0.678, 0.287)
+
+Annotating to instance g1611__4296 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.84, 0.301)
+	ABSOLUTE (IOPATH A2 ZN) = (0.804, 0.281)
+
+Annotating to instance g1649__3772 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.472, 0.995)
+	ABSOLUTE (IOPATH A2 Z) = (1.44, 0.954)
+
+Annotating to instance g1663__1474 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.536, 0.401)
+	ABSOLUTE (IOPATH A2 Z) = (0.525, 0.467)
+
+Annotating to instance g1657 of module CKND1
+	ABSOLUTE (IOPATH I ZN) = (0.409, 0.417)
+
+Annotating to instance g1651__4547 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.888, 0.621)
+	ABSOLUTE (IOPATH A2 Z) = (0.842, 0.64)
+
+Annotating to instance g1673__9682 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.863, 0.591)
+	ABSOLUTE (IOPATH A2 Z) = (0.78, 0.604)
+
+Annotating to instance g1672__2683 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.854, 0.583)
+	ABSOLUTE (IOPATH A2 Z) = (0.771, 0.598)
+
+Annotating to instance g1641__1309 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.46, 0.887)
+	ABSOLUTE (IOPATH A2 Z) = (1.436, 0.949)
+
+Annotating to instance g1648__6877 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.575, 0.991)
+	ABSOLUTE (IOPATH A2 Z) = (1.539, 1.013)
+
+Annotating to instance g1646__2900 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.493, 0.916)
+	ABSOLUTE (IOPATH A2 Z) = (1.45, 0.964)
+
+Annotating to instance g1645__2391 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.491, 0.916)
+	ABSOLUTE (IOPATH A2 Z) = (1.447, 0.959)
+
+Annotating to instance g1643__7675 of module AN2D4
+	ABSOLUTE (IOPATH A1 Z) = (1.486, 0.939)
+	ABSOLUTE (IOPATH A2 Z) = (1.451, 0.965)
+
+Annotating to instance g1665__7118 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.533, 0.399)
+	ABSOLUTE (IOPATH A2 Z) = (0.521, 0.465)
+
+Annotating to instance g1664__8757 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.528, 0.396)
+	ABSOLUTE (IOPATH A2 Z) = (0.517, 0.457)
+
+Annotating to instance g1666__1786 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.527, 0.396)
+	ABSOLUTE (IOPATH A2 Z) = (0.516, 0.463)
+
+Annotating to instance g1671__5953 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.873, 0.595)
+	ABSOLUTE (IOPATH A2 Z) = (0.791, 0.61)
+
+Annotating to instance g1677 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.238, 0.147)
+
+Annotating to instance g1676 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.206, 0.131)
+
+Annotating to instance g1674 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.235, 0.147)
+
+Annotating to instance g1670__5703 of module INR3D0
+	ABSOLUTE (IOPATH A1 ZN) = (1.219, 0.656)
+	ABSOLUTE (IOPATH B1 ZN) = (1.122, 0.505)
+	ABSOLUTE (IOPATH B2 ZN) = (1.087, 0.509)
+
+Annotating to instance g1668__7114 of module ND3D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.271, 0.298)
+	ABSOLUTE (IOPATH A2 ZN) = (0.289, 0.292)
+	ABSOLUTE (IOPATH A3 ZN) = (0.299, 0.284)
+
+Annotating to instance g1675 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.279, 0.203)
+
+Annotating to instance g1685 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.362, 0.178)
+
+Annotating to instance g1669__5266 of module NR3D0
+	ABSOLUTE (IOPATH A1 ZN) = (1.087, 0.481)
+	ABSOLUTE (IOPATH A2 ZN) = (1.127, 0.505)
+	ABSOLUTE (IOPATH A3 ZN) = (1.145, 0.525)
+
+Annotating to instance g1667__2250 of module INR3D0
+	ABSOLUTE (IOPATH A1 ZN) = (1.34, 0.704)
+	ABSOLUTE (IOPATH B1 ZN) = (1.244, 0.555)
+	ABSOLUTE (IOPATH B2 ZN) = (1.21, 0.563)
+
+Annotating to instance g1680__6083 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.33, 0.132)
+	ABSOLUTE (IOPATH A2 ZN) = (0.319, 0.139)
+
+Annotating to instance g1681__2703 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.482, 0.186)
+	ABSOLUTE (IOPATH A2 ZN) = (0.486, 0.196)
+
+Annotating to instance g1683__5795 of module IND2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.341, 0.352)
+	ABSOLUTE (IOPATH B1 ZN) = (0.255, 0.222)
+
+Annotating to instance g1678__7344 of module IND2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.325, 0.338)
+	ABSOLUTE (IOPATH B1 ZN) = (0.238, 0.207)
+
+Annotating to instance g1686__1840 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.302, 0.095)
+	ABSOLUTE (IOPATH A2 ZN) = (0.292, 0.115)
+
+Annotating to instance g1682__5019 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.546, 0.406)
+	ABSOLUTE (IOPATH A2 Z) = (0.528, 0.612)
+
+Annotating to instance g1684__1857 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.606, 0.438)
+	ABSOLUTE (IOPATH A2 Z) = (0.592, 0.464)
+
+Annotating to instance g1688__9906 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.343, 0.137)
+	ABSOLUTE (IOPATH A2 ZN) = (0.604, 0.047)
+
+Annotating to instance g1687__8780 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.543, 0.403)
+	ABSOLUTE (IOPATH A2 Z) = (0.526, 0.426)
+
+Annotating to instance g1689__4296 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.535, 0.4)
+	ABSOLUTE (IOPATH A2 Z) = (0.507, 0.407)
+
+Annotating to instance controller1_state_reg[2] of module DFKCNQD1
+	ABSOLUTE (IOPATH CP Q) = (0.661, 0.649)
+	TIMINGCHECK (SETUPHOLD (posedge D) (posedge CP) (0.103) (-0.05))
+	TIMINGCHECK (SETUPHOLD (negedge D) (posedge CP) (0.056) (0.064))
+	TIMINGCHECK (WIDTH (posedge CP) (0.619))
+	TIMINGCHECK (WIDTH (negedge CP) (0.711))
+	TIMINGCHECK (SETUPHOLD (posedge CN) (posedge CP) (0.091) (-0.038))
+	TIMINGCHECK (SETUPHOLD (negedge CN) (posedge CP) (0.224) (-0.044))
+
+Annotating to instance g1692__3772 of module INR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.92, 0.448)
+	ABSOLUTE (IOPATH B1 ZN) = (0.83, 0.296)
+
+Annotating to instance g1691__1474 of module INR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.934, 0.455)
+	ABSOLUTE (IOPATH B1 ZN) = (0.84, 0.296)
+
+Annotating to instance g1690__4547 of module NR2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.852, 0.304)
+	ABSOLUTE (IOPATH A2 ZN) = (0.855, 0.31)
+
+Annotating to instance controller1_state_reg[0] of module DFKCNQD1
+	ABSOLUTE (IOPATH CP Q) = (0.61, 0.618)
+	TIMINGCHECK (SETUPHOLD (posedge D) (posedge CP) (0.103) (-0.05))
+	TIMINGCHECK (SETUPHOLD (negedge D) (posedge CP) (0.056) (0.064))
+	TIMINGCHECK (WIDTH (posedge CP) (0.619))
+	TIMINGCHECK (WIDTH (negedge CP) (0.711))
+	TIMINGCHECK (SETUPHOLD (posedge CN) (posedge CP) (0.091) (-0.038))
+	TIMINGCHECK (SETUPHOLD (negedge CN) (posedge CP) (0.224) (-0.044))
+
+Annotating to instance g1693 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.21, 0.108)
+
+Annotating to instance controller1_Y_ADDRESS_CON_DEC_reg[2] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.345, 0.452)
+	ABSOLUTE (IOPATH E Q) = (0.547, 0.441)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance controller1_Y_ADDRESS_CON_DEC_reg[1] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.33, 0.441)
+	ABSOLUTE (IOPATH E Q) = (0.532, 0.43)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance controller1_X_ADDRESS_CON_DEC_reg[2] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.37, 0.471)
+	ABSOLUTE (IOPATH E Q) = (0.573, 0.46)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance controller1_X_ADDRESS_CON_DEC_reg[1] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.338, 0.447)
+	ABSOLUTE (IOPATH E Q) = (0.541, 0.437)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance controller1_Y_ADDRESS_CON_DEC_reg[5] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.317, 0.429)
+	ABSOLUTE (IOPATH E Q) = (0.519, 0.418)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance controller1_Y_ADDRESS_CON_DEC_reg[0] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.322, 0.434)
+	ABSOLUTE (IOPATH E Q) = (0.524, 0.423)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance controller1_X_ADDRESS_CON_DEC_reg[0] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.337, 0.446)
+	ABSOLUTE (IOPATH E Q) = (0.539, 0.435)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance g1704 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.218, 0.139)
+
+Annotating to instance controller1_Y_ADDRESS_CON_DEC_reg[4] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.503, 0.558)
+	ABSOLUTE (IOPATH E Q) = (0.706, 0.547)
+	TIMINGCHECK (WIDTH (posedge E) (0.326))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.097) (0.156))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.197) (-0.103))
+
+Annotating to instance controller1_Y_ADDRESS_CON_DEC_reg[3] of module LHD1
+	ABSOLUTE (IOPATH D QN) = (0.833, 0.563)
+	ABSOLUTE (IOPATH D Q) = (0.187, 0.315)
+	ABSOLUTE (IOPATH E QN) = (0.823, 0.766)
+	ABSOLUTE (IOPATH E Q) = (0.39, 0.309)
+	TIMINGCHECK (WIDTH (posedge E) (0.34))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.103) (0.157))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.23) (-0.104))
+
+Annotating to instance g1705 of module INVD3
+	ABSOLUTE (IOPATH I ZN) = (1.487, 1.044)
+
+Annotating to instance controller1_nstate_reg[2] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.244, 0.319)
+	ABSOLUTE (IOPATH E Q) = (0.464, 0.377)
+	TIMINGCHECK (WIDTH (posedge E) (0.431))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.141) (0.181))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.119) (-0.026))
+
+Annotating to instance controller1_P_ADDRESS_EN_reg of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.289, 0.349)
+	ABSOLUTE (IOPATH E Q) = (0.515, 0.419)
+	TIMINGCHECK (WIDTH (posedge E) (0.431))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.132) (0.167))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.106) (-0.026))
+
+Annotating to instance controller1_READ_reg of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.523, 0.504)
+	ABSOLUTE (IOPATH E Q) = (0.748, 0.577)
+	TIMINGCHECK (WIDTH (posedge E) (0.431))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.131) (0.165))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.1) (-0.02))
+
+Annotating to instance controller1_DVLP_reg of module LHQD4
+	ABSOLUTE (IOPATH D Q) = (1.676, 1.323)
+	ABSOLUTE (IOPATH E Q) = (1.898, 1.382)
+	TIMINGCHECK (WIDTH (posedge E) (0.455))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.035) (0.088))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.286) (-0.115))
+
+Annotating to instance controller1_N_ADDRESS_EN_reg of module LHQD4
+	ABSOLUTE (IOPATH D Q) = (1.241, 1.059)
+	ABSOLUTE (IOPATH E Q) = (1.47, 1.13)
+	TIMINGCHECK (WIDTH (posedge E) (0.455))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.039) (0.088))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.269) (-0.104))
+
+Annotating to instance controller1_EN_SA_reg of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.527, 0.509)
+	ABSOLUTE (IOPATH E Q) = (0.752, 0.579)
+	TIMINGCHECK (WIDTH (posedge E) (0.431))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.132) (0.168))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.103) (-0.022))
+
+Annotating to instance controller1_nstate_reg[0] of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.244, 0.312)
+	ABSOLUTE (IOPATH E Q) = (0.466, 0.379)
+	TIMINGCHECK (WIDTH (posedge E) (0.431))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.138) (0.173))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.112) (-0.024))
+
+Annotating to instance controller1_PRE_reg of module LHQD1
+	ABSOLUTE (IOPATH D Q) = (0.513, 0.501)
+	ABSOLUTE (IOPATH E Q) = (0.737, 0.57)
+	TIMINGCHECK (WIDTH (posedge E) (0.431))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (-0.134) (0.171))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.106) (-0.026))
+
+Annotating to instance g1714__9682 of module AO21D4
+	ABSOLUTE (IOPATH A1 Z) = (0.281, 0.315)
+	ABSOLUTE (IOPATH A2 Z) = (0.264, 0.421)
+	ABSOLUTE (IOPATH B Z) = (0.251, 0.372)
+	ABSOLUTE (COND ((A1==0)&&(A2==0)) (IOPATH B Z)) = (0.251, 0.372)
+	ABSOLUTE (COND ((A1==0)&&(A2==1)) (IOPATH B Z)) = (0.251, 0.372)
+	ABSOLUTE (COND ((A1==1)&&(A2==0)) (IOPATH B Z)) = (0.251, 0.372)
+
+Annotating to instance g1715__2683 of module OR2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.207, 0.306)
+	ABSOLUTE (IOPATH A2 Z) = (0.22, 0.329)
+
+Annotating to instance g1712__1309 of module NR3D0
+	ABSOLUTE (IOPATH A1 ZN) = (0.235, 0.127)
+	ABSOLUTE (IOPATH A2 ZN) = (0.315, 0.178)
+	ABSOLUTE (IOPATH A3 ZN) = (0.29, 0.17)
+
+Annotating to instance g1716__6877 of module INR2D4
+	ABSOLUTE (IOPATH A1 ZN) = (0.269, 0.231)
+	ABSOLUTE (IOPATH B1 ZN) = (0.198, 0.071)
+
+Annotating to instance g1717__2900 of module CKND2D2
+	ABSOLUTE (IOPATH A1 ZN) = (0.224, 0.231)
+	ABSOLUTE (IOPATH A2 ZN) = (0.252, 0.254)
+
+Annotating to instance g1719__2391 of module AOI21D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.301, 0.154)
+	ABSOLUTE (IOPATH A2 ZN) = (0.321, 0.13)
+	ABSOLUTE (IOPATH B ZN) = (0.317, 0.136)
+	ABSOLUTE (COND ((A1==0)&&(A2==0)) (IOPATH B ZN)) = (0.317, 0.136)
+	ABSOLUTE (COND ((A1==0)&&(A2==1)) (IOPATH B ZN)) = (0.317, 0.136)
+	ABSOLUTE (COND ((A1==1)&&(A2==0)) (IOPATH B ZN)) = (0.317, 0.136)
+
+Annotating to instance g1718__7675 of module AOI21D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.183, 0.101)
+	ABSOLUTE (IOPATH A2 ZN) = (0.288, 0.085)
+	ABSOLUTE (IOPATH B ZN) = (0.268, 0.109)
+	ABSOLUTE (COND ((A1==0)&&(A2==0)) (IOPATH B ZN)) = (0.268, 0.109)
+	ABSOLUTE (COND ((A1==0)&&(A2==1)) (IOPATH B ZN)) = (0.268, 0.109)
+	ABSOLUTE (COND ((A1==1)&&(A2==0)) (IOPATH B ZN)) = (0.268, 0.109)
+
+Annotating to instance g1721__7118 of module NR2D2
+	ABSOLUTE (IOPATH A1 ZN) = (0.212, 0.086)
+	ABSOLUTE (IOPATH A2 ZN) = (0.233, 0.103)
+
+Annotating to instance g1722__8757 of module AN2D1
+	ABSOLUTE (IOPATH A1 Z) = (0.263, 0.211)
+	ABSOLUTE (IOPATH A2 Z) = (0.252, 0.286)
+
+Annotating to instance g1725__1786 of module IND2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.209, 0.24)
+	ABSOLUTE (IOPATH B1 ZN) = (0.188, 0.116)
+
+Annotating to instance controller1_state_reg[1] of module DFKCNQD1
+	ABSOLUTE (IOPATH CP Q) = (0.587, 0.604)
+	TIMINGCHECK (SETUPHOLD (posedge D) (posedge CP) (0.117) (-0.007))
+	TIMINGCHECK (SETUPHOLD (negedge D) (posedge CP) (0.243) (-0.036))
+	TIMINGCHECK (WIDTH (posedge CP) (0.619))
+	TIMINGCHECK (WIDTH (negedge CP) (0.711))
+	TIMINGCHECK (SETUPHOLD (posedge CN) (posedge CP) (0.091) (-0.038))
+	TIMINGCHECK (SETUPHOLD (negedge CN) (posedge CP) (0.224) (-0.044))
+
+Annotating to instance g1726__5953 of module INR2D2
+	ABSOLUTE (IOPATH A1 ZN) = (0.304, 0.239)
+	ABSOLUTE (IOPATH B1 ZN) = (0.226, 0.079)
+
+Annotating to instance g1727__5703 of module IND2D1
+	ABSOLUTE (IOPATH A1 ZN) = (0.24, 0.285)
+	ABSOLUTE (IOPATH B1 ZN) = (0.217, 0.147)
+
+Annotating to instance g1728 of module INVD1
+	ABSOLUTE (IOPATH I ZN) = (0.306, 0.162)
+
+Annotating to instance g1729 of module INVD4
+	ABSOLUTE (IOPATH I ZN) = (1.602, 1.145)
+
+Annotating to instance g2 of module INR2D0
+	ABSOLUTE (IOPATH A1 ZN) = (1.045, 0.526)
+	ABSOLUTE (IOPATH B1 ZN) = (1.051, 0.413)
+
+Annotating to instance g1753 of module INR2D0
+	ABSOLUTE (IOPATH A1 ZN) = (1.215, 0.698)
+	ABSOLUTE (IOPATH B1 ZN) = (1.272, 0.477)
+
+Annotating to instance g1754 of module INR2D0
+	ABSOLUTE (IOPATH A1 ZN) = (1.146, 0.654)
+	ABSOLUTE (IOPATH B1 ZN) = (1.187, 0.449)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_cdb_buf_00093.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1717__2900.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1717__2900.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_ccl_a_buf_00024.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1727__5703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1727__5703.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1715__2683.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1715__2683.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_ccl_a_buf_00015.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1718__7675.B = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1718__7675.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1718__7675.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1719__2391.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1719__2391.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1719__2391.B = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_ccl_a_buf_00012.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1722__8757.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1722__8757.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_cse_buf_00001.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1720.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1716__6877.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1716__6877.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_ccl_a_buf_00006.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1712__1309.A3 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1712__1309.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1712__1309.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_cse_buf_00002.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1723.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1714__9682.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1714__9682.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1714__9682.B = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.CTS_cse_buf_00003.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_N_ADDRESS_EN_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_N_ADDRESS_EN_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_READ_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_READ_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_PRE_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_PRE_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1725__1786.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1725__1786.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[2] .CP = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[2] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[2] .CN = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[1] .CP = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[1] .D = (0.01)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[1] .CN = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[0] .CP = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[0] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_state_reg[0] .CN = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1728.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_X_ADDRESS_CON_DEC_reg[2] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_X_ADDRESS_CON_DEC_reg[2] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_X_ADDRESS_CON_DEC_reg[1] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_X_ADDRESS_CON_DEC_reg[1] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_X_ADDRESS_CON_DEC_reg[0] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_X_ADDRESS_CON_DEC_reg[0] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[5] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[5] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[4] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[4] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[3] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[3] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[2] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[2] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[1] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[1] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[0] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_Y_ADDRESS_CON_DEC_reg[0] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1648__6877.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1648__6877.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1636.I = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[7] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1640__5019.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1640__5019.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1628.I = (0.01)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[6] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1642__5795.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1642__5795.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1630.I = (0.03)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[5] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1645__2391.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1645__2391.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1633.I = (0.01)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[4] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1641__1309.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1641__1309.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1629.I = (0.01)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[3] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1655.I = (0.03)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[2] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1654.I = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[1] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1627.I = (0.04)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[0] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1729.I = (0.01)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[8] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[7] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[6] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[5] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[4] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[3] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1662__5953.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1662__5953.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[2] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1661__2250.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1661__2250.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[1] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1639__7344.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1639__7344.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_NOT_EN[0] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1643__7675.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1643__7675.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1631.I = (0.01)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[7] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1644__1786.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1644__1786.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1632.I = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[6] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1647__9906.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1647__9906.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1635.I = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[5] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1646__2900.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1646__2900.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1634.I = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[4] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1649__3772.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1649__3772.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1637.I = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[3] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1652.I = (0.05)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[2] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1653.I = (0.01)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[1] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1626.I = (0.03)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_EN[0] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[7] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[6] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[5] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[4] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[3] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1659__5703.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1659__5703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[2] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1660__7114.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1660__7114.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[1] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1638__1840.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1638__1840.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.N_NOT_EN[0] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1550__8780.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1550__8780.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[63] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1547__4547.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1547__4547.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[62] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1549__4296.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1549__4296.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[61] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1553__9682.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1553__9682.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[60] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1546__3772.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1546__3772.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[59] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1557__2683.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1557__2683.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[58] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1551__1474.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1551__1474.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[57] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1554__1309.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1554__1309.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[56] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1583__8757.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1583__8757.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[55] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1587__6083.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1587__6083.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[54] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1580__2900.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1580__2900.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[53] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1594__2703.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1594__2703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[52] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1588__6083.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1588__6083.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[51] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1591__5795.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1591__5795.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[50] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1595__7114.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1595__7114.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[49] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1596__7344.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1596__7344.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[48] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1600__4296.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1600__4296.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[47] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1617__8757.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1617__8757.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[46] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1605__9682.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1605__9682.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[45] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1622__3772.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1622__3772.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[44] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1604__1474.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1604__1474.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[43] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1620__6877.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1620__6877.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[42] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1606__1309.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1606__1309.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[41] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1602__4547.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1602__4547.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[40] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1568__2250.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1568__2250.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[39] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1565__1840.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1565__1840.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[38] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1566__5703.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1566__5703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[37] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1567__2250.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1567__2250.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[36] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1572__5266.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1572__5266.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[35] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1569__1474.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1569__1474.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[34] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1570__2703.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1570__2703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[33] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1562__9906.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1562__9906.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[32] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1548__6877.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1548__6877.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[31] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1552__2900.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1552__2900.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[30] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1558__2391.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1558__2391.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[29] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1560__7675.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1560__7675.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[28] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1555__7118.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1555__7118.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[27] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1561__8757.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1561__8757.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[26] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1556__1786.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1556__1786.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[25] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1559__5953.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1559__5953.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[24] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1586__8780.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1586__8780.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[23] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1574__4296.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1574__4296.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[22] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1592__3772.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1592__3772.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[21] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1589__1857.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1589__1857.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[20] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1593__4547.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1593__4547.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[19] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1581__9682.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1581__9682.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[18] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1597__2683.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1597__2683.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[17] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1582__1309.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1582__1309.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[16] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1618__2900.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1618__2900.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[15] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1603__5019.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1603__5019.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[14] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1616__2391.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1616__2391.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[13] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1619__7675.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1619__7675.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[12] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1615__7118.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1615__7118.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[11] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1614__2683.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1614__2683.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[10] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1601__1840.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1601__1840.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[9] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1621__8780.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1621__8780.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[8] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1573__6877.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1573__6877.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[7] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1575__5795.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1575__5795.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[6] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1571__5703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1571__5703.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[5] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1585__7118.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1585__7118.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[4] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1563__7114.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1563__7114.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[3] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1584__2391.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1584__2391.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[2] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1564__5266.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1564__5266.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[1] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1590__7675.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1590__7675.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.SEL[0] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.READ = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1682__5019.A2 = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1682__5019.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1705.I = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.WRITE = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.WRITE_2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1688__9906.A2 = (0.02)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1688__9906.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.NOT_WRITE = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.NOT_WRITE_2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_DVLP_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_DVLP_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.P_EN[8] = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.DVLP = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.PRE = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_EN_SA_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_EN_SA_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.EN_SA = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1670__5703.B2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1670__5703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1670__5703.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1668__7114.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1668__7114.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1668__7114.A3 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1669__5266.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1669__5266.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1669__5266.A3 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1667__2250.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1667__2250.B2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1667__2250.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1624__5266.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1624__5266.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1625__6083.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1625__6083.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1610__1857.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1610__1857.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1609__8780.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1609__8780.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1686__1840.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1686__1840.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1693.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1753.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1753.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1754.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1754.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1576__1786.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1576__1786.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1577__5953.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1577__5953.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1578__7344.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1578__7344.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1651__4547.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1651__4547.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1673__9682.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1673__9682.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1672__2683.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1672__2683.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1671__5953.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1671__5953.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g2.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g2.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1684__1857.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1684__1857.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1692__3772.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1692__3772.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1691__1474.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1691__1474.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1690__4547.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1690__4547.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1680__6083.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1680__6083.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1689__4296.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1689__4296.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1681__2703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1681__2703.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1683__5795.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1683__5795.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1678__7344.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1678__7344.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1687__8780.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1687__8780.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_nstate_reg[2] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_nstate_reg[2] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_nstate_reg[0] .D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.\controller1_nstate_reg[0] .E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1726__5953.B1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1726__5953.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1721__7118.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1721__7118.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_P_ADDRESS_EN_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.controller1_P_ADDRESS_EN_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1704.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1685.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1675.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1663__1474.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1663__1474.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1665__7118.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1665__7118.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1664__8757.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1664__8757.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1666__1786.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1666__1786.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1676.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1623__2703.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1623__2703.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1611__4296.A2 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1611__4296.A1 = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1657.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1674.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1677.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1598.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1613.I = (0)
+ABSOLUTE PORT: TB_TOP_64_64_8.TOP.CONTROLLER.g1612.I = (0)

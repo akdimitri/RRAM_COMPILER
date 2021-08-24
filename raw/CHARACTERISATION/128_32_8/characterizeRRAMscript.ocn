@@ -1,0 +1,263 @@
+;============================================
+;===               RRAM COMPILER          ===
+;===            DIMITRIS ANTONIADIS       ===
+;===          IMPERIAL COLLEGE LONDON     ===
+;============================================
+;====================Set to Maestro mode explorer =============================
+envSetVal("adexl.simulation" "ignoreDesignChangesDuringRun" 'boolean t)
+envSetVal("maestro.explorer" "onHistoryNameCollision" 'cyclic "IncrementAsNew")
+ocnSetXLMode("explorer")
+ocnxlProjectDir( "/tmp/da220/Sim" )
+ocnxlTargetCellView( "THESIS" "TB_TOP_128_32_8" "maestro" )
+ocnxlResultsLocation( "/tmp/da220/ADE_XL" )
+ocnxlSimResultsLocation( "/tmp/da220/Res" )
+ocnxlMaxJobFail( 20 )
+
+;====================== Tests setup ============================================
+
+;---------- Test "TB_TOP_128_32_8" ------------- 
+ocnxlBeginTest("THESIS:TB_TOP_128_32_8:1")
+simulator( 'ams )
+solver( 'Spectre )
+design( "THESIS" "TB_TOP_128_32_8" "config" )
+ocnAmsSetUnlNetlister()
+modelFile( 
+	'("/usr/local/cadence/kits/tsmc/180n_FORTE/latest/models/spectre/c018bcd_gen2_v1d6_usage.scs" "pre_simu")
+	'("/usr/local/cadence/kits/tsmc/180n_FORTE/latest/models/spectre/c018bcd_gen2_v1d6_usage.scs" "tt_lib")
+	'("/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/param_test" "")
+)
+analysis('tran ?stop "4.800000u"  ?errpreset "liberal"  ?additionalParams "paramset=pset1"  )
+desVar(	  "Re" 1	)
+desVar(	  "Ro" 1	)
+desVar(	  "VDDH" 5.000000	)
+desVar(	  "VDDL" 1.800000	)
+desVar(	  "VDDW" 3.300000	)
+desVar(	  "CLK" 80.000000n	)
+envOption(
+	'netlisterMode  "AMS-UNL"
+	'amsIEsList  '((t "global" "" "Value" "5.000000" "connectLib.CR_full_fast" "" "logic" "discipline=logic;" "Built-in") (t "inst" "/TOP/SIGNALS_VDDL" "Value" "1.800000" "connectLib.CR_full_fast" "" "" "inst=\"/TOP/SIGNALS_VDDL\";" "Built-in") (t "net" "/Z_BUS" "Value" "1.800000" "connectLib.CR_full_fast" "" "" "net=\"/Z_BUS\";" "Built-in"))
+	'builtinuser  nil 
+)
+option( ?categ 'amsTurboOpts
+	'psrSwitch  t 
+	'apsplus  t 
+	'errorLevel  "Liberal" 
+	'uniMode  "APS" 
+)
+option( ?categ 'elaborator
+	'delay_mode  "Path" 
+	'ntc_warn  t 
+	'no_tchk_msg  t 
+	'sdf_verbose  t 
+	'intermod_path  t 
+	'delay_type  "Maximum"
+	'sdf_cmd_file  "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/TB_TOP_128_32_8_SDF_CMD"
+)
+save( 'v "/clk" "/EN" "/RW" "/X_ADDRESS_IN<3:0>" "/Y_ADDRESS_IN<4:0>" "/reset" "/Z_BUS<7:0>"  "/TOP/Z_SA<0>"  "/TOP/Z_SA<1>"  "/TOP/Z_SA<2>"  "/TOP/Z_SA<3>"  "/TOP/Z_SA<4>"  "/TOP/Z_SA<5>"  "/TOP/Z_SA<6>"  "/TOP/Z_SA<7>"  "/P<119>"  "/P<118>"  "/P<117>"  "/P<116>"  "/P<115>"  "/P<114>"  "/P<113>"  "/P<112>"  "/TOP/RRAM_ANALOG/N<120>"  "/TOP/RRAM_ANALOG/N<119>"  "/TOP/RRAM_ANALOG/N<118>"  "/TOP/RRAM_ANALOG/N<117>"  "/TOP/RRAM_ANALOG/N<116>"  "/TOP/RRAM_ANALOG/N<115>"  "/TOP/RRAM_ANALOG/N<114>"  "/TOP/RRAM_ANALOG/N<113>" )
+temp( 27 ) 
+ocnxlOutputSignal( "/clk" ?plot t ?save t)
+ocnxlOutputSignal( "/EN" ?plot t ?save t)
+ocnxlOutputSignal( "/RW" ?plot t ?save t)
+ocnxlOutputSignal( "/X_ADDRESS_IN<3:0>" ?plot t ?save t)
+ocnxlOutputSignal( "/Y_ADDRESS_IN<4:0>" ?plot t ?save t)
+ocnxlOutputSignal( "/reset" ?plot t ?save t)
+ocnxlOutputSignal( "/Z_BUS<7:0>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_IN<1:8>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_IN<9:16>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<1>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<0>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<2>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<1>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<3>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<2>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<4>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<3>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<5>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<4>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<6>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<5>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<7>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<6>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/SA_VO<8>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/net1<7>" ?plot t ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<0>" ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<1>" ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<2>" ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<3>" ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<4>" ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<5>" ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<6>" ?save t)
+ocnxlOutputSignal( "/TOP/Z_SA<7>" ?save t)
+ocnxlOutputSignal( "/P<119>" ?save t)
+ocnxlOutputSignal( "/P<118>" ?save t)
+ocnxlOutputSignal( "/P<117>" ?save t)
+ocnxlOutputSignal( "/P<116>" ?save t)
+ocnxlOutputSignal( "/P<115>" ?save t)
+ocnxlOutputSignal( "/P<114>" ?save t)
+ocnxlOutputSignal( "/P<113>" ?save t)
+ocnxlOutputSignal( "/P<112>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<120>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<119>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<118>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<117>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<116>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<115>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<114>" ?save t)
+ocnxlOutputSignal( "/TOP/RRAM_ANALOG/N<113>" ?save t)
+ocnxlOutputExpr( "numConv(value(VT(\"/Z_BUS<7:0>\") (27.4 * VAR(\"CLK\"))) \"bin\" t)" ?name "READ_2" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<119>\") - VT(\"/TOP/RRAM_ANALOG/N<120>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_7" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<118>\") - VT(\"/TOP/RRAM_ANALOG/N<119>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_6" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<117>\") - VT(\"/TOP/RRAM_ANALOG/N<118>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_5" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<116>\") - VT(\"/TOP/RRAM_ANALOG/N<117>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_4" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<115>\") - VT(\"/TOP/RRAM_ANALOG/N<116>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_3" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<114>\") - VT(\"/TOP/RRAM_ANALOG/N<115>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_2" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<113>\") - VT(\"/TOP/RRAM_ANALOG/N<114>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_1" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<112>\") - VT(\"/TOP/RRAM_ANALOG/N<113>\")) (11.4 * VAR(\"CLK\")))" ?name "WRITE_1_0" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<119>\") - VT(\"/TOP/RRAM_ANALOG/N<120>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_7" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<118>\") - VT(\"/TOP/RRAM_ANALOG/N<119>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_6" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<117>\") - VT(\"/TOP/RRAM_ANALOG/N<118>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_5" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<116>\") - VT(\"/TOP/RRAM_ANALOG/N<117>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_4" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<115>\") - VT(\"/TOP/RRAM_ANALOG/N<116>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_3" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<114>\") - VT(\"/TOP/RRAM_ANALOG/N<115>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_2" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<113>\") - VT(\"/TOP/RRAM_ANALOG/N<114>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_1" ?plot t)
+ocnxlOutputExpr( "value((VT(\"/P<112>\") - VT(\"/TOP/RRAM_ANALOG/N<113>\")) (13.4 * VAR(\"CLK\")))" ?name "WRITE_2_0" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<0>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_0" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<1>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_1" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<2>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_2" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<3>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_3" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<4>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_4" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<5>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_5" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<6>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_6" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<7>\") (27.4 * VAR(\"CLK\")))" ?name "READ_1_7" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<0>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_0" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<1>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_1" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<2>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_2" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<3>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_3" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<4>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_4" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<5>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_5" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<6>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_6" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/TOP/Z_SA<7>\") (41.4 * VAR(\"CLK\")))" ?name "READ_2_7" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/Z_BUS<3:0>\") (41.4 * 80.000000n))" ?name "READ_2" ?plot t)
+ocnxlOutputExpr( "value(VT(\"/Z_BUS<3:0>\") (27.4 * 80.000000n))" ?name "READ_1" ?plot t)
+ocnxlEndTest()
+
+;====================== Specs ==================================================
+
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_0" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_0" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_0" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_0" "(0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_1" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_1" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_1" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_1" "(0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_2" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_2" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_2" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_2" "(0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_3" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_3" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_3" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_3" "(0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_4" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_4" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_4" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_4" "(0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_5" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_5" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_5" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_5" "(0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_6" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_6" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_6" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_6" "(0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_2_7" "1.5" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "READ_1_7" "0.3" )
+ocnxlPutLessthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_1_7" "(-0.7 * VAR(\"VDDW\"))" )
+ocnxlPutGreaterthanSpec( "THESIS:TB_TOP_128_32_8:1" "WRITE_2_7" "(0.7 * VAR(\"VDDW\"))" )
+
+;====================== Sweeps setup ===========================================
+
+;====================== Model Group setup ======================================
+
+;====================== Corners setup ==========================================
+
+ocnxlCorner( "FS"
+	'(
+		("model" "/usr/local/cadence/kits/tsmc/180n_FORTE/latest/models/spectre/c018bcd_gen2_v1d6_usage.scs" ?section "\"fs_lib\"")
+		("model" "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/param_test" ?section "")
+		("modelGroup" "")
+	)
+)
+ocnxlCorner( "SF"
+	'(
+		("model" "/usr/local/cadence/kits/tsmc/180n_FORTE/latest/models/spectre/c018bcd_gen2_v1d6_usage.scs" ?section "\"sf_lib\"")
+		("model" "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/param_test" ?section "")
+		("modelGroup" "")
+	)
+)
+ocnxlCorner( "SS"
+	'(
+		("model" "/usr/local/cadence/kits/tsmc/180n_FORTE/latest/models/spectre/c018bcd_gen2_v1d6_usage.scs" ?section "\"ss_lib\"")
+		("model" "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/param_test" ?section "")
+		("modelGroup" "")
+	)
+)
+ocnxlCorner( "FF"
+	'(
+		("model" "/usr/local/cadence/kits/tsmc/180n_FORTE/latest/models/spectre/c018bcd_gen2_v1d6_usage.scs" ?section "\"ff_lib\"")
+		("model" "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/param_test" ?section "")
+		("modelGroup" "")
+	)
+)
+
+;====================== Checks and Asserts setup ============================================
+ocnxlPutChecksAsserts(?netlist nil)
+
+;====================== Job setup ==============================================
+
+ocnxlJobSetup( '(
+"blockemail" "1"
+"configuretimeout" "300"
+"defaultcpuvalue" "1"
+"defaultmemoryvalue" "1000"
+"distributionmethod" "Local"
+"jobruntype" "ICRP"
+"estimatememoryvalue" ""
+"estimationsimulationmode" "0"
+"lingertimeout" "300"
+"maxjobs" "1"
+"name" "Maestro Default"
+"preemptivestart" "1"
+"providecpuandmemorydata" "1"
+"reconfigureimmediately" "1"
+"runpointsvalue" "5"
+"runtimeout" "-1"
+"scaleestimatedbycpu" "100"
+"scaleestimatedbymemory" "100"
+"showerrorwhenretrying" "1"
+"showoutputlogerror" "0"
+"startmaxjobsimmed" "1"
+"starttimeout" "300"
+"usesameprocess" "1"
+"warndisklow" "0"
+"warnthresholdvalue" "100"
+) )
+
+;====================== Disabled items =========================================
+
+;====================== Run Mode Options ======================================
+
+;====================== Starting Point Info ======================================
+
+;====================== Run command ============================================
+
+ocnxlRun( ?mode 'sweepsAndCorners ?nominalCornerEnabled t ?allCornersEnabled t ?allSweepsEnabled t)
+ocnxlOutputSummary(?exprSummary t ?specSummary t ?detailed t ?wave t)
+ocnxlExportOutputView( "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/80_TB_TOP_128_32_8.html" "Detail")
+ocnxlExportOutputView( "/ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_128_32_8/.CHARACTERIZATION/80_TB_TOP_128_32_8.csv" "Detail")
+ocnxlOpenResults()
+
+;====================== End XL Mode command ===================================
+
+ocnxlEndXLMode("explorer")

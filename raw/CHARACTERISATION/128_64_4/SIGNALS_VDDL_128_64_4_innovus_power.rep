@@ -1,0 +1,83 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 18.10-p002_1 (64bit) 05/29/2018 19:19 (Linux 2.6.18-194.el5)
+*	
+*
+* 	Date & Time:	2021-Aug-12 08:55:00 (2021-Aug-12 07:55:00 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: SIGNALS_VDDL_128_64_4
+*
+*	Liberty Libraries used: 
+*	        default_emulate_view: /usr/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcb018gbwp7t_270a//tcb018gbwp7ttc.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        1.8 
+*
+*       Power View : default_emulate_view
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile ../reports/SIGNALS_VDDL_128_64_4/SIGNALS_VDDL_128_64_4_innovus_power.rep
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        0.08284928 	   11.8358%
+Total Switching Power:       0.61713896 	   88.1639%
+Total Leakage Power:         0.00000242 	    0.0003%
+Total Power:                 0.69999065 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                       0.06336      0.0685   1.261e-06      0.1319       18.84 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                    0.01949      0.5486   1.162e-06      0.5681       81.16 
+Clock (Combinational)                  0           0           0           0           0 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                            0.08285      0.6171   2.423e-06         0.7         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.8    0.08285      0.6171   2.423e-06         0.7         100 
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power:               U7_g1__3772 (BUFTD8BWP7T):           0.1357 
+*                Highest Leakage Power:               U7_g5__8780 (BUFTD8BWP7T):        2.236e-07 
+*          Total Cap:      1.90475e-11 F
+*          Total instances in design:    23
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+

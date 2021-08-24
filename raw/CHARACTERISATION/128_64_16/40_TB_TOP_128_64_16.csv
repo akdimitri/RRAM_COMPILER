@@ -1,0 +1,173 @@
+,Parameter,,Nominal,,,,,,,FS,,SF,,SS,,FF
+,c018bcd_gen2_v1d6_usage.scs,,tt_lib,,,,,,,fs_lib,,sf_lib,,ss_lib,,ff_lib
+,c018bcd_gen2_v1d6_usage.scs,,pre_simu,,,,,,,nom,,nom,,nom,,nom
+,param_test,,,,,,,,,<unspecified section>,,<unspecified section>,,<unspecified section>,,<unspecified section>
+
+
+Test,Output,Nominal Spec,Nominal,Spec,Weight,Pass/Fail,Min,Max,FS Spec,FS,SF Spec,SF,SS Spec,SS,FF Spec,FF
+THESIS:TB_TOP_128_64_16:1,/clk,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/EN,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/RW,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/X_ADDRESS_IN<2:0>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/Y_ADDRESS_IN<5:0>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/reset,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/Z_BUS<15:0>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_IN<1:16>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_IN<17:32>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<1>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<0>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<2>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<1>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<3>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<2>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<4>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<3>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<5>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<4>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<6>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<5>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<7>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<6>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<8>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<7>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<9>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<8>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<10>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<9>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<11>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<10>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<12>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<11>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<13>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<12>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<14>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<13>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<15>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<14>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/SA_VO<16>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/net1<15>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/WRITE_L,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/READ_L_1,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/DVLP_L,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/PRE_L,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/SA_EN_L,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<0>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<1>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<2>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<3>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<4>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<5>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<6>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<7>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<8>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<9>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<10>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<11>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<12>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<13>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<14>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/Z_SA<15>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<111>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<110>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<109>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<108>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<107>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<106>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<105>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<104>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<103>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<102>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<101>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<100>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<99>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<98>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<97>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/P<96>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<112>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<111>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<110>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<109>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<108>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<107>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<106>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<105>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<104>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<103>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<102>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<101>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<100>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<99>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<98>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,/TOP/RRAM_ANALOG/N<97>,,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,READ_2,,error,,,,10,15,,15,,15,,10,,15
+THESIS:TB_TOP_128_64_16:1,WRITE_1_15,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-2.045,-1.206,< -2.31,-1.668,< -2.31,-1.557,< -2.31,-1.206,< -2.31,-2.045
+THESIS:TB_TOP_128_64_16:1,WRITE_1_14,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.007,2.441,> 2.31,2.327,> 2.31,2.221,> 2.31,2.007,> 2.31,2.441
+THESIS:TB_TOP_128_64_16:1,WRITE_1_13,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.901,-1.004,< -2.31,-1.483,< -2.31,-1.357,< -2.31,-1.004,< -2.31,-1.901
+THESIS:TB_TOP_128_64_16:1,WRITE_1_12,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.027,2.44,> 2.31,2.336,> 2.31,2.227,> 2.31,2.027,> 2.31,2.44
+THESIS:TB_TOP_128_64_16:1,WRITE_1_11,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.914,-1.011,< -2.31,-1.496,< -2.31,-1.368,< -2.31,-1.011,< -2.31,-1.914
+THESIS:TB_TOP_128_64_16:1,WRITE_1_10,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.034,2.445,> 2.31,2.347,> 2.31,2.233,> 2.31,2.034,> 2.31,2.445
+THESIS:TB_TOP_128_64_16:1,WRITE_1_9,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.928,-1.02,< -2.31,-1.509,< -2.31,-1.377,< -2.31,-1.02,< -2.31,-1.928
+THESIS:TB_TOP_128_64_16:1,WRITE_1_8,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.04,2.449,> 2.31,2.357,> 2.31,2.238,> 2.31,2.04,> 2.31,2.449
+THESIS:TB_TOP_128_64_16:1,WRITE_1_7,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.948,-1.041,< -2.31,-1.528,< -2.31,-1.396,< -2.31,-1.041,< -2.31,-1.948
+THESIS:TB_TOP_128_64_16:1,WRITE_1_6,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.046,2.454,> 2.31,2.368,> 2.31,2.245,> 2.31,2.046,> 2.31,2.454
+THESIS:TB_TOP_128_64_16:1,WRITE_1_5,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.966,-1.041,< -2.31,-1.544,< -2.31,-1.399,< -2.31,-1.041,< -2.31,-1.966
+THESIS:TB_TOP_128_64_16:1,WRITE_1_4,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.052,2.46,> 2.31,2.382,> 2.31,2.252,> 2.31,2.052,> 2.31,2.46
+THESIS:TB_TOP_128_64_16:1,WRITE_1_3,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.99,-1.057,< -2.31,-1.569,< -2.31,-1.416,< -2.31,-1.057,< -2.31,-1.99
+THESIS:TB_TOP_128_64_16:1,WRITE_1_2,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.055,2.464,> 2.31,2.385,> 2.31,2.25,> 2.31,2.055,> 2.31,2.464
+THESIS:TB_TOP_128_64_16:1,WRITE_1_1,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-2.041,-1.057,< -2.31,-1.634,< -2.31,-1.446,< -2.31,-1.057,< -2.31,-2.041
+THESIS:TB_TOP_128_64_16:1,WRITE_1_0,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.37,2.58,> 2.31,2.563,> 2.31,2.471,> 2.31,2.37,> 2.31,2.58
+THESIS:TB_TOP_128_64_16:1,WRITE_2_15,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,2.106,2.565,> 2.31,2.431,> 2.31,2.391,> 2.31,2.106,> 2.31,2.565
+THESIS:TB_TOP_128_64_16:1,WRITE_2_14,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.913,-862.3e-3,< -2.31,-1.388,< -2.31,-1.308,< -2.31,-862.3e-3,< -2.31,-1.913
+THESIS:TB_TOP_128_64_16:1,WRITE_2_13,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,1.718,2.416,> 2.31,2.099,> 2.31,2.1,> 2.31,1.718,> 2.31,2.416
+THESIS:TB_TOP_128_64_16:1,WRITE_2_12,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.88,-840.7e-3,< -2.31,-1.368,< -2.31,-1.275,< -2.31,-840.7e-3,< -2.31,-1.88
+THESIS:TB_TOP_128_64_16:1,WRITE_2_11,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,1.737,2.423,> 2.31,2.119,> 2.31,2.112,> 2.31,1.737,> 2.31,2.423
+THESIS:TB_TOP_128_64_16:1,WRITE_2_10,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.897,-852.2e-3,< -2.31,-1.383,< -2.31,-1.289,< -2.31,-852.2e-3,< -2.31,-1.897
+THESIS:TB_TOP_128_64_16:1,WRITE_2_9,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,1.751,2.429,> 2.31,2.137,> 2.31,2.122,> 2.31,1.751,> 2.31,2.429
+THESIS:TB_TOP_128_64_16:1,WRITE_2_8,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.918,-861.6e-3,< -2.31,-1.4,< -2.31,-1.301,< -2.31,-861.6e-3,< -2.31,-1.918
+THESIS:TB_TOP_128_64_16:1,WRITE_2_7,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,1.792,2.445,> 2.31,2.181,> 2.31,2.15,> 2.31,1.792,> 2.31,2.445
+THESIS:TB_TOP_128_64_16:1,WRITE_2_6,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.942,-878.2e-3,< -2.31,-1.423,< -2.31,-1.318,< -2.31,-878.2e-3,< -2.31,-1.942
+THESIS:TB_TOP_128_64_16:1,WRITE_2_5,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,1.785,2.445,> 2.31,2.178,> 2.31,2.147,> 2.31,1.785,> 2.31,2.445
+THESIS:TB_TOP_128_64_16:1,WRITE_2_4,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.969,-900e-3,< -2.31,-1.45,< -2.31,-1.339,< -2.31,-900e-3,< -2.31,-1.969
+THESIS:TB_TOP_128_64_16:1,WRITE_2_3,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,1.812,2.456,> 2.31,2.206,> 2.31,2.166,> 2.31,1.812,> 2.31,2.456
+THESIS:TB_TOP_128_64_16:1,WRITE_2_2,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-1.999,-911.3e-3,< -2.31,-1.475,< -2.31,-1.348,< -2.31,-911.3e-3,< -2.31,-1.999
+THESIS:TB_TOP_128_64_16:1,WRITE_2_1,"> (0.7 * VAR(""VDDW""))",error,"> (0.7 * VAR(""VDDW""))",,fail,1.813,2.478,> 2.31,2.238,> 2.31,2.194,> 2.31,1.813,> 2.31,2.478
+THESIS:TB_TOP_128_64_16:1,WRITE_2_0,"< (-0.7 * VAR(""VDDW""))",error,"< (-0.7 * VAR(""VDDW""))",,fail,-2.224,-1.37,< -2.31,-1.824,< -2.31,-1.707,< -2.31,-1.37,< -2.31,-2.224
+THESIS:TB_TOP_128_64_16:1,READ_1_0,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_1,,error,< 0.3,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_2,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_3,,error,< 0.3,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_4,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_5,,error,< 0.3,,fail,-8.71e-6,1.799,,1.799,,1.799,,-8.71e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_6,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_7,,error,< 0.3,,fail,-10.22e-6,1.799,,1.799,,1.799,,-10.22e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_8,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_9,,error,< 0.3,,fail,-10.54e-6,1.799,,1.799,,1.799,,-10.54e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_10,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_11,,error,< 0.3,,fail,-8.192e-6,1.799,,1.799,,1.799,,-8.192e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_12,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_13,,error,< 0.3,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_14,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1_15,,error,< 0.3,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_0,,error,< 0.3,,fail,-7.404e-6,1.799,,1.799,,1.799,,-7.404e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_1,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_2,,error,< 0.3,,fail,534.7e-9,1.799,,1.799,,1.799,,534.7e-9,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_3,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_4,,error,< 0.3,,fail,-4.582e-6,1.799,,1.799,,1.799,,-4.582e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_5,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_6,,error,< 0.3,,fail,-9.801e-6,1.799,,1.799,,1.799,,-9.801e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_7,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_8,,error,< 0.3,,fail,-13.45e-6,1.799,,1.799,,1.799,,-13.45e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_9,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_10,,error,< 0.3,,fail,-24.08e-6,1.799,,1.799,,1.799,,-24.08e-6,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_11,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_12,,error,< 0.3,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_13,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_14,,error,< 0.3,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_2_15,,error,> 1.5,,fail,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_16:1,READ_1,,error,,,,15,15,,15,,15,,15,,15
+THESIS:TB_TOP_128_64_16:1,"VT(""/TOP/SA_EN_L"")",,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,"VT(""/TOP/PRE_L"")",,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,"VT(""/TOP/DVLP_L"")",,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,"VT(""/TOP/READ_L_1"")",,error,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_16:1,"VT(""/TOP/WRITE_L"")",,error,,,,,,,,,,,,,
+

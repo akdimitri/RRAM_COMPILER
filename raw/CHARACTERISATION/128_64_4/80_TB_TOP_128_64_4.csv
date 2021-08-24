@@ -1,0 +1,65 @@
+,Parameter,,Nominal,,,,,,,FS,,SF,,SS,,FF
+,c018bcd_gen2_v1d6_usage.scs,,tt_lib,,,,,,,fs_lib,,sf_lib,,ss_lib,,ff_lib
+,c018bcd_gen2_v1d6_usage.scs,,pre_simu,,,,,,,nom,,nom,,nom,,nom
+,param_test,,,,,,,,,<unspecified section>,,<unspecified section>,,<unspecified section>,,<unspecified section>
+
+
+Test,Output,Nominal Spec,Nominal,Spec,Weight,Pass/Fail,Min,Max,FS Spec,FS,SF Spec,SF,SS Spec,SS,FF Spec,FF
+THESIS:TB_TOP_128_64_4:1,/clk,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/EN,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/RW,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/X_ADDRESS_IN<4:0>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/Y_ADDRESS_IN<5:0>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/reset,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/Z_BUS<3:0>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/SA_IN<1:4>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/SA_IN<5:8>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/SA_VO<1>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/net1<0>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/SA_VO<2>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/net1<1>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/SA_VO<3>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/net1<2>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/SA_VO<4>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/net1<3>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/WRITE_L,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/READ_L_1,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/DVLP_L,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/PRE_L,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/SA_EN_L,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/Z_SA<0>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/Z_SA<1>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/Z_SA<2>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/Z_SA<3>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/P<123>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/P<122>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/P<121>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/P<120>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/N<124>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/N<123>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/N<122>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,/TOP/RRAM_ANALOG/N<121>,,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,READ_2,,10,,,,10,10,,10,,10,,10,,10
+THESIS:TB_TOP_128_64_4:1,WRITE_1_3,< -2.31,-2.765,"< (-0.7 * VAR(""VDDW""))",,pass,-2.998,-2.448,< -2.31,-2.832,< -2.31,-2.668,< -2.31,-2.448,< -2.31,-2.998
+THESIS:TB_TOP_128_64_4:1,WRITE_1_2,> 2.31,2.533,"> (0.7 * VAR(""VDDW""))",,pass,2.473,2.588,> 2.31,2.56,> 2.31,2.495,> 2.31,2.473,> 2.31,2.588
+THESIS:TB_TOP_128_64_4:1,WRITE_1_1,< -2.31,-2.725,"< (-0.7 * VAR(""VDDW""))",,pass,-2.968,-2.401,< -2.31,-2.783,< -2.31,-2.631,< -2.31,-2.401,< -2.31,-2.968
+THESIS:TB_TOP_128_64_4:1,WRITE_1_0,> 2.31,2.565,"> (0.7 * VAR(""VDDW""))",,pass,2.501,2.609,> 2.31,2.587,> 2.31,2.532,> 2.31,2.501,> 2.31,2.609
+THESIS:TB_TOP_128_64_4:1,WRITE_2_3,> 2.31,2.558,"> (0.7 * VAR(""VDDW""))",,pass,2.49,2.603,> 2.31,2.56,> 2.31,2.513,> 2.31,2.49,> 2.31,2.603
+THESIS:TB_TOP_128_64_4:1,WRITE_2_2,< -2.31,-2.685,"< (-0.7 * VAR(""VDDW""))",,pass,-2.946,-2.331,< -2.31,-2.737,< -2.31,-2.606,< -2.31,-2.331,< -2.31,-2.946
+THESIS:TB_TOP_128_64_4:1,WRITE_2_1,> 2.31,2.517,"> (0.7 * VAR(""VDDW""))",,pass,2.449,2.582,> 2.31,2.539,> 2.31,2.47,> 2.31,2.449,> 2.31,2.582
+THESIS:TB_TOP_128_64_4:1,WRITE_2_0,< -2.31,-2.748,"< (-0.7 * VAR(""VDDW""))",,pass,-2.988,-2.419,< -2.31,-2.821,< -2.31,-2.656,< -2.31,-2.419,< -2.31,-2.988
+THESIS:TB_TOP_128_64_4:1,READ_1_0,,1.799,> 1.5,,pass,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_4:1,READ_1_1,,-13.58e-6,< 0.3,,pass,-23.29e-6,-2.358e-6,,-6.827e-6,,-2.358e-6,,-23.29e-6,,-6.014e-6
+THESIS:TB_TOP_128_64_4:1,READ_1_2,,1.799,> 1.5,,pass,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_4:1,READ_1_3,,-4.194e-6,< 0.3,,pass,-5.395e-6,1.435e-6,,-5.395e-6,,-2.246e-6,,-5.356e-6,,1.435e-6
+THESIS:TB_TOP_128_64_4:1,READ_2_0,,3.112e-6,< 0.3,,pass,-18.05e-6,3.112e-6,,1.299e-6,,-16.74e-6,,-2.542e-6,,-18.05e-6
+THESIS:TB_TOP_128_64_4:1,READ_2_1,,1.799,> 1.5,,pass,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_4:1,READ_2_2,,-6.839e-6,< 0.3,,pass,-14.11e-6,9.185e-6,,-14.11e-6,,9.185e-6,,-1.402e-6,,-1.007e-6
+THESIS:TB_TOP_128_64_4:1,READ_2_3,,1.799,> 1.5,,pass,1.799,1.799,,1.799,,1.799,,1.799,,1.799
+THESIS:TB_TOP_128_64_4:1,READ_1,,5,,,,5,5,,5,,5,,5,,5
+THESIS:TB_TOP_128_64_4:1,"VT(""/TOP/SA_EN_L"")",,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,"VT(""/TOP/PRE_L"")",,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,"VT(""/TOP/DVLP_L"")",,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,"VT(""/TOP/READ_L_1"")",,,,,,,,,,,,,,,
+THESIS:TB_TOP_128_64_4:1,"VT(""/TOP/WRITE_L"")",,,,,,,,,,,,,,,
+

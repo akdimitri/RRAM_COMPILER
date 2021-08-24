@@ -1,0 +1,83 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 18.10-p002_1 (64bit) 05/29/2018 19:19 (Linux 2.6.18-194.el5)
+*	
+*
+* 	Date & Time:	2021-Aug-08 08:38:15 (2021-Aug-08 07:38:15 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: CONTROLLER_5V_128_16_4
+*
+*	Liberty Libraries used: 
+*	        default_emulate_view: /usr/local/cadence/kits/tsmc/180n_FORTE/PDK_v02_1.6b_2021/tsmc_libraries/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcb018bcdgp2a_110a/tcb018bcdgp2atc.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:          5 
+*
+*       Power View : default_emulate_view
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile ../reports/CONTROLLER_5V_128_16_4/CONTROLLER_5V_128_16_4_innovus_power.rep
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        0.79435780 	   19.5605%
+Total Switching Power:       3.26661526 	   80.4383%
+Total Leakage Power:         0.00004777 	    0.0012%
+Total Power:                 4.06102083 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                        0.3699     0.06541   4.244e-06      0.4353       10.72 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                     0.4245       3.201   4.352e-05       3.626       89.28 
+Clock (Combinational)                  0           0           0           0           0 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                             0.7944       3.267   4.777e-05       4.061         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                         5     0.7944       3.267   4.777e-05       4.061         100 
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power:                     g2230 (INVD8):           0.1078 
+*                Highest Leakage Power:  controller1_state_reg[2] (DFKCNQD1):        3.203e-07 
+*          Total Cap:      2.32725e-10 F
+*          Total instances in design:   304
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+

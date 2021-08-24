@@ -1,0 +1,6 @@
+simulator lang=spectre
+pset1 paramset {
+time  Re  Ro  
+0n    9.750000k	 108.333333k
+2720.000000n	108.333333k	9.750000k
+}

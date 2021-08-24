@@ -1,0 +1,194 @@
+======================================================================
+
+Annotating SDF timing data:
+  Compiled SDF file:     /ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_32_32_4/.CHARACTERIZATION/SIGNALS_VDDL_32_32_4_final.sdf.X
+  Log file:              /ibe/users/da220/Cadence/WORK_TSMC180FORTE/THESIS/TB_TOP_32_32_4/.CHARACTERIZATION/SIGNALS_VDDL_32_32_4_final.sdf.X_sdf_annotation.log
+  Backannotation scope:  TB_TOP_32_32_4.TOP.SIGNALS_VDDL
+  Configuration file:    
+  MTM control:           MAXIMUM
+  Scale factors:         
+  Scale type:            
+
+Time units: 1ns
+
+
+Annotating to instance FE_PDC1_READ_VDDL_1 of module BUFFD2BWP7T
+	ABSOLUTE (IOPATH I Z) = (0.503, 0.384)
+
+Annotating to instance FE_PDC0_NOT_READ_VDDL_1 of module BUFFD2BWP7T
+	ABSOLUTE (IOPATH I Z) = (0.505, 0.386)
+
+Annotating to instance U7_g5__8780 of module BUFTD8BWP7T
+	ABSOLUTE (IOPATH I Z) = (1.772, 1.176)
+	ABSOLUTE (IOPATH OE Z) = ((), (), 0.248, 1.798, 0.223, 1.139)
+
+Annotating to instance U7_g6__4296 of module BUFTD8BWP7T
+	ABSOLUTE (IOPATH I Z) = (1.77, 1.177)
+	ABSOLUTE (IOPATH OE Z) = ((), (), 0.248, 1.796, 0.223, 1.14)
+
+Annotating to instance U7_g1__3772 of module BUFTD8BWP7T
+	ABSOLUTE (IOPATH I Z) = (1.772, 1.176)
+	ABSOLUTE (IOPATH OE Z) = ((), (), 0.248, 1.798, 0.223, 1.139)
+
+Annotating to instance U7_g4__1474 of module BUFTD8BWP7T
+	ABSOLUTE (IOPATH I Z) = (1.772, 1.176)
+	ABSOLUTE (IOPATH OE Z) = ((), (), 0.248, 1.798, 0.223, 1.139)
+
+Annotating to instance U1_out_reg of module LHQD2BWP7T
+	ABSOLUTE (IOPATH D Q) = (0.558, 0.507)
+	ABSOLUTE (IOPATH E Q) = (0.632, 0.493)
+	TIMINGCHECK (WIDTH (posedge E) (0.166))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.018) (-0.001))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.181) (-0.123))
+
+Annotating to instance U3_out_reg of module LHQD2BWP7T
+	ABSOLUTE (IOPATH D Q) = (0.567, 0.511)
+	ABSOLUTE (IOPATH E Q) = (0.642, 0.496)
+	TIMINGCHECK (WIDTH (posedge E) (0.166))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.018) (-0.001))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.181) (-0.124))
+
+Annotating to instance U6_out_reg of module LHQD2BWP7T
+	ABSOLUTE (IOPATH D Q) = (0.613, 0.521)
+	ABSOLUTE (IOPATH E Q) = (0.691, 0.521)
+	TIMINGCHECK (WIDTH (posedge E) (0.166))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.014) (0.002))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.168) (-0.11))
+
+Annotating to instance U4_out_reg of module LHQD2BWP7T
+	ABSOLUTE (IOPATH D Q) = (0.553, 0.491)
+	ABSOLUTE (IOPATH E Q) = (0.631, 0.491)
+	TIMINGCHECK (WIDTH (posedge E) (0.166))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.014) (0.002))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.168) (-0.11))
+
+Annotating to instance U5_out_reg of module LHQD2BWP7T
+	ABSOLUTE (IOPATH D Q) = (0.555, 0.492)
+	ABSOLUTE (IOPATH E Q) = (0.633, 0.491)
+	TIMINGCHECK (WIDTH (posedge E) (0.166))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.014) (0.002))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.168) (-0.11))
+
+Annotating to instance g11 of module INVD1BWP7T
+	ABSOLUTE (IOPATH I ZN) = (0.111, 0.019)
+
+Annotating to instance g14 of module INVD1BWP7T
+	ABSOLUTE (IOPATH I ZN) = (0.109, 0.02)
+
+Annotating to instance U6_mid_reg of module LHD1BWP7T
+	ABSOLUTE (IOPATH D QN) = (0.268, 0.18)
+	ABSOLUTE (IOPATH D Q) = (0.118, 0.186)
+	ABSOLUTE (IOPATH E QN) = (0.252, 0.251)
+	ABSOLUTE (IOPATH E Q) = (0.188, 0.17)
+	TIMINGCHECK (WIDTH (posedge E) (0.135))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.008) (0.01))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.154) (-0.102))
+
+Annotating to instance U4_mid_reg of module LHD1BWP7T
+	ABSOLUTE (IOPATH D QN) = (0.268, 0.181)
+	ABSOLUTE (IOPATH D Q) = (0.117, 0.185)
+	ABSOLUTE (IOPATH E QN) = (0.253, 0.252)
+	ABSOLUTE (IOPATH E Q) = (0.188, 0.17)
+	TIMINGCHECK (WIDTH (posedge E) (0.135))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.007) (0.01))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.153) (-0.101))
+
+Annotating to instance U5_mid_reg of module LHD1BWP7T
+	ABSOLUTE (IOPATH D QN) = (0.268, 0.181)
+	ABSOLUTE (IOPATH D Q) = (0.117, 0.185)
+	ABSOLUTE (IOPATH E QN) = (0.253, 0.252)
+	ABSOLUTE (IOPATH E Q) = (0.188, 0.17)
+	TIMINGCHECK (WIDTH (posedge E) (0.135))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.007) (0.01))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.153) (-0.101))
+
+Annotating to instance U1_mid_reg of module LHQD2BWP7T
+	ABSOLUTE (IOPATH D Q) = (0.565, 0.507)
+	ABSOLUTE (IOPATH E Q) = (0.636, 0.492)
+	TIMINGCHECK (WIDTH (posedge E) (0.166))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.022) (-0.006))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.182) (-0.124))
+
+Annotating to instance U3_mid_reg of module LHQD2BWP7T
+	ABSOLUTE (IOPATH D Q) = (0.581, 0.519)
+	ABSOLUTE (IOPATH E Q) = (0.649, 0.501)
+	TIMINGCHECK (WIDTH (posedge E) (0.166))
+	TIMINGCHECK (SETUPHOLD (posedge D) (negedge E) (0.025) (-0.008))
+	TIMINGCHECK (SETUPHOLD (negedge D) (negedge E) (0.185) (-0.128))
+
+Annotating to instance g19 of module CKND1BWP7T
+	ABSOLUTE (IOPATH I ZN) = (0.133, 0.097)
+
+Annotating to instance g23 of module CKND1BWP7T
+	ABSOLUTE (IOPATH I ZN) = (0.132, 0.096)
+
+Annotating to instance g20 of module CKND1BWP7T
+	ABSOLUTE (IOPATH I ZN) = (0.138, 0.103)
+
+Annotating to instance g21 of module CKND1BWP7T
+	ABSOLUTE (IOPATH I ZN) = (0.151, 0.115)
+
+Annotating to instance g22 of module CKND1BWP7T
+	ABSOLUTE (IOPATH I ZN) = (0.129, 0.094)
+   assign WRITE_2 = WRITE ;
+        |
+ncelab: *W,SDFNCAP (/ibe/users/da220/Cadence/WORK_TSMC180FORTE/DIGITAL_THESIS_5V/CONTROLLER_5V_32_32_4/functional/verilog.v,118|8): The interconnect source TB_TOP_32_32_4.TOP.CONTROLLER.controller1_N_ADDRESS_EN_reg.Q is separated by a unidirectional continuous assign from the destination TB_TOP_32_32_4.TOP.CONTROLLER.WRITE_2.  The port annotation will still occur.
+   assign NOT_WRITE_2 = NOT_WRITE ;
+        |
+ncelab: *W,SDFNCAP (/ibe/users/da220/Cadence/WORK_TSMC180FORTE/DIGITAL_THESIS_5V/CONTROLLER_5V_32_32_4/functional/verilog.v,117|8): The interconnect source TB_TOP_32_32_4.TOP.CONTROLLER.g1560.ZN is separated by a unidirectional continuous assign from the destination TB_TOP_32_32_4.TOP.CONTROLLER.NOT_WRITE_2.  The port annotation will still occur.
+   assign DVLP = P_EN[8] ;
+        |
+ncelab: *W,SDFNCAP (/ibe/users/da220/Cadence/WORK_TSMC180FORTE/DIGITAL_THESIS_5V/CONTROLLER_5V_32_32_4/functional/verilog.v,116|8): The interconnect source TB_TOP_32_32_4.TOP.CONTROLLER.FE_OFC0_DVLP.Z is separated by a unidirectional continuous assign from the destination TB_TOP_32_32_4.TOP.CONTROLLER.DVLP.  The port annotation will still occur.
+   assign READ_VDDL_2 = FE_PSRN_1 ;
+        |
+ncelab: *W,SDFNCAP (/ibe/users/da220/Cadence/WORK_TSMC180FORTE/DIGITAL_THESIS_1_8V/SIGNALS_VDDL_32_32_4/functional/verilog.v,58|8): The interconnect source TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U3_out_reg.Q is separated by a unidirectional continuous assign from the destination TB_TOP_32_32_4.TOP.SIGNALS_VDDL.READ_VDDL_2.  The port annotation will still occur.
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.g22.I = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.g21.I = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.g19.I = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.g23.I = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.g20.I = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U1_out_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U1_out_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U3_out_reg.E = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U3_out_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U6_out_reg.E = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U6_out_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U4_out_reg.E = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U4_out_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U5_out_reg.E = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U5_out_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U6_mid_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U6_mid_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U4_mid_reg.E = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U4_mid_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U5_mid_reg.E = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U5_mid_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U1_mid_reg.E = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U1_mid_reg.D = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U3_mid_reg.E = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U3_mid_reg.D = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.WRITE_VDDL = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.g14.I = (0.009)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.NOT_WRITE_VDDL = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.FE_PDC1_READ_VDDL_1.I = (0.002)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.READ_VDDL_1 = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.g11.I = (0.005)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.NOT_READ_VDDL_1 = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.FE_PDC0_NOT_READ_VDDL_1.I = (0.005)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.READ_VDDL_2 = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.NOT_READ_VDDL_2 = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.DVLP_L = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.PRE_L = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g5__8780.OE = (0.009)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g5__8780.I = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g6__4296.OE = (0.006)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g6__4296.I = (0.001)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g1__3772.OE = (0.009)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g1__3772.I = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g4__1474.OE = (0.009)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.U7_g4__1474.I = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.SA_EN_L = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.Z_BUS[3] = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.Z_BUS[2] = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.Z_BUS[1] = (0)
+ABSOLUTE PORT: TB_TOP_32_32_4.TOP.SIGNALS_VDDL.Z_BUS[0] = (0)
