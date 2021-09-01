@@ -89,7 +89,9 @@ Cadence implementation with main compiler components
 
 4. Download RRAM COMPILER Repository and place folder RRAM_COMPILER inside folder SKILL
 
-5. Further TSMC technology Files are needed to run the compiler. After examing which files can be uploaded without violating agreement of use, the repository will be updated.
+5. Copy DIGITAL to working directory. Generate folders constraints, tcl, reports, innovus, work if they dont exist.
+
+6. Further TSMC technology Files are needed to run the compiler. After examing which files can be uploaded without violating agreement of use, the repository will be updated.
 
 -----------------------------------	
 
