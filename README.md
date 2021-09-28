@@ -123,7 +123,7 @@ The RRAM Array is presented on the following image. The SEL lines are shared hor
 
 The proposed simplified architecture is show on the image below. 
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/full_RRAM_Architecture_2.png" width="400">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/full_RRAM_architecture.png" width="400">
 
 **Version 2 RRAM Compiler Generated 128 x 128 Array**
 
@@ -294,7 +294,7 @@ The image below shows a small array of 64 x 64, where the width of a word is 4 b
 
 **Proposed RRAM Schematic**
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/full_RRAM_architecture.png" width="1000">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/full_RRAM_Architecture_2.png" width="1000">
 
 **Proposed RRAM Layout Version 3**
 
