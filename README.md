@@ -123,7 +123,7 @@ The RRAM Array is presented on the following image. The SEL lines are shared hor
 
 The proposed simplified architecture is show on the image below. 
 
-<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/simplified_architecture_2.png" width="400">
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/full_RRAM_Architecture_2.png" width="400">
 
 **Version 2 RRAM Compiler Generated 128 x 128 Array**
 
