@@ -292,6 +292,10 @@ The image below shows a small array of 64 x 64, where the width of a word is 4 b
 
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/64_64_4.png" width="1000">
 
+**Proposed RRAM Schematic**
+
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/full_RRAM_architecture.png" width="1000">
+
 **Proposed RRAM Layout Version 3**
 
 The image below shows a small array of 64 x 64, where the width of a word is 8 bits. This array was chosen so that the circuits location is clear in the image. As the size grows, the smaller relatively to the total area the layout of Write Drivers/Sense Amplifier/IO circuits become. The layout is surrounded by power lines.  The density of memory for this size is around 0.023 Mb/mm2.
