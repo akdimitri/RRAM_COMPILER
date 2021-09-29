@@ -30,7 +30,7 @@ Research Project: Large-scale mixed-signal array compiler for automatic memory g
 		- Automatic LVS clean DRC clean Layout Implementation
 		- Automatic Characterisation of Timing Permomance
 
-* Version 4: TODO: Array of RRAMs
+* Version 4: Future Work: Array of RRAMs
 
 
 **Research Project Description**: Commercial availability of memory complier is only used for industrial design of static random-access memory (SRAM) or
@@ -50,6 +50,12 @@ process of common memory.
 ###### Abstract - The lack of open-source memory compilers in academia typically causes significant delays in research and design implementations. This paper presents an open-source memory compiler that is irectly integrated within the Cadence Virtuoso environment using physical verification tools provided by Mentor Graphics (Calibre). It facilitates the entire memory generation process from netlist generation to layout implementation, and physical implementation verification. To the best of our knowledge, this is the first open-source memory compiler that has been developed specifically to automate Resistive Random Access Memory (RRAM) generation. RRAM holds the promise of achieving high speed, high density and non-volatility. A novel RRAM architecture, additionally is proposed, and a number of generated RRAM arrays are evaluated to identify their worst case control line parasitics and worst case settling time across the memristors of their cells. The total capacitance of lines SEL, N and P is 5.83 fF/cell, 3.31 fF/cell and 2.48 fF/cell respectively, while the total calculated resistance for SEL is 1.28 Ohm/cell and 0.14 Ohm/cell for both N and P lines.
 
 ------------------------------------------
+
+**Thesis**
+
+[Large-scale Mixed-signal RRAM Array Compiler for Automatic Memory Generation and Verification]
+
+###### Abstract - A handful of conventional memory compilers are only available to academia. Conventional memories suffer of volatility issues, high power consumption, high write voltage and low endurance. A number of emerging memory technologies are investigated to tackle the problems. The most promising type of memory is the Resistive Random Access Memory (RRAM). RRAM holds the promise of achieving high speed, high density and non-volatility. This thesis presents an open source RRAM compiler for automatic memory generation and verification. The RRAM compiler is directly integrated within the Cadence Virtuoso and Innovus environment, using physical verification tools provided by Mentor Graphics (Calibre). The compiler automatically generates the RRAM array and its peripheral circuits, verifies its layout and performs timing characterisation of the generated memory. To the best of the authors’ knowledge, this is the first open-source RRAM compiler. Additionally, a novel RRAM architecture is presented and a plethora of square N x N (up to N = 128) RRAM arrays are investigated regarding their worst case control line parasitics and their worst case settling time across the memristors of their cells. A number of various sizes and combinations of M x N RRAMs ,up to M = 128, N = 64 and word size B = 16 bits, are generated and characterised for clock frequencies equal to 25 MHz, 16.66 MHz and 12.5 MHz. The generated RRAMs, including both digital and peripheral circuits, achieve a density of up to 0.024 Mb/mm2 in 180 nm technology.
 
 **Research Project Objectives**
 
