@@ -70,6 +70,9 @@ The expected outcome of this project is to realize the automatic ReRAM generatio
 physical verification and timing/power characteristics. The deliverable outcome from the student will be a final report showing
 Cadence implementation with main compiler components
 
+Abstract RRAM Compiler Flow
+<img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/flow.drawio.png" width="800">
+
 ------------------------------
 
 **Instructions**
