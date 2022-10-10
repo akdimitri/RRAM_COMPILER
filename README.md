@@ -71,6 +71,7 @@ physical verification and timing/power characteristics. The deliverable outcome 
 Cadence implementation with main compiler components
 
 Abstract RRAM Compiler Flow
+
 <img src="https://github.com/akdimitri/RRAM_COMPILER/blob/main/images/flow.drawio.png" width="800">
 
 ------------------------------
